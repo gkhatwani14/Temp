@@ -16,7 +16,7 @@ Target upside, PEG and broker rating are the Zacks figures (the screen's designa
 
 ## Funnel
 
-- Supplied list: 30,000 global tickers; 5,294 are listed on the screen's exchanges (NASDAQ 2,387, NYSE 1,901, LSE 867, NYSE American/Arca 138, Cboe 1). Nine could not be matched to live data.
+- Supplied list: 30,000 global tickers; 5,294 are listed on the screen's exchanges (NASDAQ 2,387, NYSE 1,901, LSE 867, NYSE American/Arca 138, Cboe 1). Nine did not match the bulk data feed and were checked individually: none is an oversold candidate (CFR, ROKU, BWMN, PTLE and HWG have RSI between 53 and 77; ARI last traded 2026-11-06 at RSI 12; TCBI, ACHV and EMAN no longer return price data).
 - Market cap > $1B and 90-day average traded value > $10M: 2,186 names (2,065 US, 121 LSE; GBP converted at 1.3208 USD, 2026-11-13).
 - RSI(14) < 30 at the 2026-11-13 close: 36 names, all US-listed. No LSE name qualifies: the two oversold LSE names above $1B (Kainos, Coats) trade under $10M a day.
 - Regime: SPY closed 1.3% below its 50-day MA (754.37 vs 764.43), far from the 10% systemic-panic trigger, so the 25% fence is a hard exclusion.

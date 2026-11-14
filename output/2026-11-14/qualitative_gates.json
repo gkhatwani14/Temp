@@ -1,0 +1,131 @@
+{
+ "_headline": "**Two stocks qualify as hard passes: Grand Canyon Education (LOPE) and Kanzhun (BZ).** NVIDIA (NVDA) clears every numeric gate but is excluded under the existential-news rule. Stage 2 confirmation gates (three-scenario DCF: base-case upside >= 15%, worst-case downside <= 8%) have not been run, so both names are screening-stage passes, not buy recommendations.",
+ "_result_note": "Target upside, PEG and broker rating are the Zacks figures (the screen's designated provider); EV/EBITDA percentile is the current multiple's rank within its own five-year history. With only two qualifiers the rank-normalised composite is coarse: each component is simply 100 for the better name and 0 for the other.",
+ "_funnel": [
+  "Supplied list: 30,000 global tickers; 5,294 are listed on the screen's exchanges (NASDAQ 2,387, NYSE 1,901, LSE 867, NYSE American/Arca 138, Cboe 1). Nine could not be matched to live data.",
+  "Market cap > $1B and 90-day average traded value > $10M: 2,186 names (2,065 US, 121 LSE; GBP converted at 1.3208 USD, 2026-11-13).",
+  "RSI(14) < 30 at the 2026-11-13 close: 36 names, all US-listed. No LSE name qualifies: the two oversold LSE names above $1B (Kainos, Coats) trade under $10M a day.",
+  "Regime: SPY closed 1.3% below its 50-day MA (754.37 vs 764.43), far from the 10% systemic-panic trigger, so the 25% fence is a hard exclusion.",
+  "Falling-knife fences: 13 names sit more than 25% below their 50-day MA and are excluded; none has RSI < 15. 23 remain.",
+  "Fundamental, valuation, sentiment and EV/EBITDA-history gates: 3 names clear all of them (NVDA, LOPE, BZ).",
+  "Existential-news exclusion and thesis filter: NVDA excluded; LOPE and BZ qualify.",
+  "Cross-checks: recomputing Wilder RSI from two independent price histories reproduced the provider RSI to within 0.05 on all 74 names with RSI < 33, so no name sits on the wrong side of 30. Finviz's own RSI < 30 screen contains all 36 names; its nine extras are five names that fail the $10M liquidity floor and four NYSE ADRs absent from the list (PBR, PBR.A, YPF, VIST), which were evaluated anyway and fail."
+ ],
+ "LOPE": {
+  "status": "HARD PASS",
+  "existential": {
+   "status": "PASS",
+   "summary": "Decline is an earnings reaction: shares fell 18.9% on 2026-11-05 after Q3 results (2.4% revenue growth, Q4 EPS guide below consensus). Full-year 2026 guidance was issued, not withdrawn; no fraud, restatement, going-concern or regulatory trigger in the headlines or 8-Ks."
+  },
+  "thesis": {
+   "status": "PASS (weak)",
+   "filters_met": 1,
+   "summary": "Limb (c), growing demand: university-partner enrollments +5.2% to 145,270, online +7.1%, off-campus sites +12.6%, two new sites opened in 2026 (Q3 release, 8-K 2026-11-04). No exposure to the listed growth themes and no specific incentive."
+  },
+  "entry": "the last new 20-session closing low was 2026-11-09, four sessions ago, so the stabilisation test (five clear sessions) is not yet met; wait for a fifth session without a new closing low below $116.16. A later close below that level means the stop governs.",
+  "flags": [
+   "The 3-year EPS CAGR is 10.4%, barely above the 10% floor (GAAP diluted EPS $5.73 in 2022 to $7.71 in 2025; 2025 was flat on 2024). All four providers agree on the figure.",
+   "Analyst coverage is thin: the Zacks broker rating rests on 4 brokers and the target on 3 analysts. All three targets were revised after the drop (Truist to $180 and Barrington $200 on 2026-11-05, BMO to $173 on 2026-11-06), so the upside is not a stale-target artefact.",
+   "Sentiment is poor: Zacks Rank 4 (Sell), four downward and no upward EPS revisions in 60 days, Zacks industry rank 160 of 247.",
+   "The thesis fit is the weakest part: a September headline attributes an earlier 28% drop to fears that AI disrupts online education, which is the structural bear case to weigh.",
+   "No catalyst is near: next earnings are expected 2027-02-17.",
+   "Three-year price return is -12.6% and the three-year Sharpe ratio is -0.08, so it is not the 'compounder caught in a selloff' archetype on price, though ROIC has risen every year to 44%."
+  ]
+ },
+ "BZ": {
+  "status": "HARD PASS (caveats)",
+  "existential": {
+   "status": "PASS",
+   "summary": "ADS fell 25.3% on 2026-11-12. Headlines attribute it to softening demand, soft revenue guidance and founder share sales; none reports fraud, a restatement, withdrawn guidance or regulatory action. No company filing explains the move, so the trigger is known from headlines only."
+  },
+  "thesis": {
+   "status": "PASS (contested)",
+   "filters_met": 1,
+   "summary": "Limb (c), growing demand: Q2 2026 revenue +14.1%, paid enterprise customers +10.8% to 7.2M, monthly active users above 70M for the first time, growth 'accelerating' (6-K 2026-08-25). November headlines citing softening demand cut against this; Q3 results on 2026-11-25 will settle it."
+  },
+  "entry": "the 25% gap is one session old and the flush has not aged, so there is no stabilisation evidence yet; wait for five sessions without a close below $12.49, which runs into the 2026-11-25 results. A close below $12.49 after entry means the stop governs.",
+  "flags": [
+   "Event risk: Q3 results on 2026-11-25 arrive before any stabilisation can be confirmed. A one-day 25% gap also shows the stock does not trade tightly enough to guarantee an 8% stop.",
+   "Most analyst inputs pre-date the drop: the Zacks rating (1.29, 14 brokers) is unchanged for three months and the $21.95 average target is largely unrevised. The three post-drop actions are Citi $26 to $22 (11-12), Barclays $20 to $17 (11-13) and an 86Research upgrade with a $17 target (11-13); even $17 is 31% above the close, so the upside gate holds on fresh targets alone.",
+   "Foreign private issuer reporting in RMB: SEC XBRL data is annual only, so TTM free cash flow, Altman Z and net cash come from providers (S&P via stockanalysis, FactSet, Zacks) rather than from filings.",
+   "The EV/EBITDA gate rests on an 18-quarter provider series (listed June 2021): SHORT SERIES, quarterly not monthly.",
+   "The 191% EPS CAGR is off a near-zero 2022 base (RMB 0.12 per share).",
+   "Insiders have been sellers: nine open-market sales worth $122M and $381M of proposed sales (Form 144) in six months, per Finviz.",
+   "Three-year price return is -13.8% and the three-year Sharpe ratio is 0.09."
+  ]
+ },
+ "NVDA": {
+  "status": "Numeric pass \u2014 EXCLUDED (existential news)",
+  "existential": {
+   "status": "EXCLUDED",
+   "summary": "Drawdown follows the CEO's immediate resignation (reported 2026-11-12) amid a board special-committee investigation, a reported FBI inquiry, congressional subpoena threats and calls for tighter China export controls, and investor litigation."
+  },
+  "thesis": {
+   "status": "PASS",
+   "filters_met": 3,
+   "summary": "AI hardware; sovereign-AI and export-policy exposure; new infrastructure partnerships."
+  },
+  "entry": "not applicable while excluded.",
+  "flags": [
+   "Thirteen analyst downgrades between 2026-11-09 and 2026-11-13 (Finviz); the Zacks broker rating moved from 1.13 to 1.47 in a week.",
+   "Still printing new 20-session closing lows (four in the last five sessions); the 5.7x-volume flush on 2026-11-12 is one session old.",
+   "Earnings on 2026-11-17 will be reported under an interim CEO."
+  ],
+  "exclusion_detail": "**Why excluded.** The screen's rule removes names whose drawdown is driven by regulatory or legal action that plausibly reprices the business permanently, because trailing fundamentals cannot see such events. The headlines retrieved on 2026-11-14 (Reuters, WSJ, Yahoo Finance, Barron's via Finviz and Google News) describe an unresolved board investigation with outside counsel, a reported federal investigation, lawmakers pressing for export-control action and threatening subpoenas, and shareholder suits. That is a legal and regulatory overhang with an open-ended outcome, not an ordinary earnings miss, so the conservative reading is to exclude. This is a judgment call: on a narrow reading (no fraud, restatement, going-concern or withdrawn guidance has been reported) NVDA would be the top-ranked hard pass, clearing every numeric gate on every provider with no conflicts and scoring 14 of 14 on the Tier-2 criteria. Revisit after the 2026-11-17 results and once the investigation's scope is known."
+ },
+ "_near_miss": [
+  "## Near misses (capitulation watchlist)",
+  "",
+  "| Ticker | What it fails | Detail |",
+  "|---|---|---|",
+  "| DT (Dynatrace) | Forward PEG only | Zacks PEG 1.79 (P/E 23.65 on 13.2% growth) against a 1.5 cap; Nasdaq 3.13, stockanalysis 1.92, Finviz 1.41. Every other gate passes, EV/EBITDA is at the 8th percentile of its history. |",
+  "| DGII (Digi International) | EV/EBITDA history; PEG not published | EV/EBITDA 19.3x is at the 59th percentile of its own history on both series, so no option is met; no provider publishes a long-term growth estimate, so the PEG gate cannot be evaluated. |",
+  "| HALO (Halozyme) | Target upside, solvency, EV/EBITDA (provider-dependent) | Zacks consensus target $115 is 14.7% above the price (other providers 17\u201320%); net debt/EBITDA is 2.7\u20133.2x on as-reported EBITDA, which includes a 2025 acquired-R&D charge, but 1.9x on providers' adjusted EBITDA. |",
+  "| NTCT (NetScout) | Broker rating; PEG | Zacks rating 2.33 from 3 brokers (was 1.67 three months ago); no Zacks growth estimate, Finviz PEG 2.0. |",
+  "| FFIV (F5) | Falling-knife fence, PEG, rating | 25.3% below its 50-day MA on all three price sources, just through the fence; Zacks PEG and rating also fail. |",
+  "| HWC (Hancock Whitney) | 3-yr EPS CAGR | EPS $5.98 (2022) to $5.67 (2025), a -1.8% CAGR. As a bank its Altman Z is undefined and no provider solvency score could be sourced. |",
+  "| VIST (Vista Energy, not in the list) | Altman Z | FactSet Altman Z 1.98; passes the other numeric gates. |"
+ ],
+ "_overlays": [
+  "## Overlays from the other two attachments",
+  "",
+  "**Seasonality (seasonality prompt).** Sixteen years of monthly dividend-adjusted closes to October 2026, Kruskal\u2013Wallis across calendar months, best 2\u201310 month window on demeaned log returns.",
+  "",
+  "| Ticker | Kruskal\u2013Wallis p | Best window | Avg window return | Win rate | Rest of year | Seasonal excess | Tier | Out-of-sample |",
+  "|---|---|---|---|---|---|---|---|---|",
+  "| LOPE | 0.96 | buy start of Feb, sell end of Mar | 6.7% | 10 of 16 | 9.2% | 4.5 pts | none | window fitted on 2010\u20132017 (Aug\u2013Nov) did not hold in 2018\u20132026 |",
+  "| NVDA | 0.29 | buy start of May, sell end of Aug | 27.8% | 13 of 16 | 29.8% | 13.1 pts | none | fitted window held, but far behind buy-and-hold |",
+  "| BZ | not analysed | \u2014 | \u2014 | \u2014 | \u2014 | \u2014 | \u2014 | listed June 2021: only 5 observations per calendar month (10 required) |",
+  "",
+  "Neither analysable name shows statistically real seasonality (p well above 0.05, so no q-value survives), and November is not a seasonally weak month for LOPE (average +3.0%). Seasonality gives no reason to time or avoid either entry.",
+  "",
+  "**Broken price or broken business (notes, section 2).**",
+  "",
+  "| Indicator | LOPE | BZ |",
+  "|---|---|---|",
+  "| ROIC high and stable (> 15%) | Yes: 35% (2022) rising every year to 44% TTM (S&P via stockanalysis) | Unclear: providers disagree (S&P 9.9%, Finviz 21%, FactSet 24%) |",
+  "| FCF margin robust | Yes: about 23% | Yes: about 50% |",
+  "| Gross margin flat or expanding | Yes: 53.3% TTM vs 52.8% three-year average | Yes: 85.9% vs 83.5% |",
+  "| Deeply oversold vs 200-day MA | RSI 25.9; 22% below the 200-day MA | RSI 28.4; 14% below the 200-day MA |",
+  "| Death cross with volume expansion on down days | 50-day below 200-day since 2025-12-10; down-day volume about equal to up-day volume (1.04x) | 50-day still above 200-day; down-day volume 1.21x up-day volume |",
+  "| Litmus test: revenue and cash flow still compounding | Yes: revenue +2.4% in Q3 with FCF and EBITDA up about 20% year on year, and 2026 EPS guided to $9.81\u20139.85 against $7.71 in 2025 | Through Q2 yes (revenue +14.1%); November headlines question it and Q3 is unreported |",
+  "| Reading | Broken price, on the evidence available | Undetermined until the 2026-11-25 results |",
+  "",
+  "**Consolidation zone (notes, section 1).** Neither name has formed a base. For both, ATR and Bollinger-band width are at the top of their one-year range (volatility is expanding, not compressing), and LOPE's 50/100/200-day EMAs are spread across 8% of the price. BZ's EMAs are clustered within 2%, but the price has just gapped below all of them. A volume-profile reading needs intraday data, which was not collected."
+ ],
+ "_method": [
+  "## Method, sources and limits",
+  "",
+  "- **Bulk first pass:** TradingView scanner (fundamentals and estimates supplied by FactSet) for every in-scope ticker: RSI, 50-day MA, market cap, traded value, and first-pass fundamentals.",
+  "- **Per-candidate verification of all 40 oversold names:** Zacks (PEG, broker rating, price target, rank, style scores, industry rank), stockanalysis.com (S&P Global Market Intelligence: Altman Z, FCF, debt, EBITDA, quarterly EV/EBITDA history), SEC EDGAR XBRL filings (FCF, EBITDA, debt, cash, shares, split-adjusted annual EPS), Nasdaq.com (daily prices, 13F position changes, analyst data), Finviz (snapshot, analyst actions, insider trades, news), FRED (3-month T-bill 4.14% on 2026-11-12) and Google News RSS headlines.",
+  "- **Gate decisions:** each gate is evaluated on every provider that reports it and decided by a stated hierarchy (filings first for FCF, solvency and EPS; Zacks first for PEG, target and broker rating; FactSet first for Altman Z). The evaluation file records every provider's value and flags disagreements.",
+  "- **EV/EBITDA history:** primary series is monthly and point-in-time, built from SEC filings (EBITDA = operating income + D&A over the trailing four quarters, debt and cash from the latest balance sheet public at each month-end) and month-end closes; the provider's 20-quarter series is the cross-check and the fallback for non-US filers.",
+  "- **Technicals:** Wilder RSI(14) and the 50-day SMA are recomputed from two independent daily price histories (stockanalysis and Nasdaq, split-adjusted closes).",
+  "- **Substitutions:** no provider 'Profitability Score' or 'Solvency Score' is publicly retrievable, so the Tier-2 profitability criterion uses the Piotroski F-Score (flagged) and financials' Altman-Z substitute is reported as not evaluable. Interest coverage is EBIT over interest expense.",
+  "- **Unavailable sources:** Yahoo Finance rate-limited this machine (HTTP 429), Macrotrends and Stockopedia answer with bot challenges, MSN serves its data through a keyed API, and FT Markets forecasts are subscriber-only. None was worked around. No LSE candidate reached the stage where the Stockopedia fallback would have been needed.",
+  "- **Known weak spots:** the SEC-derived EBITDA uses a single D&A tag and can understate D&A for companies that tag intangible amortisation separately (it understates HALO's by about $100M); wherever the filing-based and provider figures disagree the gate is marked as a conflict. Thesis-filter and existential-news results are analyst judgments made from headlines and filings, not article text.",
+  "- **Not done:** Stage 2 (CAPM, three-scenario DCF, the base-case and worst-case confirmation gates) for either qualifier.",
+  "",
+  "This is a rules-based screen on public data as of one date, not investment advice. Analyst targets and ratings lag sharp price moves, and a screening pass says nothing about whether the Stage 2 valuation gates would hold."
+ ]
+}

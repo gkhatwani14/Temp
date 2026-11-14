@@ -57,7 +57,8 @@ def tier2(e: dict) -> dict:
         cols = _latest_fy_cols(vals, 3)
         if vals.get("TTM") is not None and len(cols) == 3:
             avg = sum(vals[c] for c in cols) / 3
-            ev_m.append(f"{m} TTM {vals['TTM']:.1f}% vs 3-FY avg {avg:.1f}%")
+            k = 100.0 if abs(vals["TTM"]) <= 1.5 else 1.0   # provider serves margins as fractions
+            ev_m.append(f"{m} TTM {vals['TTM'] * k:.1f}% vs 3-FY avg {avg * k:.1f}%")
             met_m = bool(met_m) or vals["TTM"] > avg
     crit["expanding_margins"] = {"met": met_m, "evidence": "; ".join(ev_m) or "margin history unavailable"}
 

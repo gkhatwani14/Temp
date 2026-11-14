@@ -54,10 +54,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 8.68,
+   "finviz_peg_trailing_pe_context_only": 0.57,
    "zacks_exp_eps_growth_3_5yr_pct": 12.0,
    "factset_trailing_peg_context_only": 1.7114622784680469
   },
   "targets": {
+   "zacks_used": 257.0,
    "zacks_headline": 257.0,
    "zacks_faq": 257.0,
    "zacks_n": 3,
@@ -173,14 +175,12 @@
     "per_provider": {
      "zacks": true,
      "nasdaq": true,
-     "stockanalysis": true,
-     "finviz": true
+     "stockanalysis": true
     },
     "values": {
      "zacks": 0.72,
      "nasdaq": 0.72,
-     "stockanalysis": 0.681,
-     "finviz": 0.57
+     "stockanalysis": 0.681
     },
     "status": "PASS"
    },
@@ -541,10 +541,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": null,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": 0.05180773208157196
   },
   "targets": {
+   "zacks_used": 92.5,
    "zacks_headline": 92.5,
    "zacks_faq": null,
    "zacks_n": 4,
@@ -659,14 +661,12 @@
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "status": "NOT EVALUABLE"
    },
@@ -1090,10 +1090,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": null,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": -0.0012357600652347835
   },
   "targets": {
+   "zacks_used": 106.14,
    "zacks_headline": 107.71,
    "zacks_faq": 106.14,
    "zacks_n": 14,
@@ -1208,14 +1210,12 @@
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "status": "NOT EVALUABLE"
    },
@@ -1232,7 +1232,7 @@
      "finviz": true
     },
     "values": {
-     "zacks": 1.2542904981163665,
+     "zacks": 1.2214315613227291,
      "factset": 1.2324543114273756,
      "stockanalysis": 1.233361239012139,
      "nasdaq": 1.2371285056509,
@@ -1595,10 +1595,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 40.1,
+   "finviz_peg_trailing_pe_context_only": 1.48,
    "zacks_exp_eps_growth_3_5yr_pct": 25.08,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 541.78,
    "zacks_headline": 541.78,
    "zacks_faq": 541.78,
    "zacks_n": 18,
@@ -1713,14 +1715,12 @@
     "per_provider": {
      "zacks": false,
      "nasdaq": false,
-     "stockanalysis": true,
-     "finviz": true
+     "stockanalysis": true
     },
     "values": {
      "zacks": 1.6,
      "nasdaq": 5.99,
-     "stockanalysis": 1.372,
-     "finviz": 1.48
+     "stockanalysis": 1.372
     },
     "status": "FAIL (CONFLICT)"
    },
@@ -2138,10 +2138,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 10.2,
+   "finviz_peg_trailing_pe_context_only": 0.83,
    "zacks_exp_eps_growth_3_5yr_pct": 9.37,
    "factset_trailing_peg_context_only": 0.07778908437839001
   },
   "targets": {
+   "zacks_used": 21.26,
    "zacks_headline": 21.95,
    "zacks_faq": 21.26,
    "zacks_n": 13,
@@ -2256,14 +2258,12 @@
     "per_provider": {
      "zacks": true,
      "nasdaq": true,
-     "stockanalysis": true,
-     "finviz": true
+     "stockanalysis": true
     },
     "values": {
      "zacks": 1.09,
      "nasdaq": 1.38,
-     "stockanalysis": 0.989,
-     "finviz": 0.83
+     "stockanalysis": 0.989
     },
     "status": "PASS"
    },
@@ -2280,7 +2280,7 @@
      "finviz": true
     },
     "values": {
-     "zacks": 0.6936728395061726,
+     "zacks": 0.6404320987654322,
      "factset": 0.6247359497268516,
      "stockanalysis": 0.6157407407407407,
      "nasdaq": 0.5895061728395061,
@@ -2734,10 +2734,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 11.12,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": 48.88,
    "factset_trailing_peg_context_only": -0.039703090728918415
   },
   "targets": {
+   "zacks_used": 55.8,
    "zacks_headline": 55.8,
    "zacks_faq": 55.8,
    "zacks_n": 5,
@@ -2850,14 +2852,12 @@
     "per_provider": {
      "zacks": true,
      "nasdaq": true,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "values": {
      "zacks": 0.23,
      "nasdaq": 0.23,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "status": "PASS"
    },
@@ -3285,10 +3285,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 37.12,
+   "finviz_peg_trailing_pe_context_only": 0.14,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": 1.2991149057419136
   },
   "targets": {
+   "zacks_used": 142.6,
    "zacks_headline": 142.6,
    "zacks_faq": 142.6,
    "zacks_n": 5,
@@ -3397,22 +3399,20 @@
    },
    "peg": {
     "metric": "peg_forward",
-    "pass": true,
-    "decided_by": "finviz",
+    "pass": null,
+    "decided_by": null,
     "conflict": false,
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": true
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": 0.14
+     "stockanalysis": null
     },
-    "status": "PASS"
+    "status": "NOT EVALUABLE"
    },
    "upside": {
     "metric": "target_upside",
@@ -3781,7 +3781,7 @@
     "note": "open-market 'Buy' vs 'Sale' rows dated within the window; values in USD as shown by finviz"
    }
   },
-  "failed_criteria": "falling knife: -29.7% vs 50-day MA (fence -25%); 3-yr EPS CAGR -2.0% (sec); broker rating 2.00 (zacks)"
+  "failed_criteria": "falling knife: -29.7% vs 50-day MA (fence -25%); 3-yr EPS CAGR -2.0% (sec); forward PEG not published by any provider (no long-term growth estimate); broker rating 2.00 (zacks)"
  },
  "CTVA": {
   "ticker": "CTVA",
@@ -3831,10 +3831,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 9.48,
+   "finviz_peg_trailing_pe_context_only": 0.54,
    "zacks_exp_eps_growth_3_5yr_pct": 6.84,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 14.82,
    "zacks_headline": 17.17,
    "zacks_faq": 14.82,
    "zacks_n": 12,
@@ -3947,14 +3949,12 @@
     "per_provider": {
      "zacks": true,
      "nasdaq": false,
-     "stockanalysis": null,
-     "finviz": true
+     "stockanalysis": null
     },
     "values": {
      "zacks": 1.39,
      "nasdaq": 1.77,
-     "stockanalysis": null,
-     "finviz": 0.54
+     "stockanalysis": null
     },
     "status": "PASS (CONFLICT)"
    },
@@ -3971,7 +3971,7 @@
      "finviz": true
     },
     "values": {
-     "zacks": 0.8207847295864266,
+     "zacks": 0.5715800636267232,
      "factset": 0.4645118769883352,
      "stockanalysis": 0.5673382820784729,
      "nasdaq": 2.608695652173913,
@@ -4293,10 +4293,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 17.49,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": 1.5219794447510642
   },
   "targets": {
+   "zacks_used": 79.6,
    "zacks_headline": 81.6,
    "zacks_faq": 79.6,
    "zacks_n": 5,
@@ -4387,16 +4389,14 @@
    "eps_cagr": {
     "metric": "eps_cagr_3y",
     "pass": true,
-    "decided_by": "sec",
+    "decided_by": "factset",
     "conflict": false,
     "per_provider": {
-     "sec": true,
      "factset": true,
      "stockanalysis": true,
      "finviz": true
     },
     "values": {
-     "sec": 0.2599210498948732,
      "factset": 0.27119749669269133,
      "stockanalysis": 0.2723348645794861,
      "finviz": 0.2712
@@ -4411,14 +4411,12 @@
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "status": "NOT EVALUABLE"
    },
@@ -4435,7 +4433,7 @@
      "finviz": true
     },
     "values": {
-     "zacks": 0.47212700703590094,
+     "zacks": 0.43604546274580547,
      "factset": 0.43604546274580547,
      "stockanalysis": 0.43604546274580547,
      "nasdaq": 0.43424138553130076,
@@ -4842,10 +4840,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 7.01,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": 5.28,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 54.5,
    "zacks_headline": 54.5,
    "zacks_faq": 54.5,
    "zacks_n": 2,
@@ -4936,16 +4936,14 @@
    "eps_cagr": {
     "metric": "eps_cagr_3y",
     "pass": false,
-    "decided_by": "sec",
+    "decided_by": "factset",
     "conflict": false,
     "per_provider": {
-     "sec": false,
      "factset": false,
      "stockanalysis": false,
      "finviz": false
     },
     "values": {
-     "sec": -0.07211867798997351,
      "factset": 0.014189664749472142,
      "stockanalysis": 0.014149277915021186,
      "finviz": 0.014199999999999999
@@ -4960,14 +4958,12 @@
     "per_provider": {
      "zacks": true,
      "nasdaq": true,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "values": {
      "zacks": 1.33,
      "nasdaq": 1.46,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "status": "PASS"
    },
@@ -5334,7 +5330,7 @@
     "note": "open-market 'Buy' vs 'Sale' rows dated within the window; values in USD as shown by finviz"
    }
   },
-  "failed_criteria": "3-yr EPS CAGR -7.2% (sec); broker rating 2.67 (zacks)"
+  "failed_criteria": "3-yr EPS CAGR 1.4% (factset); broker rating 2.67 (zacks)"
  },
  "DT": {
   "ticker": "DT",
@@ -5391,10 +5387,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 23.65,
+   "finviz_peg_trailing_pe_context_only": 1.41,
    "zacks_exp_eps_growth_3_5yr_pct": 13.24,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 61.5,
    "zacks_headline": 61.88,
    "zacks_faq": 61.5,
    "zacks_n": 32,
@@ -5450,18 +5448,18 @@
    "solvency": {
     "metric": "solvency",
     "pass": true,
-    "decided_by": "sec",
+    "decided_by": "factset",
     "conflict": false,
     "per_provider": {
-     "sec": true,
+     "sec": null,
      "factset": true,
      "stockanalysis": true
     },
     "values": {
      "sec": {
-      "net_debt": -720885000.0,
-      "ebitda": 304686000.0,
-      "interest_coverage": -30.76084785262457,
+      "net_debt": null,
+      "ebitda": null,
+      "interest_coverage": null,
       "no_interest_expense_reported": false
      },
      "factset": {
@@ -5477,7 +5475,7 @@
     },
     "status": "PASS",
     "notes": {
-     "sec": "SOLVENCY PASS -- net cash / negligible debt (net debt <= 0)",
+     "sec": "net debt or EBITDA unavailable",
      "factset": "SOLVENCY PASS -- net cash / negligible debt (net debt <= 0)",
      "stockanalysis": "SOLVENCY PASS -- net cash / negligible debt (net debt <= 0)"
     }
@@ -5505,20 +5503,18 @@
     "metric": "peg_forward",
     "pass": false,
     "decided_by": "zacks",
-    "conflict": true,
+    "conflict": false,
     "per_provider": {
      "zacks": false,
      "nasdaq": false,
-     "stockanalysis": false,
-     "finviz": true
+     "stockanalysis": false
     },
     "values": {
      "zacks": 1.79,
      "nasdaq": 3.13,
-     "stockanalysis": 1.921,
-     "finviz": 1.41
+     "stockanalysis": 1.921
     },
-    "status": "FAIL (CONFLICT)"
+    "status": "FAIL"
    },
    "upside": {
     "metric": "target_upside",
@@ -5533,7 +5529,7 @@
      "finviz": true
     },
     "values": {
-     "zacks": 0.3812500000000001,
+     "zacks": 0.3727678571428572,
      "factset": 0.38261553571428575,
      "stockanalysis": 0.36741071428571437,
      "nasdaq": 0.43660714285714297,
@@ -5562,7 +5558,7 @@
    }
   },
   "ev_gate": {
-   "primary": "sec_monthly",
+   "primary": "stockanalysis_quarterly",
    "pass": true,
    "detail": {
     "sec_monthly": {
@@ -5590,7 +5586,8 @@
      "n_negative_or_missing": 0,
      "first": "2021-11-30",
      "last": "2026-11-13",
-     "frequency": "monthly, point-in-time (SEC filings + month-end close)"
+     "frequency": "monthly, point-in-time (SEC filings + month-end close)",
+     "unreliable": "filing-derived EBITDA unusable (sign convention of the IFRS tags); providers decide"
     },
     "stockanalysis_quarterly": {
      "n_obs": 21,
@@ -5934,10 +5931,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 16.93,
+   "finviz_peg_trailing_pe_context_only": 2.12,
    "zacks_exp_eps_growth_3_5yr_pct": 7.95,
    "factset_trailing_peg_context_only": 4.1598441301637195
   },
   "targets": {
+   "zacks_used": 453.38,
    "zacks_headline": 453.38,
    "zacks_faq": 453.38,
    "zacks_n": 8,
@@ -6028,16 +6027,14 @@
    "eps_cagr": {
     "metric": "eps_cagr_3y",
     "pass": true,
-    "decided_by": "sec",
+    "decided_by": "factset",
     "conflict": false,
     "per_provider": {
-     "sec": true,
      "factset": true,
      "stockanalysis": true,
      "finviz": true
     },
     "values": {
-     "sec": 0.3082491584064506,
      "factset": 0.2408560055883684,
      "stockanalysis": 0.2410454203380039,
      "finviz": 0.2409
@@ -6052,14 +6049,12 @@
     "per_provider": {
      "zacks": false,
      "nasdaq": false,
-     "stockanalysis": false,
-     "finviz": false
+     "stockanalysis": false
     },
     "values": {
      "zacks": 2.13,
      "nasdaq": 2.74,
-     "stockanalysis": 2.134,
-     "finviz": 2.12
+     "stockanalysis": 2.134
     },
     "status": "FAIL"
    },
@@ -6487,10 +6482,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": null,
+   "finviz_peg_trailing_pe_context_only": 1.68,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": 0.3549598062763565
   },
   "targets": {
+   "zacks_used": 28.33,
    "zacks_headline": 28.33,
    "zacks_faq": null,
    "zacks_n": 3,
@@ -6599,22 +6596,20 @@
    },
    "peg": {
     "metric": "peg_forward",
-    "pass": false,
-    "decided_by": "finviz",
+    "pass": null,
+    "decided_by": null,
     "conflict": false,
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": false
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": 1.68
+     "stockanalysis": null
     },
-    "status": "FAIL"
+    "status": "NOT EVALUABLE"
    },
    "upside": {
     "metric": "target_upside",
@@ -6943,7 +6938,7 @@
     "note": "open-market 'Buy' vs 'Sale' rows dated within the window; values in USD as shown by finviz"
    }
   },
-  "failed_criteria": "Altman Z 1.02 (factset); solvency: ND/EBITDA 5.45x, interest coverage 2.1x (sec); 3-yr EPS CAGR -26.7% (sec); PEG 1.68 (finviz); target upside 11.2% (zacks); broker rating 3.33 (zacks); EV/EBITDA 11.26x at percentile 71% of its own history (no option met)"
+  "failed_criteria": "Altman Z 1.02 (factset); solvency: ND/EBITDA 5.45x, interest coverage 2.1x (sec); 3-yr EPS CAGR -26.7% (sec); forward PEG not published by any provider (no long-term growth estimate); target upside 11.2% (zacks); broker rating 3.33 (zacks); EV/EBITDA 11.26x at percentile 71% of its own history (no option met)"
  },
  "GEF": {
   "ticker": "GEF",
@@ -6995,10 +6990,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 15.44,
+   "finviz_peg_trailing_pe_context_only": 1.81,
    "zacks_exp_eps_growth_3_5yr_pct": 27.46,
    "factset_trailing_peg_context_only": 0.03909644091429824
   },
   "targets": {
+   "zacks_used": 83.4,
    "zacks_headline": 83.4,
    "zacks_faq": 83.4,
    "zacks_n": 5,
@@ -7107,20 +7104,18 @@
     "metric": "peg_forward",
     "pass": true,
     "decided_by": "zacks",
-    "conflict": true,
+    "conflict": false,
     "per_provider": {
      "zacks": true,
      "nasdaq": true,
-     "stockanalysis": true,
-     "finviz": false
+     "stockanalysis": true
     },
     "values": {
      "zacks": 0.56,
      "nasdaq": 0.56,
-     "stockanalysis": 0.596,
-     "finviz": 1.81
+     "stockanalysis": 0.596
     },
-    "status": "PASS (CONFLICT)"
+    "status": "PASS"
    },
    "upside": {
     "metric": "target_upside",
@@ -7513,10 +7508,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 13.43,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 9.31,
    "zacks_headline": 9.44,
    "zacks_faq": 9.31,
    "zacks_n": 8,
@@ -7632,14 +7629,12 @@
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "status": "NOT EVALUABLE"
    },
@@ -7656,7 +7651,7 @@
      "finviz": true
     },
     "values": {
-     "zacks": 0.43465045592705165,
+     "zacks": 0.4148936170212767,
      "factset": 0.38677811550151975,
      "stockanalysis": 0.38677811550151975,
      "nasdaq": 0.44376899696048633,
@@ -8034,10 +8029,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 11.35,
+   "finviz_peg_trailing_pe_context_only": 0.23,
    "zacks_exp_eps_growth_3_5yr_pct": 32.0,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 115.44,
    "zacks_headline": 115.0,
    "zacks_faq": 115.44,
    "zacks_n": 9,
@@ -8103,7 +8100,7 @@
     "values": {
      "sec": {
       "net_debt": 2175916000.0,
-      "ebitda": 690974000.0,
+      "ebitda": 793128000.0,
       "interest_coverage": 30.57541266098313,
       "no_interest_expense_reported": false
      },
@@ -8120,7 +8117,7 @@
     },
     "status": "FAIL (CONFLICT)",
     "notes": {
-     "sec": "ND/EBITDA 3.15x, interest coverage 30.6x",
+     "sec": "ND/EBITDA 2.74x, interest coverage 30.6x",
      "factset": "ND/EBITDA 1.89x, interest coverage 46.3x",
      "stockanalysis": "ND/EBITDA 1.93x, interest coverage 46.3x"
     }
@@ -8152,37 +8149,35 @@
     "per_provider": {
      "zacks": true,
      "nasdaq": true,
-     "stockanalysis": null,
-     "finviz": true
+     "stockanalysis": null
     },
     "values": {
      "zacks": 0.35,
      "nasdaq": 0.38,
-     "stockanalysis": null,
-     "finviz": 0.23
+     "stockanalysis": null
     },
     "status": "PASS"
    },
    "upside": {
     "metric": "target_upside",
-    "pass": false,
+    "pass": true,
     "decided_by": "zacks",
-    "conflict": true,
+    "conflict": false,
     "per_provider": {
-     "zacks": false,
+     "zacks": true,
      "factset": true,
      "stockanalysis": true,
      "nasdaq": true,
      "finviz": true
     },
     "values": {
-     "zacks": 0.14690336092550127,
+     "zacks": 0.1512915129151291,
      "factset": 0.19566060636282057,
      "stockanalysis": 0.19567168644659416,
      "nasdaq": 0.17393038795252824,
      "finviz": 0.19567168644659416
     },
-    "status": "FAIL (CONFLICT)"
+    "status": "PASS"
    },
    "abr": {
     "metric": "abr",
@@ -8205,8 +8200,8 @@
    }
   },
   "ev_gate": {
-   "primary": "sec_monthly",
-   "pass": false,
+   "primary": "stockanalysis_quarterly",
+   "pass": true,
    "detail": {
     "sec_monthly": {
      "n_obs": 61,
@@ -8233,7 +8228,8 @@
      "n_negative_or_missing": 0,
      "first": "2021-11-30",
      "last": "2026-11-13",
-     "frequency": "monthly, point-in-time (SEC filings + month-end close)"
+     "frequency": "monthly, point-in-time (SEC filings + month-end close)",
+     "unreliable": "as-reported operating income 674M + provider D&A 119M (the filing's D&A tag, 17M, omits separately tagged intangible amortisation)"
     },
     "stockanalysis_quarterly": {
      "n_obs": 21,
@@ -8526,7 +8522,7 @@
     "note": "open-market 'Buy' vs 'Sale' rows dated within the window; values in USD as shown by finviz"
    }
   },
-  "failed_criteria": "solvency: ND/EBITDA 3.15x, interest coverage 30.6x (sec); target upside 14.7% (zacks); EV/EBITDA 19.76x at percentile 46% of its own history (no option met)"
+  "failed_criteria": "solvency: ND/EBITDA 2.74x, interest coverage 30.6x (sec)"
  },
  "HLIO": {
   "ticker": "HLIO",
@@ -8583,10 +8579,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 14.84,
+   "finviz_peg_trailing_pe_context_only": 0.94,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": 0.1501157638454807
   },
   "targets": {
+   "zacks_used": 79.0,
    "zacks_headline": 79.0,
    "zacks_faq": 79.0,
    "zacks_n": 5,
@@ -8697,20 +8695,18 @@
     "metric": "peg_forward",
     "pass": false,
     "decided_by": "stockanalysis",
-    "conflict": true,
+    "conflict": false,
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": false,
-     "finviz": true
+     "stockanalysis": false
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": 1.686,
-     "finviz": 0.94
+     "stockanalysis": 1.686
     },
-    "status": "FAIL (CONFLICT)"
+    "status": "FAIL"
    },
    "upside": {
     "metric": "target_upside",
@@ -9136,10 +9132,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 10.16,
+   "finviz_peg_trailing_pe_context_only": 0.75,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 80.66,
    "zacks_headline": 83.48,
    "zacks_faq": 80.66,
    "zacks_n": 11,
@@ -9249,22 +9247,20 @@
    },
    "peg": {
     "metric": "peg_forward",
-    "pass": true,
-    "decided_by": "finviz",
+    "pass": null,
+    "decided_by": null,
     "conflict": false,
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": true
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": 0.75
+     "stockanalysis": null
     },
-    "status": "PASS"
+    "status": "NOT EVALUABLE"
    },
    "upside": {
     "metric": "target_upside",
@@ -9279,7 +9275,7 @@
      "finviz": true
     },
     "values": {
-     "zacks": 0.27879901960784315,
+     "zacks": 0.23560049019607843,
      "factset": 0.20216410845588229,
      "stockanalysis": 0.235140931372549,
      "nasdaq": 0.22104779411764697,
@@ -9558,7 +9554,7 @@
     "note": "open-market 'Buy' vs 'Sale' rows dated within the window; values in USD as shown by finviz"
    }
   },
-  "failed_criteria": "Altman Z not evaluable (financial; no sourced Solvency Score); solvency not evaluable; 3-yr EPS CAGR -1.8% (sec); EV/EBITDA history not evaluable (EBITDA <= 0 or no sourced series)"
+  "failed_criteria": "Altman Z not evaluable (financial; no sourced Solvency Score); solvency not evaluable; 3-yr EPS CAGR -1.8% (sec); forward PEG not published by any provider (no long-term growth estimate); EV/EBITDA history not evaluable (EBITDA <= 0 or no sourced series)"
  },
  "IONS": {
   "ticker": "IONS",
@@ -9615,10 +9611,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": null,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": 9.57,
    "factset_trailing_peg_context_only": -0.0867434386771335
   },
   "targets": {
+   "zacks_used": 66.52,
    "zacks_headline": 69.24,
    "zacks_faq": 66.52,
    "zacks_n": 21,
@@ -9733,14 +9731,12 @@
     "per_provider": {
      "zacks": null,
      "nasdaq": false,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": -0.85,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "status": "FAIL"
    },
@@ -9757,7 +9753,7 @@
      "finviz": true
     },
     "values": {
-     "zacks": 1.3826565726083961,
+     "zacks": 1.289057123193393,
      "factset": 1.3383475911906402,
      "stockanalysis": 1.3565037852718516,
      "nasdaq": 1.4910529938059187,
@@ -10132,10 +10128,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 16.0,
+   "finviz_peg_trailing_pe_context_only": 1.59,
    "zacks_exp_eps_growth_3_5yr_pct": 5.0,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 99.33,
    "zacks_headline": 99.33,
    "zacks_faq": 99.33,
    "zacks_n": 3,
@@ -10191,18 +10189,18 @@
    "solvency": {
     "metric": "solvency",
     "pass": true,
-    "decided_by": "sec",
+    "decided_by": "factset",
     "conflict": false,
     "per_provider": {
-     "sec": true,
+     "sec": null,
      "factset": true,
      "stockanalysis": true
     },
     "values": {
      "sec": {
-      "net_debt": -251900000.0,
-      "ebitda": 203600000.0,
-      "interest_coverage": -42.23076923076923,
+      "net_debt": null,
+      "ebitda": null,
+      "interest_coverage": null,
       "no_interest_expense_reported": false
      },
      "factset": {
@@ -10218,7 +10216,7 @@
     },
     "status": "PASS",
     "notes": {
-     "sec": "SOLVENCY PASS -- net cash / negligible debt (net debt <= 0)",
+     "sec": "net debt or EBITDA unavailable",
      "factset": "SOLVENCY PASS -- net cash / negligible debt (net debt <= 0)",
      "stockanalysis": "SOLVENCY PASS -- net cash / negligible debt (net debt <= 0)"
     }
@@ -10250,14 +10248,12 @@
     "per_provider": {
      "zacks": false,
      "nasdaq": false,
-     "stockanalysis": false,
-     "finviz": false
+     "stockanalysis": false
     },
     "values": {
      "zacks": 3.2,
      "nasdaq": 3.2,
-     "stockanalysis": 1.869,
-     "finviz": 1.59
+     "stockanalysis": 1.869
     },
     "status": "FAIL"
    },
@@ -10303,7 +10299,7 @@
    }
   },
   "ev_gate": {
-   "primary": "sec_monthly",
+   "primary": "stockanalysis_quarterly",
    "pass": true,
    "detail": {
     "sec_monthly": {
@@ -10331,7 +10327,8 @@
      "n_negative_or_missing": 0,
      "first": "2021-11-30",
      "last": "2026-11-13",
-     "frequency": "monthly, point-in-time (SEC filings + month-end close)"
+     "frequency": "monthly, point-in-time (SEC filings + month-end close)",
+     "unreliable": "filing-derived EBITDA unusable (sign convention of the IFRS tags); providers decide"
     },
     "stockanalysis_quarterly": {
      "n_obs": 21,
@@ -10669,10 +10666,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 11.95,
+   "finviz_peg_trailing_pe_context_only": 1.13,
    "zacks_exp_eps_growth_3_5yr_pct": 15.0,
    "factset_trailing_peg_context_only": 0.4776161228655395
   },
   "targets": {
+   "zacks_used": 187.33,
    "zacks_headline": 187.33,
    "zacks_faq": 187.33,
    "zacks_n": 3,
@@ -10787,14 +10786,12 @@
     "per_provider": {
      "zacks": true,
      "nasdaq": true,
-     "stockanalysis": true,
-     "finviz": true
+     "stockanalysis": true
     },
     "values": {
      "zacks": 0.8,
      "nasdaq": 0.8,
-     "stockanalysis": 0.756,
-     "finviz": 1.13
+     "stockanalysis": 0.756
     },
     "status": "PASS"
    },
@@ -11274,10 +11271,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": null,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": 3.476202352638635
   },
   "targets": {
+   "zacks_used": null,
    "zacks_headline": null,
    "zacks_faq": null,
    "zacks_n": 0,
@@ -11392,14 +11391,12 @@
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "status": "NOT EVALUABLE"
    },
@@ -11804,10 +11801,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 13.56,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 33.5,
    "zacks_headline": 33.5,
    "zacks_faq": 33.5,
    "zacks_n": 14,
@@ -11922,14 +11921,12 @@
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "status": "NOT EVALUABLE"
    },
@@ -12312,10 +12309,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 11.68,
+   "finviz_peg_trailing_pe_context_only": 2.0,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": 0.43822482339707897
   },
   "targets": {
+   "zacks_used": 42.5,
    "zacks_headline": 45.0,
    "zacks_faq": 42.5,
    "zacks_n": 3,
@@ -12424,22 +12423,20 @@
    },
    "peg": {
     "metric": "peg_forward",
-    "pass": false,
-    "decided_by": "finviz",
+    "pass": null,
+    "decided_by": null,
     "conflict": false,
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": false
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": 2.0
+     "stockanalysis": null
     },
-    "status": "FAIL"
+    "status": "NOT EVALUABLE"
    },
    "upside": {
     "metric": "target_upside",
@@ -12454,7 +12451,7 @@
      "finviz": true
     },
     "values": {
-     "zacks": 0.40056022408963576,
+     "zacks": 0.32275132275132257,
      "factset": 0.40056022408963576,
      "stockanalysis": 0.32275132275132257,
      "nasdaq": 0.32275132275132257,
@@ -12798,7 +12795,7 @@
     "note": "open-market 'Buy' vs 'Sale' rows dated within the window; values in USD as shown by finviz"
    }
   },
-  "failed_criteria": "PEG 2.00 (finviz); broker rating 2.33 (zacks)"
+  "failed_criteria": "forward PEG not published by any provider (no long-term growth estimate); broker rating 2.33 (zacks)"
  },
  "NVDA": {
   "ticker": "NVDA",
@@ -12855,10 +12852,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 17.54,
+   "finviz_peg_trailing_pe_context_only": 0.16,
    "zacks_exp_eps_growth_3_5yr_pct": 14.0,
    "factset_trailing_peg_context_only": 0.16786844913630963
   },
   "targets": {
+   "zacks_used": 273.18,
    "zacks_headline": 293.22,
    "zacks_faq": 273.18,
    "zacks_n": 47,
@@ -12973,14 +12972,12 @@
     "per_provider": {
      "zacks": true,
      "nasdaq": true,
-     "stockanalysis": true,
-     "finviz": true
+     "stockanalysis": true
     },
     "values": {
      "zacks": 1.25,
      "nasdaq": 1.25,
-     "stockanalysis": 0.269,
-     "finviz": 0.16
+     "stockanalysis": 0.269
     },
     "status": "PASS"
    },
@@ -12997,7 +12994,7 @@
      "finviz": true
     },
     "values": {
-     "zacks": 0.8005526558182379,
+     "zacks": 0.6774946269573228,
      "factset": 0.7569567516119129,
      "stockanalysis": 0.7171016272643538,
      "nasdaq": 0.5202947497697268,
@@ -13462,10 +13459,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": null,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": -0.0020922589875240322
   },
   "targets": {
+   "zacks_used": 3.16,
    "zacks_headline": 3.78,
    "zacks_faq": 3.16,
    "zacks_n": 7,
@@ -13532,7 +13531,7 @@
     "values": {
      "sec": {
       "net_debt": 2152000000.0,
-      "ebitda": -616000000.0,
+      "ebitda": -605000000.0,
       "interest_coverage": -5.423728813559322,
       "no_interest_expense_reported": false
      },
@@ -13581,14 +13580,12 @@
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "status": "NOT EVALUABLE"
    },
@@ -13605,7 +13602,7 @@
      "finviz": true
     },
     "values": {
-     "zacks": 2.176470588235294,
+     "zacks": 1.65546218487395,
      "factset": 0.3613445378151261,
      "stockanalysis": 0.8277310924369747,
      "nasdaq": 0.9327731092436975,
@@ -13973,10 +13970,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 12.74,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 93.0,
    "zacks_headline": 93.0,
    "zacks_faq": 93.0,
    "zacks_n": 2,
@@ -14091,14 +14090,12 @@
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": false,
-     "finviz": null
+     "stockanalysis": false
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": 1.561,
-     "finviz": null
+     "stockanalysis": 1.561
     },
     "status": "FAIL"
    },
@@ -14516,10 +14513,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 3.71,
+   "finviz_peg_trailing_pe_context_only": 0.76,
    "zacks_exp_eps_growth_3_5yr_pct": 10.64,
    "factset_trailing_peg_context_only": 0.044129429610868076
   },
   "targets": {
+   "zacks_used": 22.95,
    "zacks_headline": 22.95,
    "zacks_faq": 22.95,
    "zacks_n": 8,
@@ -14575,18 +14574,18 @@
    "solvency": {
     "metric": "solvency",
     "pass": true,
-    "decided_by": "sec",
+    "decided_by": "factset",
     "conflict": false,
     "per_provider": {
-     "sec": true,
+     "sec": null,
      "factset": true,
      "stockanalysis": true
     },
     "values": {
      "sec": {
-      "net_debt": 19351000000.0,
-      "ebitda": 52166000000.0,
-      "interest_coverage": -8.276511627906977,
+      "net_debt": null,
+      "ebitda": null,
+      "interest_coverage": null,
       "no_interest_expense_reported": false
      },
      "factset": {
@@ -14602,7 +14601,7 @@
     },
     "status": "PASS",
     "notes": {
-     "sec": "SOLVENCY PASS -- net cash / negligible debt (ND/EBITDA 0.37x < 0.5x)",
+     "sec": "net debt or EBITDA unavailable",
      "factset": "ND/EBITDA 1.00x, interest coverage 7.6x",
      "stockanalysis": "ND/EBITDA 1.05x, interest coverage 39.8x"
     }
@@ -14634,14 +14633,12 @@
     "per_provider": {
      "zacks": true,
      "nasdaq": true,
-     "stockanalysis": null,
-     "finviz": true
+     "stockanalysis": null
     },
     "values": {
      "zacks": 0.35,
      "nasdaq": 0.35,
-     "stockanalysis": null,
-     "finviz": 0.76
+     "stockanalysis": null
     },
     "status": "PASS"
    },
@@ -15034,10 +15031,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": null,
+   "finviz_peg_trailing_pe_context_only": 0.56,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": 0.03859496523425644
   },
   "targets": {
+   "zacks_used": null,
    "zacks_headline": null,
    "zacks_faq": null,
    "zacks_n": 0,
@@ -15093,18 +15092,18 @@
    "solvency": {
     "metric": "solvency",
     "pass": true,
-    "decided_by": "sec",
+    "decided_by": "factset",
     "conflict": false,
     "per_provider": {
-     "sec": true,
+     "sec": null,
      "factset": true,
      "stockanalysis": true
     },
     "values": {
      "sec": {
-      "net_debt": 19351000000.0,
-      "ebitda": 52166000000.0,
-      "interest_coverage": -8.276511627906977,
+      "net_debt": null,
+      "ebitda": null,
+      "interest_coverage": null,
       "no_interest_expense_reported": false
      },
      "factset": {
@@ -15120,7 +15119,7 @@
     },
     "status": "PASS",
     "notes": {
-     "sec": "SOLVENCY PASS -- net cash / negligible debt (ND/EBITDA 0.37x < 0.5x)",
+     "sec": "net debt or EBITDA unavailable",
      "factset": "ND/EBITDA 1.00x, interest coverage 7.6x",
      "stockanalysis": "ND/EBITDA 1.05x, interest coverage 39.8x"
     }
@@ -15146,22 +15145,20 @@
    },
    "peg": {
     "metric": "peg_forward",
-    "pass": true,
-    "decided_by": "finviz",
+    "pass": null,
+    "decided_by": null,
     "conflict": false,
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": true
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": 0.56
+     "stockanalysis": null
     },
-    "status": "PASS"
+    "status": "NOT EVALUABLE"
    },
    "upside": {
     "metric": "target_upside",
@@ -15497,7 +15494,7 @@
     "note": "open-market 'Buy' vs 'Sale' rows dated within the window; values in USD as shown by finviz"
    }
   },
-  "failed_criteria": "Altman Z 1.42 (factset); 3-yr EPS CAGR -18.5% (sec)"
+  "failed_criteria": "Altman Z 1.42 (factset); 3-yr EPS CAGR -18.5% (sec); forward PEG not published by any provider (no long-term growth estimate)"
  },
  "PLUG": {
   "ticker": "PLUG",
@@ -15554,10 +15551,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": null,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 3.18,
    "zacks_headline": 3.18,
    "zacks_faq": 3.18,
    "zacks_n": 15,
@@ -15672,14 +15671,12 @@
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "status": "NOT EVALUABLE"
    },
@@ -16056,10 +16053,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 19.34,
+   "finviz_peg_trailing_pe_context_only": 0.35,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": 1.09914341257647
   },
   "targets": {
+   "zacks_used": 24.29,
    "zacks_headline": 24.29,
    "zacks_faq": 24.29,
    "zacks_n": 14,
@@ -16115,18 +16114,18 @@
    "solvency": {
     "metric": "solvency",
     "pass": true,
-    "decided_by": "sec",
+    "decided_by": "factset",
     "conflict": false,
     "per_provider": {
-     "sec": true,
+     "sec": null,
      "factset": true,
      "stockanalysis": true
     },
     "values": {
      "sec": {
-      "net_debt": -385032000.0,
-      "ebitda": 204783000.0,
-      "interest_coverage": -11.961587230551205,
+      "net_debt": null,
+      "ebitda": null,
+      "interest_coverage": null,
       "no_interest_expense_reported": false
      },
      "factset": {
@@ -16142,7 +16141,7 @@
     },
     "status": "PASS",
     "notes": {
-     "sec": "SOLVENCY PASS -- net cash / negligible debt (net debt <= 0)",
+     "sec": "net debt or EBITDA unavailable",
      "factset": "SOLVENCY PASS -- net cash / negligible debt (net debt <= 0)",
      "stockanalysis": "SOLVENCY PASS -- net cash / negligible debt (net debt <= 0)"
     }
@@ -16166,22 +16165,20 @@
    },
    "peg": {
     "metric": "peg_forward",
-    "pass": true,
-    "decided_by": "finviz",
+    "pass": null,
+    "decided_by": null,
     "conflict": false,
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": true
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": 0.35
+     "stockanalysis": null
     },
-    "status": "PASS"
+    "status": "NOT EVALUABLE"
    },
    "upside": {
     "metric": "target_upside",
@@ -16533,7 +16530,7 @@
     "note": "open-market 'Buy' vs 'Sale' rows dated within the window; values in USD as shown by finviz"
    }
   },
-  "failed_criteria": "falling knife: -36.6% vs 50-day MA (fence -25%); 3-yr EPS CAGR undefined (non-positive EPS) (sec)"
+  "failed_criteria": "falling knife: -36.6% vs 50-day MA (fence -25%); 3-yr EPS CAGR undefined (non-positive EPS) (sec); forward PEG not published by any provider (no long-term growth estimate)"
  },
  "SOUN": {
   "ticker": "SOUN",
@@ -16590,10 +16587,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": null,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 9.1,
    "zacks_headline": 9.1,
    "zacks_faq": 9.1,
    "zacks_n": 5,
@@ -16708,14 +16707,12 @@
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "status": "NOT EVALUABLE"
    },
@@ -17088,10 +17085,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 7.91,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": 10.0,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 63.0,
    "zacks_headline": 63.0,
    "zacks_faq": 63.0,
    "zacks_n": 2,
@@ -17206,14 +17205,12 @@
     "per_provider": {
      "zacks": true,
      "nasdaq": true,
-     "stockanalysis": true,
-     "finviz": null
+     "stockanalysis": true
     },
     "values": {
      "zacks": 0.79,
      "nasdaq": 0.79,
-     "stockanalysis": 0.901,
-     "finviz": null
+     "stockanalysis": 0.901
     },
     "status": "PASS"
    },
@@ -17637,10 +17634,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 7.74,
+   "finviz_peg_trailing_pe_context_only": 9.3,
    "zacks_exp_eps_growth_3_5yr_pct": 5.42,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 17.19,
    "zacks_headline": 17.69,
    "zacks_faq": 17.19,
    "zacks_n": 8,
@@ -17756,14 +17755,12 @@
     "per_provider": {
      "zacks": true,
      "nasdaq": false,
-     "stockanalysis": null,
-     "finviz": false
+     "stockanalysis": null
     },
     "values": {
      "zacks": 1.43,
      "nasdaq": 1.57,
-     "stockanalysis": null,
-     "finviz": 9.3
+     "stockanalysis": null
     },
     "status": "PASS (CONFLICT)"
    },
@@ -17780,7 +17777,7 @@
      "finviz": true
     },
     "values": {
-     "zacks": 0.5599647266313934,
+     "zacks": 0.515873015873016,
      "factset": 0.48022169312169294,
      "stockanalysis": 0.5264550264550263,
      "nasdaq": 0.4805996472663139,
@@ -18151,10 +18148,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 28.31,
+   "finviz_peg_trailing_pe_context_only": 1.81,
    "zacks_exp_eps_growth_3_5yr_pct": 13.94,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 212.96,
    "zacks_headline": 212.96,
    "zacks_faq": 212.96,
    "zacks_n": 26,
@@ -18269,14 +18268,12 @@
     "per_provider": {
      "zacks": false,
      "nasdaq": false,
-     "stockanalysis": false,
-     "finviz": false
+     "stockanalysis": false
     },
     "values": {
      "zacks": 2.03,
      "nasdaq": 15.59,
-     "stockanalysis": 1.859,
-     "finviz": 1.81
+     "stockanalysis": 1.859
     },
     "status": "FAIL"
    },
@@ -18655,10 +18652,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": null,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 59.13,
    "zacks_headline": 59.13,
    "zacks_faq": 59.13,
    "zacks_n": 8,
@@ -18771,14 +18770,12 @@
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "status": "NOT EVALUABLE"
    },
@@ -19151,10 +19148,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 12.41,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": 0.05157109740728818
   },
   "targets": {
+   "zacks_used": 44.6,
    "zacks_headline": 44.6,
    "zacks_faq": 44.6,
    "zacks_n": 10,
@@ -19267,14 +19266,12 @@
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "status": "NOT EVALUABLE"
    },
@@ -19681,10 +19678,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 5.55,
+   "finviz_peg_trailing_pe_context_only": 0.4,
    "zacks_exp_eps_growth_3_5yr_pct": 9.54,
    "factset_trailing_peg_context_only": 2.247040754688032
   },
   "targets": {
+   "zacks_used": 90.5,
    "zacks_headline": 93.07,
    "zacks_faq": 90.5,
    "zacks_n": 7,
@@ -19750,8 +19749,8 @@
     "values": {
      "sec": {
       "net_debt": null,
-      "ebitda": 511927000.0,
-      "interest_coverage": -7.657080241925611,
+      "ebitda": null,
+      "interest_coverage": null,
       "no_interest_expense_reported": false
      },
      "factset": {
@@ -19799,14 +19798,12 @@
     "per_provider": {
      "zacks": true,
      "nasdaq": true,
-     "stockanalysis": null,
-     "finviz": true
+     "stockanalysis": null
     },
     "values": {
      "zacks": 0.58,
      "nasdaq": 0.58,
-     "stockanalysis": null,
-     "finviz": 0.4
+     "stockanalysis": null
     },
     "status": "PASS"
    },
@@ -19823,7 +19820,7 @@
      "finviz": true
     },
     "values": {
-     "zacks": 0.6667263610315184,
+     "zacks": 0.6207020057306589,
      "factset": 0.7408254297994268,
      "stockanalysis": 0.6806948424068766,
      "nasdaq": 0.5700214899713467,
@@ -19852,7 +19849,7 @@
    }
   },
   "ev_gate": {
-   "primary": "sec_monthly",
+   "primary": "stockanalysis_quarterly",
    "pass": true,
    "detail": {
     "sec_monthly": {
@@ -19880,7 +19877,8 @@
      "n_negative_or_missing": 0,
      "first": "2021-11-30",
      "last": "2026-11-13",
-     "frequency": "monthly, point-in-time (SEC filings + month-end close)"
+     "frequency": "monthly, point-in-time (SEC filings + month-end close)",
+     "unreliable": "filing-derived EBITDA unusable (sign convention of the IFRS tags); providers decide"
     },
     "stockanalysis_quarterly": {
      "n_obs": 21,
@@ -20206,10 +20204,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 8.64,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": null
   },
   "targets": {
+   "zacks_used": 10.55,
    "zacks_headline": 10.55,
    "zacks_faq": 10.55,
    "zacks_n": 10,
@@ -20320,14 +20320,12 @@
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "status": "NOT EVALUABLE"
    },
@@ -20706,10 +20704,12 @@
   },
   "peg_inputs": {
    "zacks_forward_pe_f1": 4.17,
+   "finviz_peg_trailing_pe_context_only": null,
    "zacks_exp_eps_growth_3_5yr_pct": null,
    "factset_trailing_peg_context_only": 0.0003525565460959059
   },
   "targets": {
+   "zacks_used": 60.14,
    "zacks_headline": 61.39,
    "zacks_faq": 60.14,
    "zacks_n": 8,
@@ -20820,14 +20820,12 @@
     "per_provider": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "values": {
      "zacks": null,
      "nasdaq": null,
-     "stockanalysis": null,
-     "finviz": null
+     "stockanalysis": null
     },
     "status": "NOT EVALUABLE"
    },
@@ -20844,7 +20842,7 @@
      "finviz": true
     },
     "values": {
-     "zacks": 0.6197889182058047,
+     "zacks": 0.5868073878627968,
      "factset": 0.6846965699208445,
      "stockanalysis": 0.6036939313984169,
      "nasdaq": 0.46807387862796834,

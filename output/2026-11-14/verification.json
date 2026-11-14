@@ -1,0 +1,902 @@
+{
+ "LOPE": {
+  "ticker": "LOPE",
+  "gates": [
+   {
+    "gate": "G1",
+    "orchestrator_claim": "NASDAQ; market cap $3.08B (SA $3.04B); 90-day ADV $49.77M; universe pass",
+    "independent_value": "Exchange NASDAQ-GS; market cap $3,076,568,350 (Nasdaq summary; = 25,510,517 sh x $120.60) / $3,041,594,350 (stockanalysis); 90-trading-day average traded value $49.77M recomputed from raw Nasdaq daily rows (close x volume)",
+    "source_url": "https://api.nasdaq.com/api/quote/LOPE/summary?assetclass=stocks ; https://api.nasdaq.com/api/quote/LOPE/historical?assetclass=stocks&fromdate=2022-09-01&todate=2026-11-14&limit=9999",
+    "retrieved_at": "2026-11-14T13:58:43Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Cap is 3x and ADV 5x the thresholds. ADV excluding the post-earnings sessions is still $47.4M. Minor share-count mismatch between providers (25.22M vs 25.51M) is immaterial here."
+   },
+   {
+    "gate": "G2",
+    "orchestrator_claim": "FCF TTM $264.85M (SEC/SA/Zacks agree)",
+    "independent_value": "FCF TTM $264,848,000 on the raw stockanalysis statistics payload; recomputed from SEC filings: OCF TTM $302.07M (FY25 273.491 + 9M26 171.589 - 9M25 143.006) less capex TTM ~$37.2M = ~$264.85M",
+    "source_url": "https://stockanalysis.com/stocks/lope/statistics/__data.json ; https://www.sec.gov/Archives/edgar/data/1434588/000110465926122668/lope-20260930x10q.htm",
+    "retrieved_at": "2026-11-14T14:12:51Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Strongly positive. FY2025 capex component (34.84M) taken from provider annual table, 9M figures read from the 10-Q cash-flow statement."
+   },
+   {
+    "gate": "G3",
+    "orchestrator_claim": "Altman Z 16.3 (FactSet) / 17.5 (SA) / 14.39 (SEC)",
+    "independent_value": "17.5 printed on raw stockanalysis statistics payload; 14.39 recomputed by me from SEC XBRL (WC 184.98M, TA 894.49M, RE 2,851.33M, EBIT TTM 313.16M, TL 255.09M, sales TTM 1,148.27M, MVE 3,076.6M)",
+    "source_url": "https://stockanalysis.com/stocks/lope/statistics/__data.json ; https://data.sec.gov/api/xbrl/companyfacts/CIK0001434588.json",
+    "retrieved_at": "2026-11-14T13:32:21Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Retained earnings (2.85B) exceed total assets (0.89B) because of treasury stock, which inflates the score; even with that term zeroed Z = 9.9, far above 3."
+   },
+   {
+    "gate": "G4",
+    "orchestrator_claim": "Net debt <= 0 on all providers (SEC -162.1M; SA/FactSet -48.1M); EBITDA 355.5M; interest coverage n/a; automatic pass",
+    "independent_value": "Cash $58.76M + investments $103.38M = $162.14M; no borrowings (10-Q: 'no amounts drawn on the Revolving Credit Facility', 'Cash paid for interest $ --'); only debt-like item is operating lease liabilities $114.01M -> net cash $48.13M including leases. EBITDA TTM recomputed $355.2M (SA 355.5M). Interest coverage not computable (no interest expense)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1434588/000110465926122668/lope-20260930x10q.htm",
+    "retrieved_at": "2026-11-14T14:12:51Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Automatic pass via net debt <= 0 as of 2026-09-30. Forward caveat: liquidity fell $137.9M in 9 months on buybacks; a $100M secured revolver (expandable to $200M) was signed 2026-09-28 expressly to fund buybacks and the board added $355M of authorization on 2026-10-28 ($394.5M available vs $162M liquidity). Net cash is likely to erode, though the credit agreement caps leverage at 2.0x."
+   },
+   {
+    "gate": "G5",
+    "orchestrator_claim": "3-yr EPS CAGR 10.40% (SEC: 7.71 vs 5.73); FactSet 10.43%; pass",
+    "independent_value": "FY2025 diluted EPS $7.71 (10-K filed 2026-02-18, income statement) vs FY2022 diluted EPS $5.73 (10-K filed 2023-02-16, income statement) -> CAGR 10.40%; threshold requires FY2025 EPS >= $7.63",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1434588/000110465926017047/lope-20251231x10k.htm ; https://www.sec.gov/Archives/edgar/data/1434588/000155837023001452/lope-20221231x10k.htm",
+    "retrieved_at": "2026-11-14T14:15:08Z",
+    "verdict": "PASS_BUT_FRAGILE",
+    "note": "Both figures read directly on the 10-K income statements and match XBRL. Passes by 0.40pp / $0.08 of EPS (1.1%). The pass depends on FY2022 being a trough (EPS fell 5.92 -> 5.73) and on buybacks: net income CAGR is only 5.4% (184.7M -> 216.2M) and FY2025 net income is below FY2020-21 (257-260M). The preceding windows fail: FY2021->FY2024 = 9.3%, FY2020->FY2023 = 7.7%. FY2025 EPS was also flat/down vs FY2024 (7.73), partly due to a $35M litigation settlement."
+   },
+   {
+    "gate": "G6",
+    "orchestrator_claim": "Zacks PEG 0.80 (P/E F1 11.95 / 15.0% 3-5yr growth); Nasdaq 0.80, SA 0.756, finviz 1.13; pass",
+    "independent_value": "Raw Zacks quote page: 'Exp EPS Growth (3-5yr) 15.00%', 'Forward PE 11.95', 'PEG Ratio 0.80'; recomputed 11.95/15.0 = 0.797; F1 estimate $10.09 -> 120.60/10.09 = 11.95",
+    "source_url": "https://www.zacks.com/stock/quote/LOPE",
+    "retrieved_at": "2026-11-14T13:29:50Z",
+    "verdict": "PASS_BUT_FRAGILE",
+    "note": "Clears 1.5 with a wide numeric margin (break-even long-term growth is 8.0%), and the F1 estimate already reflects the cut guidance ($10.09). Fragility is coverage and input quality: Zacks' revision table shows only 2 analysts on F1/F2 (1 on the quarter), the 15% long-term rate is undated and well above realised growth (Zacks past-5-yr 9.6%, 3-yr CAGR 10.4%, consensus FY27 growth 10.6%); finviz carries 9.71% -> PEG 1.13. Zacks Rank is #4 (Sell) with all F1/F2 revisions downward in the last 30 days."
+   },
+   {
+    "gate": "G7",
+    "orchestrator_claim": "Zacks average target $187.33 (3 analysts) -> +55.3%; other providers $184.33-$186.50 -> +52.8% to +54.6%; pass",
+    "independent_value": "Raw Zacks page: average $187.33, high $200.00, low $180.00, 'three analysts'; vs $120.60 close = +55.3% (Zacks' printed 59.06% is vs the prior close $117.77). Refreshed 3-target mean (173/180/200) = $184.33 -> +52.8%; lowest single target $173 -> +43.4%",
+    "source_url": "https://www.zacks.com/stock/research/LOPE/price-target-stock-forecast",
+    "retrieved_at": "2026-11-14T13:32:30Z",
+    "verdict": "PASS_BUT_FRAGILE",
+    "note": "Numerically robust and not stale (Truist cut to $180 on 11-05, Barrington reiterated $200 on 11-05, BMO cut $182 -> $173 on 11-06), but it rests on only 3 analysts, and Zacks' average still embeds BMO's superseded $182 (187.33 = (180+182+200)/3). Flagged fragile solely for thin coverage."
+   },
+   {
+    "gate": "G8",
+    "orchestrator_claim": "Zacks ABR 1.50 from 4 brokers; FactSet 1.125, finviz 1.25, SA 1.33; pass",
+    "independent_value": "Raw Zacks table: Strong Buy 3, Buy 0, Hold 1, Sell 0, Strong Sell 0 -> ABR 1.50 'made by four brokerage firms'; identical for Today / 1 week / 1 month / 2 months / 3 months ago",
+    "source_url": "https://www.zacks.com/stock/research/LOPE/price-target-stock-forecast",
+    "retrieved_at": "2026-11-14T13:32:30Z",
+    "verdict": "PASS_BUT_FRAGILE",
+    "note": "Four brokers only. A single Strong Buy -> Hold change gives (2x1 + 2x3)/4 = 2.00, which fails the strict < 2 test. ABR has not moved in three months despite a guidance cut and a 19% one-day drop, while Zacks' own Rank is #4 (Sell). A MarketBeat headline dated 2026-11-05 cites an 'Analyst Downgrade' that is not reflected on Zacks, finviz or stockanalysis (cannot be verified from reachable sources)."
+   },
+   {
+    "gate": "G9",
+    "orchestrator_claim": "RSI(14) 25.93; SMA50 149.49; close 120.60; gap -19.33%; not a falling knife",
+    "independent_value": "Recomputed from raw Nasdaq daily closes (1,055 rows) and from the stockanalysis series: Wilder RSI(14) = 25.93; 50-day SMA = $149.491; close $120.60 -> -19.33% vs SMA50. finviz raw page prints RSI 25.93 and SMA50 -19.33%",
+    "source_url": "https://api.nasdaq.com/api/quote/LOPE/historical?assetclass=stocks&fromdate=2022-09-01&todate=2026-11-14&limit=9999",
+    "retrieved_at": "2026-11-14T13:58:43Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "All three sub-tests hold as of the 2026-11-13 close (RSI between 15 and 30; price 7.0% above the -25% knife level of $112.12). Time-sensitive: RSI rose from 20.8 to 25.9 on the 11-13 bounce, and a further gain of about +2.0% ($2.37) in one session lifts it to 30, ending the oversold condition."
+   },
+   {
+    "gate": "G10",
+    "orchestrator_claim": "No existential trigger; shares fell ~19% on 2026-11-05 after Q3 results (8-K 2026-11-04)",
+    "independent_value": "Drop of -18.9% on 2026-11-05 (150.67 -> 122.25) follows the Q3 release: revenue $267.3M below the company's own $268.5-270.5M guide, FY2026 guidance lowered but still issued (revenue $1,160.7-1,161.7M vs $1,165.3-1,172.3M; adj. EPS $10.09-10.13 vs $10.18-10.32), enrollment growth slowed to +5.2% from +7.6%. 10-Q contains no going-concern, restatement or material-weakness language. Separate open item: CFO placed on paid administrative leave effective 2026-08-21 'in connection with an ongoing governmental investigation involving a non-employee third party's trades in Company stock' (8-K filed 2026-08-24)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1434588/000110465926122660/lope-ex99d1.htm ; https://www.sec.gov/Archives/edgar/data/1434588/000110465926100299/lope-20260821x8k.htm",
+    "retrieved_at": "2026-11-14T14:12:01Z",
+    "verdict": "PASS_BUT_FRAGILE",
+    "note": "Not triggered: the drawdown is an ordinary revenue miss plus guidance cut, guidance was not withdrawn, and the CFO matter did not move the stock when disclosed (147.46 -> 147.66 -> 149.08 on 08-21/24/25). Fragile because the orchestrator's reading omits the CFO probe entirely: the 8-K says the company is not a focus and that financial statements are not at issue, but the Q3 statements are signed by an interim CFO and the investigation is unresolved. Pending RICO/consumer class actions also remain (Ogdon class-certification motion filed 2026-10-30; Smith class certification denied 2026-09-11), with no accrual."
+   },
+   {
+    "gate": "G11",
+    "orchestrator_claim": "Current EV/EBITDA 8.49 (SEC monthly, 61 obs) / 8.42 (SA quarterly); 3-yr MA 14.1 / 12.9; 5-yr median 13.1 / 12.4; p25 11.5 / 10.5; options A, B and C all pass; not a short series",
+    "independent_value": "Raw stockanalysis quarterly series (20 quarter-ends 2021-12-31..2026-09-30 + current): current 8.42x; 5-yr median 12.42x (12.50x excl. current); 25th percentile 10.49x (10.97x excl. current); 3-yr mean 13.35x (12.97x incl. current); current is the series minimum and 35-37% below the 3-yr MA. EV check: market cap $3,041.6-3,076.6M + lease debt $114.0M - cash & investments $162.1M = $2,993-3,028M; TTM EBITDA $355.2M recomputed (op. income 313.158 + D&A 42.087) -> 8.42-8.52x",
+    "source_url": "https://stockanalysis.com/stocks/lope/financials/ratios/__data.json?p=quarterly",
+    "retrieved_at": "2026-11-14T13:43:20Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Passes A and B with large margin on a full 5-year series; C also holds. Caveats that do not change the outcome: TTM EBITDA still contains three quarters earned under the Original MSA fee base, and the +19.7% trailing EBITDA growth used for option C is inflated by lapping $37.4M of Q3-2025 charges (adjusted EBITDA: +5.0% for 9M, -3.2% in Q3)."
+   },
+   {
+    "gate": "G12",
+    "orchestrator_claim": "Met only via limb (c): partner enrollments +5.2%, two new sites; no growth-theme exposure",
+    "independent_value": "(a) none - education services; a 2026-09-22 headline frames AI as a threat to the stock. (b) none identified. (c) partner enrollments +5.2% y/y to 145,270 at 2026-09-30 (GCU online +7.1%, off-campus sites +12.6%), two sites opened in 9M 2026 (48 total), 15-year Amended MSA with GCU to 2041; but growth decelerated from +7.6% at 2026-06-30, GCU ground enrollment -4.1%, Q3 revenue +2.4%, partner count flat at 20, FY guidance cut",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1434588/000110465926122660/lope-ex99d1.htm ; https://www.sec.gov/Archives/edgar/data/1434588/000110465926088669/lope-20260730xex99d1.htm",
+    "retrieved_at": "2026-11-14T14:15:41Z",
+    "verdict": "PASS_BUT_FRAGILE",
+    "note": "Limb (c) is literally met (demand is growing) but weakly: it is organic mid-single-digit enrollment growth that slowed sharply in the same report that caused the selloff, with no new partner contracts. Limbs (a) and (b) are not met."
+   }
+  ],
+  "existential_news": {
+   "triggered": false,
+   "why_stock_fell": "Q3 2026 results released after the close on 2026-11-04 drove an 18.9% drop on 2026-11-05 (150.67 -> 122.25 on about 3x normal volume) and a further 3.7% on 11-06. Service revenue of $267.3M (+2.4% y/y) came in below the company's own $268.5-270.5M guide and below consensus; adjusted EPS $1.77 was in line (vs $1.78 a year earlier); adjusted EBITDA fell 3.2%. Enrollment growth slowed to +5.2% from +7.6% a quarter earlier, with GCU ground enrollment down 4.1%. Guidance was cut, not withdrawn: Q4 adjusted EPS to $3.63-3.67 from $3.75-3.85 and FY2026 revenue to $1,160.7-1,161.7M from $1,165.3-1,172.3M. It was also the first quarter under the Amended MSA with GCU, which narrows the fee base to tuition and academic fees only. Truist and BMO cut targets on 11-05/11-06 while keeping Buy ratings.",
+   "evidence": [
+    {
+     "date": "2026-11-04",
+     "headline": "GRAND CANYON EDUCATION, INC. REPORTS THIRD QUARTER 2026 RESULTS",
+     "publisher": "PR Newswire (also SEC 8-K Exhibit 99.1, accession 0001104659-26-122660)"
+    },
+    {
+     "date": "2026-11-04",
+     "headline": "Grand Canyon Education earnings beat by $0.01, revenue fell short of estimates",
+     "publisher": "Investing.com"
+    },
+    {
+     "date": "2026-11-04",
+     "headline": "Grand Canyon Education Q4FY26 Results: Adj EPS guide cut to $3.63-$3.67",
+     "publisher": "scanx.trade"
+    },
+    {
+     "date": "2026-11-04",
+     "headline": "Grand Canyon Education Misses The Whisper As Enrollment Starts Stall And Guidance Shifts To A 2027 Ground Come (truncated in feed)",
+     "publisher": "Earnings Whispers (via finviz)"
+    },
+    {
+     "date": "2026-11-05",
+     "headline": "Grand Canyon Education (NASDAQ:LOPE) Hits New 1-Year Low on Analyst Downgrade",
+     "publisher": "MarketBeat"
+    },
+    {
+     "date": "2026-11-05",
+     "headline": "Grand Canyon Education (NASDAQ:LOPE) Price Target Cut to $180.00 by Analysts at Truist Financial",
+     "publisher": "MarketBeat"
+    },
+    {
+     "date": "2026-11-06",
+     "headline": "BMO Capital Maintains Grand Canyon Education(LOPE.US) With Buy Rating, Cuts Target Price to $173",
+     "publisher": "Futu (\u5bcc\u9014\u725b\u725b)"
+    },
+    {
+     "date": "2026-11-09",
+     "headline": "BMO Capital highlights value opportunities in education stocks after sell-off",
+     "publisher": "Investing.com"
+    },
+    {
+     "date": "2026-08-24",
+     "headline": "Grand Canyon Education places CFO on leave amid stock trade probe",
+     "publisher": "StreetInsider (matches SEC 8-K Item 5.02 filed 2026-08-24)"
+    },
+    {
+     "date": "2026-08-27",
+     "headline": "Grand Canyon Education CFO placed on administrative leave amid stock probe",
+     "publisher": "The Business Journals"
+    },
+    {
+     "date": "2026-10-18",
+     "headline": "Andrew Left wants his fraud conviction tossed after witness gets caught up in insider trading probe",
+     "publisher": "Business Insider (surfaced by the LOPE CFO-name search; link to LOPE inferred from headline only)"
+    },
+    {
+     "date": "2026-09-22",
+     "headline": "Grand Canyon Education shares drop 28% on AI fe... (truncated)",
+     "publisher": "Pluang (not corroborated by the price series: -2.5% that day)"
+    },
+    {
+     "date": "2026-10-26",
+     "headline": "Education Secretary McMahon Praises GCU's Efforts To Address National Workforce Shortages",
+     "publisher": "AZ Free News"
+    }
+   ],
+   "reasoning": "None of the listed G10 triggers drives the drawdown. Full-year guidance was lowered and re-issued, not withdrawn (read on the 8-K exhibit and compared with the 2026-07-30 release). The Q3 10-Q has no going-concern, restatement or material-weakness language. No new regulatory action against GCE or GCU appeared in 20-day searches; the one Department of Education headline is favourable. The Amended MSA is a negotiated commercial contract (15-year term, GCU's termination-for-convenience right removed), not a regulatory or legal action, although it permanently narrows the fee base. The one item that resembles a trigger is the CFO's paid administrative leave since 2026-08-21 tied to a government investigation of a third party's trading in LOPE stock. The 8-K states the company is not a focus and that no financial-statement or accounting issue is involved, and the stock did not react when it was disclosed, so it is not what caused the fall. It remains unresolved and should be monitored; the 75-day news scan (window start 2026-08-31) missed it by a few days."
+  },
+  "thesis_filter": {
+   "met": true,
+   "which": "(c) only - growing demand in the last 6 months. (a) not met: no exposure to any listed growth theme. (b) not met: no identifiable supply-chain or government-incentive benefit.",
+   "strength": "weak",
+   "evidence": [
+    {
+     "date": "2026-11-04",
+     "fact": "University partner enrollments +5.2% y/y to 145,270 at 2026-09-30; GCU online +7.1% to 115,520; off-campus classroom/lab site enrollments +12.6% to 7,780 (+14.1% excluding closed sites); two new sites opened in the nine months (48 total).",
+     "source": "SEC 8-K Exhibit 99.1, https://www.sec.gov/Archives/edgar/data/1434588/000110465926122660/lope-ex99d1.htm"
+    },
+    {
+     "date": "2026-11-04",
+     "fact": "Against: GCU ground enrollment -4.1% to 23,650; Q3 service revenue only +2.4% and below the company's own guide; adjusted EBITDA -3.2%; FY2026 revenue guidance cut to $1,160.7-1,161.7M from $1,165.3-1,172.3M.",
+     "source": "SEC 8-K Exhibit 99.1 (2026-11-04) vs Exhibit 99.1 of 2026-07-30"
+    },
+    {
+     "date": "2026-07-30",
+     "fact": "Deceleration: enrollments were +7.6% y/y (126,231) at 2026-06-30 with off-campus sites +16.8%; partner count unchanged at 20 in both the Q2 and Q3 releases (no new partners).",
+     "source": "SEC 8-K Exhibit 99.1, https://www.sec.gov/Archives/edgar/data/1434588/000110465926088669/lope-20260730xex99d1.htm"
+    },
+    {
+     "date": "2026-07-29",
+     "fact": "Amended and Restated MSA with GCU: 15-year initial term to 2041-06-30 and GCU's termination-for-convenience right removed (supports contract durability), but service fees now 60% of tuition and academic fees only, excluding ancillary revenue. GCU is 139,170 of 145,270 enrollments (96%).",
+     "source": "Form 10-Q for 2026-09-30, https://www.sec.gov/Archives/edgar/data/1434588/000110465926122668/lope-20260930x10q.htm"
+    },
+    {
+     "date": "2026-10-16",
+     "fact": "Headline: 'ARIZONA SUPREME COURT GRANTS HISTORIC APPROVAL FOR GRAND CANYON UNIVERSITY'S NEW COLLEGE OF LAW' - a new program at the main partner (headline only).",
+     "source": "PR Newswire via finviz news feed"
+    },
+    {
+     "date": "2026-09-22",
+     "fact": "Limb (a) against: headlines 'Grand Canyon Education shares drop 28% on AI fe...' and 'Grand Canyon Education: Strong Fundamentals Quell AI Fears' frame AI as a risk to the business, not an exposure.",
+     "source": "Google News RSS (Pluang; Seeking Alpha)"
+    },
+    {
+     "date": "2026-10-26",
+     "fact": "Limb (b) against: the only policy headline found is 'Education Secretary McMahon Praises GCU's Efforts To Address National Workforce Shortages' - praise, not a specific incentive or supply-chain benefit.",
+     "source": "Google News RSS (AZ Free News)"
+    }
+   ]
+  },
+  "target_staleness": "Targets are not stale. The decline began 2026-11-05 (first session after the 11-04 after-close release) and all three targets post-date it: Truist cut to $180 on 2026-11-05 (MarketBeat headline; consistent with the Zacks low of $180), Barrington reiterated Buy/$200 on 2026-11-05, and BMO maintained Buy and cut $182 -> $173 on 2026-11-06 (stockanalysis ratings feed). One input is a day behind on Zacks: its $187.33 average equals (180+182+200)/3, so it still carries BMO's superseded $182; the refreshed mean is $184.33 (stockanalysis, finviz), +52.8% vs $120.60. Ratings themselves have not changed: Zacks ABR is 1.50 with identical counts for three months, and finviz shows no upgrade or downgrade in 90 days (last listed action is Truist's initiation on 2026-06-09). Estimates are mixed: Zacks F1 EPS $10.09 reflects the cut guidance, while stockanalysis' FY2026 consensus of $10.21 still pre-dates it.",
+  "overall": "HARD_PASS_WITH_CAVEATS",
+  "strongest_argument_against": "LOPE qualifies only on the thinnest reading of several gates at once, and the selloff may be a justified re-rating rather than an oversold growth stock. The EPS-growth gate passes by $0.08 of EPS (10.40% vs 10%), and only because FY2022 was a trough year and the diluted share count fell 13%: net income grew 5.4% a year, FY2025 net income ($216M) is still below FY2020-21 ($257-260M), and the two preceding 3-year windows fail (9.3% and 7.7%). The three analyst gates rest on 2-4 brokers; one Strong Buy -> Hold change puts ABR at exactly 2.00 (fail), the ABR has not moved in three months while Zacks' own Rank is #4 (Sell) with every F1/F2 revision downward, and the 15% long-term growth rate behind the PEG is well above anything the company has delivered. The sole thesis limb is enrollment growth that slowed from +7.6% to +5.2% in one quarter (ground -4.1%, revenue +2.4% and below its own guide, full-year guidance cut), in a business with no growth-theme exposure, 96% of enrollments from one customer whose fee base was just narrowed, and a CFO on leave since 2026-08-21 amid a government insider-trading probe.",
+  "parser_or_data_errors_found": [
+   "Zacks consensus target $187.33 = (180+182+200)/3 still includes BMO's superseded $182 (cut to $173 on 2026-11-06). The orchestrator's deciding upside of 55.3% is overstated by about 2.5pp; the refreshed mean is $184.33 (+52.8%). Not decisive.",
+   "Nasdaq analyst record: the 'history' mean_target values equal the stock's closing prices on those dates (2026-10-01 = 153.71, 2026-09-01 = 150.09, 2026-08-01 = 145.34 = close of 07-31), so that series is a price line, not target history. The latest value 186.5 is the mean of only two targets (173, 200), and Nasdaq's summary endpoint separately prints a '1 Year Target' of $182.00. Not used to decide a gate.",
+   "Market-cap inconsistency: stockanalysis uses 25,220,517 shares ($3.042B) while the 10-Q cover and the 2026-11-04 release state 25,510,517 shares outstanding at 2026-11-02 ($3.077B, matching Nasdaq). This 1.1% gap flows into SA's EV/EBITDA (8.42x vs about 8.52x). Not decisive.",
+   "Inconsistent EV / net-debt definitions inside the evaluation: the SEC-monthly EV/EBITDA 'current' of 8.488x nets only cash and equivalents ($58.8M), ignoring $103.4M of investments and $114.0M of lease liabilities, while the SEC solvency net debt of -$162.1M nets cash plus investments and ignores leases, and SA's -$48.1M includes leases. No gate outcome changes.",
+   "ebitda_growth_4q = +19.7% is a GAAP artefact of lapping a $35.0M litigation settlement and $2.4M lease charges in Q3 2025; adjusted EBITDA rose 5.0% for the nine months and fell 3.2% in Q3 2026. Affects only G11 option C, which was not the option relied on.",
+   "G10 coverage gap: 'why_moving' is null and the orchestrator's reading does not mention the 8-K of 2026-08-24 (Item 5.02, CFO placed on paid leave amid a government probe of third-party trading in LOPE stock), although that filing is in recent_8k. The 75-day news scan started 2026-08-31 and so missed the 08-24 to 08-28 headlines.",
+   "News scan query keys are not classifications: the Q3 results press release is filed under 'bankruptcy' and 'ceo_cfo_resigns', and the buyback headline under 'sec_investigation'. The Pluang headline dated 2026-09-22 ('shares drop 28% on AI fe...') is not corroborated by the price series (-2.5% that day).",
+   "finviz ratings record states window_days = 90 but its rows run back to 2017 (window not applied to rows); the derived upgrades_90d / downgrades_90d = 0 are nevertheless correct.",
+   "stockanalysis FY2026 EPS consensus ($10.21, 3 analysts) pre-dates the guidance cut to $10.09-10.13, so SA's forward P/E 11.34 and PEG 0.756 are slightly stale; the designated Zacks figures (F1 $10.09, P/E 11.95) are current.",
+   "TTM EBITDA: providers show $355.541M; my recompute from the 10-K/10-Q lines (operating income + depreciation and amortization + intangible amortization) gives $355.245M. A 0.08% difference, immaterial."
+  ]
+ },
+ "critic": {
+  "reviewed": [
+   {
+    "ticker": "DT",
+    "failing_gates_claimed": "G6 PEG: Zacks 1.79 (conflict: finviz 1.41 passes)",
+    "independent_check": "Raw Zacks quote page https://www.zacks.com/stock/quote/DT (retrieved 2026-11-14T13:40Z): 'Exp EPS Growth (3-5yr) 13.24% Forward PE 23.65 PEG Ratio 1.79'; 23.65/13.24 = 1.786. Zacks F1 EPS 1.89 (FY 3/2027), F2 2.17; even P/E on F2 (44.80/2.17 = 20.65) gives 1.56. Other gates re-read: SEC diluted EPS 0.54 (FY3/2026) vs 0.37 (FY3/2023) = +13.4% (https://data.sec.gov/api/xbrl/companyfacts/CIK0001773383.json); ABR 1.61 from 36 brokers and target 61.88/61.50 on https://www.zacks.com/stock/research/DT/price-target-stock-forecast; SMA50 56.3696, gap -20.52%, RSI 26.68 on both stockanalysis and Nasdaq closes.",
+    "exclusion_correct": true,
+    "would_pass_under_alternative_reading": "Only finviz (forward P/E 20.91 on next fiscal year / EPS next 5Y 14.84% = 1.41). stockanalysis 1.92 and Nasdaq 3.13 also fail. Not the designated Zacks definition.",
+    "note": "Single-gate fail, and it is real on the designated measure. Every other gate passes."
+   },
+   {
+    "ticker": "DGII",
+    "failing_gates_claimed": "G11 EV/EBITDA fails on both series; G6 PEG unavailable",
+    "independent_check": "Raw Zacks quote https://www.zacks.com/stock/quote/DGII: 'Exp EPS Growth (3-5yr) NA Forward PE 17.49 PEG Ratio NA'. Raw stockanalysis https://stockanalysis.com/stocks/dgii/statistics/__data.json: PEG Ratio n/a, EV/EBITDA 17.20, EBITDA 124.51M. finviz PEG '-' and EPS next 5Y '-'; Nasdaq PEG 0.0 (null). G11 recomputed from https://stockanalysis.com/stocks/dgii/financials/ratios/__data.json?p=quarterly (20 quarters 2021-12..2026-09 plus current): current 17.196 vs 3-yr MA 16.996 and 5-yr median 16.915 (16.68 / 16.84 if the current point is left out of the history), p25 14.74, option C threshold 13.6: A, B and C all fail. SEC-built series: 19.34 vs MA 17.54, fail.",
+    "exclusion_correct": true,
+    "would_pass_under_alternative_reading": "None for G6: no reachable provider publishes a 3-5 year growth estimate or PEG, so the gate cannot be evaluated. G11 is a 1.2% miss on the stockanalysis series; it would pass option A on the SEC series only if the current point used Q4 FY2026 EBITDA (about 17.2x vs MA about 17.5), which mixes definitions.",
+    "note": "The SEC series' current point pairs the Nov-13 price with June-2026 TTM EBITDA (112.9M) because the FY2026 10-K is not filed; the 8-K results of 2026-11-12 are not used. Near miss on G11, but G6 is unavailable, so not wrongly excluded."
+   },
+   {
+    "ticker": "HALO",
+    "failing_gates_claimed": "G4 solvency on SEC as-reported EBITDA (ND/EBITDA 3.15x); G7 Zacks target upside 14.69%; G11 EV/EBITDA on the SEC-built series",
+    "independent_check": "G4/G11: https://data.sec.gov/api/xbrl/companyfacts/CIK0001159036.json. TTM to 2026-09-30: OperatingIncomeLoss 674.2M; DepreciationDepletionAndAmortization 16.7M (depreciation only); AmortizationOfIntangibleAssets is tagged separately (23.4M Q4-2025 + 88.5M 9M-2026 = 111.9M) and is omitted by the pipeline. Corrected as-reported EBITDA 802.9M; net debt 2,175.9M (debt 3,250.3M, cash 1,030.0M, short-term investments 44.4M); ND/EBITDA 2.71x, still above 2.5x. Interest coverage 30.6x. Q4-2025 also carries a 284.9M acquired-IPR&D write-off (ResearchAndDevelopmentAssetAcquiredOtherThanThroughBusinessCombinationWrittenOff) and a 48.7M intangible impairment; adding these back gives 1,136.5M, matching stockanalysis 1,140.4M (https://stockanalysis.com/stocks/halo/statistics/__data.json) and FactSet 1,150.2M, i.e. 1.89-1.93x. G11 rebuilt monthly: pipeline 19.76 vs 3-yr MA 17.89 (fail); with amortisation 17.00 vs 15.47 (fail); with the one-offs also excluded 12.01 vs MA 13.70, median 15.48, p25 13.12 (pass A and B). stockanalysis series 11.96 vs MA 12.13, median 14.22 (pass A). G7: https://www.zacks.com/stock/research/HALO/price-target-stock-forecast (cached 13:40Z, re-fetched live 14:16Z, identical) prints two snapshots: headline 'comes to $115.00 ... increase of 14.23% from the last closing price of $100.67' (Nov-12 close) and FAQ 'average price target ... is $115.44 ... current UPSIDE ... is 15.13%' against $100.27 (Nov-13 close). ABR 1.80 from 10 brokers; Zacks PEG 0.35; SEC EPS 2.56 vs 1.44 = +21.1%.",
+    "exclusion_correct": true,
+    "would_pass_under_alternative_reading": "Yes, all three flip together. G4 and G11 pass on provider EBITDA that excludes the one-off acquired-IPR&D write-off and impairment (FactSet 1.89x, stockanalysis 1.93x; stockanalysis EV/EBITDA series passes option A). G7 passes on Zacks' own fresher FAQ snapshot (15.13%) and on FactSet, stockanalysis and finviz (119.89, +19.6%) and Nasdaq (117.71, +17.4%); only the stale Zacks headline (115.00 vs the Nov-13 close, 14.69%) fails.",
+    "note": "The one name that needs a human decision. On the pipeline's designated measure (filings-first, as-reported EBITDA) it still fails G4 (2.71x) and G11 after the amortisation omission is fixed, so it is not listed as wrongly excluded. The G7 fail is a stale-snapshot artefact and should be a pass. If EBITDA excluding one-off acquired IPR&D is accepted, HALO passes every numeric gate (G10 and G12 not assessed here)."
+   },
+   {
+    "ticker": "NTCT",
+    "failing_gates_claimed": "G8 Zacks ABR 2.33 (3 brokers); G6 PEG available only from finviz (2.00)",
+    "independent_check": "Raw https://www.zacks.com/stock/research/NTCT/price-target-stock-forecast: 'ABR of 2.33 ... made by three brokerage firms', one Strong Buy and two Hold; table columns run 3 Months Ago to Today, so 2.33 is the current value. Raw https://www.zacks.com/stock/quote/NTCT: 'Exp EPS Growth (3-5yr) NA ... PEG Ratio NA'. stockanalysis statistics: PEG n/a, EPS growth forecast 5.6% with forward P/E 11.83 (about 2.1). finviz PEG 2.00.",
+    "exclusion_correct": true,
+    "would_pass_under_alternative_reading": "G8 would pass on FactSet (1.50), but G6 is unavailable at Zacks and fails wherever it can be derived (about 2.0-2.1), so no reading passes both.",
+    "note": "Both fails are real. The Altman conflict (SEC-computed 2.96 vs FactSet 3.49 and stockanalysis 3.08) does not matter here."
+   },
+   {
+    "ticker": "HWC",
+    "failing_gates_claimed": "G5 3-yr EPS CAGR negative; bank, so G3/G4 not evaluable",
+    "independent_check": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000750577.json: EarningsPerShareDiluted FY2025 5.67 (10-K filed 2026-02-27) vs FY2022 5.98; CAGR -1.76%. FactSet and finviz -1.78%. Zacks quote https://www.zacks.com/stock/quote/HWC: PEG Ratio NA (the table's PEG pass comes from finviz 0.75, not the designated source).",
+    "exclusion_correct": true,
+    "would_pass_under_alternative_reading": "None.",
+    "note": "G5 fail is real. G3 has no sourced Solvency Score and Zacks PEG is unavailable, so it could not pass anyway."
+   },
+   {
+    "ticker": "DOX",
+    "failing_gates_claimed": "G5 EPS CAGR (SEC -7.2%); G8 Zacks ABR 2.67",
+    "independent_check": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001062579.json ends at FY2024 (20-F filed 2024-12-17): 4.25 vs FY2021 5.32, so the SEC pair is two fiscal years stale. stockanalysis income statement (https://stockanalysis.com/stocks/dox/financials/income-statement/__data.json): FY2026 4.68, FY2025 5.05, FY2023 4.49, FY2022 4.44; FY2026 vs FY2023 = +1.4%, FY2025 vs FY2022 = +4.4%. Raw Zacks https://www.zacks.com/stock/research/DOX/price-target-stock-forecast: 'ABR of 2.67 ... six brokerage firms'.",
+    "exclusion_correct": true,
+    "would_pass_under_alternative_reading": "G8 would pass on FactSet (1.63), but G5 is below 10% on every fiscal-year pair.",
+    "note": "The fail is real, but the SEC figure that decided G5 uses the wrong fiscal-year pair (FY2024 vs FY2021). DOX's SEC solvency and EV numbers are also FY2024 data."
+   },
+   {
+    "ticker": "GEF",
+    "failing_gates_claimed": "G5 EPS CAGR (FactSet -9.8%); G8 Zacks ABR 3.00; G3 not evaluable",
+    "independent_check": "Raw Zacks https://www.zacks.com/stock/research/GEF/price-target-stock-forecast: 'ABR of 3.00 ... six brokerage firms'. SEC companyfacts (CIK0000043920) has no single EarningsPerShareDiluted (dual-class EPS). stockanalysis diluted EPS: FY2026 (9/2026) 4.48, FY2025 transition year null, FY2024 4.64, FY2023 (10/2023) 6.17, FY2022 6.32; FY2026 vs FY2023 = -10.1%.",
+    "exclusion_correct": true,
+    "would_pass_under_alternative_reading": "None. FactSet ABR 1.8 would pass G8, but G5 is negative on every pair and Altman Z is unsourced.",
+    "note": "The pipeline's stockanalysis pair uses FY2022 as the base (the null transition year shifts the three-columns-back offset). Not decisive."
+   },
+   {
+    "ticker": "NEU",
+    "failing_gates_claimed": "G7 no analyst target at Zacks (finviz 651, -8.2%); G8 ABR (FactSet 2.0, finviz 3.0); G6 PEG unavailable",
+    "independent_check": "Raw https://www.zacks.com/stock/research/NEU/price-target-stock-forecast: 'NewMarket does not have any price target set by analysts'; no ABR text. Raw https://www.zacks.com/stock/quote/NEU: Forward PE NA, Exp EPS Growth NA, PEG NA. finviz target 651 vs price 709.19.",
+    "exclusion_correct": true,
+    "would_pass_under_alternative_reading": "None. No provider shows a target 15% above the price or an ABR below 2.",
+    "note": "Designated Zacks measures are unavailable for G6, G7 and G8."
+   },
+   {
+    "ticker": "TEAM",
+    "failing_gates_claimed": "G5 negative EPS (CAGR undefined); G6 Zacks PEG 2.03; G11 not evaluable",
+    "independent_check": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001650372.json: diluted EPS FY6/2026 -0.21, FY6/2023 -1.90 (both losses). Raw https://www.zacks.com/stock/quote/TEAM: 'Exp EPS Growth (3-5yr) 13.94% Forward PE 28.31 PEG Ratio 2.03'.",
+    "exclusion_correct": true,
+    "would_pass_under_alternative_reading": "None on GAAP diluted EPS. finviz's 52% 'EPS past 3Y' is a narrowing loss, not growth. PEG fails at every provider (1.81-15.6).",
+    "note": "Real fails."
+   },
+   {
+    "ticker": "IOSP",
+    "failing_gates_claimed": "G5 EPS CAGR -4.3%; G6 Zacks PEG 3.20; G8 Zacks ABR 2.00",
+    "independent_check": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001054905.json: FY2025 4.67 vs FY2022 5.32 = -4.25%. Raw https://www.zacks.com/stock/quote/IOSP: 'Exp EPS Growth (3-5yr) 5.00% Forward PE 16.00 PEG Ratio 3.20'. Raw https://www.zacks.com/stock/research/IOSP/price-target-stock-forecast: 'ABR of 2.00 ... four brokerage firms' (1.50 a week ago).",
+    "exclusion_correct": true,
+    "would_pass_under_alternative_reading": "G8 would pass on FactSet or finviz (1.0), but G5 and G6 fail everywhere.",
+    "note": "ABR is exactly 2.00, which fails the strict below-2 test."
+   },
+   {
+    "ticker": "FFIV",
+    "failing_gates_claimed": "G9 price 25.3% below the 50-day MA; G6 Zacks PEG 2.13; G8 Zacks ABR 2.69; G11 fails on both series",
+    "independent_check": "50 closes from 2026-09-04 to 2026-11-13, summed exactly, from stockanalysis (https://stockanalysis.com/api/symbol/s/FFIV/history?range=5Y&period=Daily) and Nasdaq (https://api.nasdaq.com/api/quote/FFIV/historical?assetclass=stocks&fromdate=2022-09-01&todate=2026-11-14&limit=9999): the two series are identical over the last 60 sessions; SMA50 = 413.6975, close 309.14, gap -25.274%; RSI(14) 24.10. FactSet/TradingView SMA50 is the same. Raw Zacks quote: 'Exp EPS Growth (3-5yr) 7.95% Forward PE 16.93 PEG Ratio 2.13'; price-target page: 'ABR of 2.69 ... 13 brokerage firms'.",
+    "exclusion_correct": true,
+    "would_pass_under_alternative_reading": "The G9 fence alone would not trip on an exponential 50-day average (EMA50 392.34, -21.2%), but G6, G8 and G11 fail regardless.",
+    "note": "The fence trips by 0.27 points on the simple average; SMA50 excluding today's close gives -25.57%. SEC EPS pair is FY2025 vs FY2022 (+30.8%) while FactSet and stockanalysis use FY2026 vs FY2023 (+24.1%); both pass."
+   },
+   {
+    "ticker": "STRA",
+    "failing_gates_claimed": "G9 fence (28.1% below the 50-day MA); G8 Zacks ABR 3.50; G11 on the SEC series",
+    "independent_check": "SMA50 76.0668 on both stockanalysis and Nasdaq closes, close 54.72, gap -28.06%, RSI 22.01. Raw https://www.zacks.com/stock/research/STRA/price-target-stock-forecast: 'ABR of 3.50 ... four brokerage firms' (2.00 a month ago). SEC TTM operating income fell from 180.2M (June 2026) to 55.6M (Sept 2026), giving as-reported EBITDA 102.6M vs stockanalysis 247.7M (https://stockanalysis.com/stocks/stra/statistics/__data.json).",
+    "exclusion_correct": true,
+    "would_pass_under_alternative_reading": "G11 passes on the stockanalysis series (4.64x), but G8 and G9 fail on every source.",
+    "note": "Real fails."
+   },
+   {
+    "ticker": "VIST",
+    "failing_gates_claimed": "G3 Altman Z below 3 (FactSet 1.98)",
+    "independent_check": "Raw https://stockanalysis.com/stocks/vist/statistics/__data.json: Altman Z-Score 1.88. FactSet 1.98; SEC-computed 2.07. All three are below 3.",
+    "exclusion_correct": true,
+    "would_pass_under_alternative_reading": "None among sourced Altman Z values. A different model (Z'' for emerging-market or non-manufacturers) is not the spec.",
+    "note": "Single-gate fail, real. Separately, the SEC-derived EBITDA for VIST is wrong (IFRS D&A sign), though that gate passes anyway."
+   },
+   {
+    "ticker": "AXON",
+    "failing_gates_claimed": "G4 solvency (ND/EBITDA 6.4x, coverage 0.6x); G5 EPS CAGR -9.4%; G6 Zacks PEG 1.60",
+    "independent_check": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001069183.json: diluted EPS FY2025 1.51 vs FY2022 2.03 = -9.39%. SEC at 2026-09-30: debt 2,868M, cash 1,459M, short-term investments 182M, net debt 1,228M; TTM EBITDA 191M, EBIT 68M vs interest expense 114M. stockanalysis: net debt 1,333M, EBITDA 175.5M, coverage 0.46. Raw https://www.zacks.com/stock/quote/AXON: 'Exp EPS Growth (3-5yr) 25.08% Forward PE 40.10 PEG Ratio 1.60'.",
+    "exclusion_correct": true,
+    "would_pass_under_alternative_reading": "G6 alone would pass on finviz (1.48) or stockanalysis (1.37), but G4 and G5 fail at every provider.",
+    "note": "Real fails."
+   }
+  ],
+  "wrongly_excluded": [],
+  "pipeline_issues": [
+   "SEC-derived EBITDA omits amortisation of intangibles when the filer tags us-gaap:DepreciationDepletionAndAmortization for depreciation only and reports AmortizationOfIntangibleAssets separately. HALO: 16.7M used, 111.9M omitted, so EBITDA is 691.0M instead of 802.9M, ND/EBITDA 3.15x instead of 2.71x, and current EV/EBITDA 19.76 instead of 17.00. It does not flip HALO on an as-reported basis, but the published figures are wrong.",
+   "As-reported SEC EBITDA keeps one-off charges that FactSet and stockanalysis exclude, and the SEC figure outranks them for solvency and is the primary EV/EBITDA series. HALO: 284.9M acquired-IPR&D write-off plus 48.7M impairment in Q4-2025. STRA: TTM operating income 180M to 56M in Q3-2026. This definitional choice alone decides HALO's G4 and G11; the spec does not say which EBITDA is meant, so it needs an explicit rule.",
+   "Zacks price-target page carries two snapshots. The pipeline pairs the headline average (computed against the prior session's close, Nov 12) with the Nov-13 close; the FAQ block on the same page is computed on the Nov-13 close. Of the 40 names only HALO's G7 flips (115.00 gives 14.69%, 115.44 gives 15.13%). Averages differ materially elsewhere without changing the gate (NVDA 293.22 vs 273.18, CTVA 17.17 vs 14.82, HWC 83.48 vs 80.66).",
+   "EPS CAGR fiscal-year alignment: the SEC pair lags for September-year-end issuers that have released FY2026 results but not yet filed the annual report. DGII and FFIV use FY2025 vs FY2022 while FactSet and stockanalysis use FY2026 vs FY2023. DOX is two years stale (FY2024 vs FY2021) because the FY2025 20-F is not in the companyfacts API and the fallback did not add its EPS. GEF's stockanalysis pair uses FY2022 as base because a null transition year shifts the offset. No reviewed verdict flips, but the SEC value that decides the gate is on a different year pair from the providers it is compared with.",
+   "SEC TTM fundamentals are a quarter stale for the same issuers: DGII and FFIV use June-2026 TTM EBITDA and balance sheet with the Nov-13 price (DGII SEC EV/EBITDA 19.34 vs stockanalysis 17.20). DOX's SEC solvency and EV inputs are FY2024.",
+   "IFRS sign error (VIST): ifrs-full:DepreciationAndAmortisationExpense is reported negative and is added as-is, so EBITDA = 1,250.8M - 738.9M = 511.9M instead of about 1,990M (stockanalysis 2,541M, FactSet 2,672M). SEC EV/EBITDA shows 10.3 vs 3.63 at stockanalysis; interest expense is also negative (coverage -7.7x) and total debt is missing. Negative SEC interest coverage also appears for DT (-30.8) and IOSP (-42.2), harmless there because both are net cash.",
+   "PEG falls through to finviz when Zacks prints NA, although Zacks is the designated definition: HWC's PEG shows as a pass on finviz 0.75 and NTCT's as a fail on finviz 2.00. With Zacks growth unavailable the gate should read not evaluable (as it does for DGII and NEU).",
+   "EV/EBITDA statistics include the current observation in the 3-year average, 5-year median and percentile it is compared against. Tested on DGII and HALO: no flip either way.",
+   "SEC monthly EV subtracts cash only, while the solvency net debt also subtracts short-term investments (HALO had 486M of them in mid-2025), so the two gates use inconsistent net debt.",
+   "SEC EV/EBITDA series cannot be built for dual-class issuers (GEF, TEAM: no share count), so the gate falls back to stockanalysis; TEAM then has only 6 observations and is not evaluable.",
+   "Cache is not stale: every raw page used was retrieved 2026-11-14 between 13:26Z and 14:07Z, and a live re-fetch of the HALO Zacks page at 14:16Z was identical. All Zacks ABR, PEG and target parses for the 14 names match the raw pages; the ABR table's column order (3 Months Ago to Today) is read correctly."
+  ]
+ },
+ "NVDA": {
+  "ticker": "NVDA",
+  "gates": [
+   {
+    "gate": "G1",
+    "orchestrator_claim": "Universe pass: NASDAQ-listed, market cap about $3.925T, 90-day average daily traded value about $28.81B.",
+    "independent_value": "Market cap $3,924.69B (Zacks quote page); $3.932T (stockanalysis); SEC cover shares 24.1B x $162.85 = $3.925T. ADV90 recomputed from the raw Nasdaq daily series = $28.81B. Exchange NASDAQ (Zacks feed; 8-K press release 'NASDAQ: NVDA').",
+    "source_url": "https://www.zacks.com/stock/quote/NVDA ; https://api.nasdaq.com/api/quote/NVDA/historical?assetclass=stocks&fromdate=2022-09-01&todate=2026-11-14&limit=9999",
+    "retrieved_at": "2026-11-14T13:22:12Z / 2026-11-14T13:52:07Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Clears both thresholds by orders of magnitude."
+   },
+   {
+    "gate": "G2",
+    "orchestrator_claim": "FCF TTM = $127.006B on all providers.",
+    "independent_value": "$127.006B, recomputed from SEC companyfacts: operating cash flow TTM $134.360B (102,718 - 42,779 + 74,421, $M) less capex $7.354B (6,042 - 3,122 + 4,434). The stockanalysis statistics page shows the same $127,006,000,000.",
+    "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json ; https://stockanalysis.com/stocks/nvda/statistics/__data.json",
+    "retrieved_at": "2026-11-14T13:26:07Z / 2026-11-14T13:22:27Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "TTM ends 2026-07-26 (10-Q filed 2026-08-26). Q3 FY27 results are due 2026-11-17."
+   },
+   {
+    "gate": "G3",
+    "orchestrator_claim": "Altman Z 37.3 (factset), 34.85 (stockanalysis), 30.31 (SEC-derived); all above 3.",
+    "independent_value": "34.85 on the stockanalysis page. My own recompute from SEC balance-sheet figures and a $3.925T market cap = 30.31 (working capital $154.4B, total assets $320.3B, retained earnings $219.2B, EBIT TTM $197.6B, total liabilities $91.3B, sales TTM $303.0B).",
+    "source_url": "https://stockanalysis.com/stocks/nvda/statistics/__data.json ; https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+    "retrieved_at": "2026-11-14T13:22:27Z / 2026-11-14T13:26:07Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "About 25.8 of the 30.3 comes from the market-value/liabilities term; the other terms alone sum to about 4.5, still above 3. I could not read the 37.3 'factset' figure on a raw page."
+   },
+   {
+    "gate": "G4",
+    "orchestrator_claim": "Automatic pass: net debt <= 0 (stockanalysis -$23.6B; factset -$60.5B) or SEC net debt +$10.9B = 0.05x EBITDA; interest coverage about 426x.",
+    "independent_value": "stockanalysis: cash and short-term investments $62.469B, total debt $38.860B, net cash $23.609B, EBITDA $201.266B, interest coverage 425.8x. SEC: long-term debt $33.366B less cash and equivalents $22.443B = +$10.923B (excludes marketable securities) = 0.054x EBITDA; EBIT $197.579B / TTM interest $464M = 425.8x.",
+    "source_url": "https://stockanalysis.com/stocks/nvda/statistics/__data.json ; https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+    "retrieved_at": "2026-11-14T13:22:27Z / 2026-11-14T13:26:07Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Passes under either definition. SEC long-term debt rose from $8.47B (2026-04-26) to $33.37B (2026-07-26). The three providers give three different net-debt figures (-60.5B, -23.6B, +10.9B), yet the gate is marked conflict:false."
+   },
+   {
+    "gate": "G5",
+    "orchestrator_claim": "3-year EPS CAGR 206.6% (SEC: FY2026 $4.90 vs FY2023 $0.17).",
+    "independent_value": "SEC companyfacts: diluted EPS FY ended 2026-01-25 = $4.90 (10-K filed 2026-02-25). FY ended 2023-01-29 = $1.74 as first reported (10-K filed 2023-02-24), i.e. $0.174 after the 10:1 split, restated as $0.17 in the 10-K filed 2025-02-26. CAGR = 204.2% on 0.174, 206.6% on 0.17.",
+    "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+    "retrieved_at": "2026-11-14T13:26:07Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Rounding the base to $0.17 adds about 2.4 points to the CAGR; immaterial against a 10% threshold."
+   },
+   {
+    "gate": "G6",
+    "orchestrator_claim": "Zacks PEG 1.25 = forward P/E (F1) 17.54 / expected 3-5yr EPS growth 14.0%.",
+    "independent_value": "Zacks quote page text: 'Exp EPS Growth (3-5yr) 14.00% Forward PE 17.54 PEG Ratio 1.25'. Recomputed 17.54/14.00 = 1.253; $162.85 / current-year estimate $9.28 = 17.55.",
+    "source_url": "https://www.zacks.com/stock/quote/NVDA",
+    "retrieved_at": "2026-11-14T13:22:12Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "16.5% below the 1.5 ceiling. The 14% growth estimate carries no date and may pre-date the CEO exit; at this price PEG breaches 1.5 only if it falls below about 11.7%. Other providers are far lower (stockanalysis 0.27, finviz 0.16)."
+   },
+   {
+    "gate": "G7",
+    "orchestrator_claim": "Zacks consensus target $293.22 (47 analysts) = +80.1% vs $162.85; other providers +52% to +76%.",
+    "independent_value": "Zacks price-target page: average $293.22, 47 analysts, low $174, high $515; the page's own upside of 76.44% uses the stale $166.19 close, and +80.05% vs $162.85. The FAQ on the same page says $273.18 (+67.75%). finviz $286.12; stockanalysis $279.63. Twelve targets issued 2026-11-11 to 11-13 (finviz and stockanalysis ratings): 170, 170, 174, 180, 185, 186, 188, 200, 200, 205, 210, 300 = mean $197.33 (+21.2%), median $187.00 (+14.8%).",
+    "source_url": "https://www.zacks.com/stock/research/NVDA/price-target-stock-forecast ; https://finviz.com/stock?t=NVDA&p=d ; https://stockanalysis.com/stocks/nvda/ratings/__data.json",
+    "retrieved_at": "2026-11-14T13:23:06Z / 2026-11-14T14:23:30Z / 2026-11-14T13:29:16Z",
+    "verdict": "PASS_BUT_FRAGILE",
+    "note": "Passes on every published consensus, but the consensus is stale: roughly three quarters of the Zacks targets pre-date the 11-11 resignation. The median of the targets actually reset after the event implies +14.8%, just under the 15% threshold of $187.28."
+   },
+   {
+    "gate": "G8",
+    "orchestrator_claim": "Zacks ABR 1.47 (53 brokers); was 1.13 one week and one month ago.",
+    "independent_value": "Zacks table, Today: 40 Strong Buy, 3 Buy, 9 Hold, 0 Sell, 1 Strong Sell = 53 brokers; 78/53 = 1.47. One week ago 1.13, three months ago 1.14. finviz Recom 1.53; stockanalysis 37/10/14 of 61 = 1.62.",
+    "source_url": "https://www.zacks.com/stock/research/NVDA/price-target-stock-forecast",
+    "retrieved_at": "2026-11-14T13:23:06Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Clears 2.0 by 26%, but moved 0.34 in one week. Zacks shows 9 new Holds against 13 downgrades on finviz (11-09 to 11-13), so it lags; with all 13 it would be about 1.62. Reaching 2.0 would take about 14 more Strong Buy to Hold moves."
+   },
+   {
+    "gate": "G9",
+    "orchestrator_claim": "RSI(14) 24.86; close $162.85 vs SMA50 $214.65 = -24.13%; not a falling knife.",
+    "independent_value": "Recomputed Wilder RSI(14) = 24.86 on both the Nasdaq and stockanalysis daily closes; SMA50 = $214.647; gap = -24.13%. finviz shows RSI 24.86 and SMA50 -24.13%; stockanalysis shows RSI 24.86 and 50-day average 214.65.",
+    "source_url": "https://api.nasdaq.com/api/quote/NVDA/historical?assetclass=stocks&fromdate=2022-09-01&todate=2026-11-14&limit=9999 ; https://stockanalysis.com/api/symbol/s/NVDA/history?range=5Y&period=Daily",
+    "retrieved_at": "2026-11-14T13:52:07Z / 2026-11-14T13:22:42Z",
+    "verdict": "PASS_BUT_FRAGILE",
+    "note": "Only 0.87 points inside the -25% falling-knife limit. The cutoff price is $160.99, 1.14% below the close; intraday lows on 11-12 ($148.80) and 11-13 ($158.39) were below it, and the Zacks feed's after-hours print of $161.18 is -24.9%. Earnings are 2026-11-17 after the close."
+   },
+   {
+    "gate": "G10",
+    "orchestrator_claim": "Intends to EXCLUDE: drawdown follows the CEO's immediate resignation, a board special-committee investigation, a reported FBI investigation, congressional export-control and subpoena threats, and investor litigation.",
+    "independent_value": "Primary source confirmed: Form 8-K filed 2026-11-12, Item 5.02, says the Board accepted Jen-Hsun Huang's resignation as President, CEO and director effective immediately on 2026-11-11; CFO Colette Kress is interim CEO. Dated headlines show securities-fraud class actions (from 11-09), an FBI probe (11-09), a DOJ takeover of a chip-diversion probe (11-10), reported DOJ probes of Nvidia (11-12) and export-curb legislation gaining traction (11-12). No going-concern, restatement or withdrawn-guidance item found.",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm ; https://news.google.com/rss/search (queries listed under existential_news)",
+    "retrieved_at": "2026-11-14T14:23:02Z / 2026-11-14T14:23:39Z",
+    "verdict": "FAIL",
+    "note": "Exclusion upheld. It is a judgment call: a CEO departure alone is not a listed trigger, and DOJ has not confirmed the company is a target. The company-specific leg of the drawdown is nonetheless driven by fraud allegations and open regulatory and legal actions whose outcome could permanently cut export revenue. News evidence is headlines only."
+   },
+   {
+    "gate": "G11",
+    "orchestrator_claim": "EV/EBITDA current 19.42 (stockanalysis) / 19.55 (SEC monthly) vs 3-yr MA 36.8 / 42.9, 5-yr median 42.6 / 47.9, 25th percentile 36.3 / 36.9; options A, B and C all pass.",
+    "independent_value": "stockanalysis quarterly series (20 quarters, 2021-10-31 to 2026-07-26, plus current) recomputed: current 19.42x; 3-yr MA 36.83x; 5-yr median 42.63x (42.21x if the 2021-10-31 quarter is dropped); 25th percentile 36.31x (35.69x). EV check: $3,932.3B + $38.86B debt - $62.47B cash = $3,908.7B; / EBITDA $201.266B = 19.42x. EBITDA TTM growth +104.8%.",
+    "source_url": "https://stockanalysis.com/stocks/nvda/financials/ratios/__data.json?p=quarterly",
+    "retrieved_at": "2026-11-14T13:24:57Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Current multiple is the lowest of the 5-year series and 47% below the 3-year MA. Not a short series. I did not rebuild the SEC monthly series; the stockanalysis series alone decides the gate."
+   },
+   {
+    "gate": "G12",
+    "orchestrator_claim": "Thesis filter met (AI hardware theme).",
+    "independent_value": "(a) AI hardware: 8-K press release describes NVIDIA as 'the world leader in AI and accelerated computing'; SIC 3674. (c) Demand: SEC Q2 FY27 revenue $96.221B vs $46.743B a year earlier (+105.9%); October-November 2026 headlines on expanded Oracle, Meta and SK Telecom deals. (b) Geopolitics is a headwind, not a benefit.",
+    "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json ; https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvidiaannouncesceotransiti.htm",
+    "retrieved_at": "2026-11-14T13:26:07Z / 2026-11-14T14:23:16Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Limbs (a) and (c) are met strongly. Partnership evidence is headline-level only."
+   }
+  ],
+  "existential_news": {
+   "triggered": true,
+   "why_stock_fell": "The fall came in two legs. From 10-30 to 11-05 the stock went from $213.66 to $181.60 in an AI and chip sector selloff (S&P 500 -4.4% and NVDA -9.3% on 11-05), alongside DOJ scrutiny of the Hugging Face deal and the first report that the CEO was the target of a Chinese spy plot. From 11-08 to 11-13 the fall was company-specific, $186.64 to $162.85 (-12.7%) while the market rallied on 11-09: the board opened a probe into CEO Jensen Huang's relationship with a Megaspeed executive alleged to be a Chinese intelligence asset, securities class actions were filed, an FBI probe and a DOJ chip-diversion probe were reported, Congress pushed export curbs and threatened a subpoena, the CEO resigned on 11-11, and 13 brokers downgraded.",
+   "evidence": [
+    {
+     "date": "2026-11-12",
+     "headline": "Form 8-K Item 5.02: Board accepted the resignation of Jen-Hsun Huang as President, CEO and director, effective immediately (2026-11-11); CFO Colette Kress appointed interim CEO; Harvey C. Jones appointed Chair",
+     "publisher": "SEC EDGAR (NVIDIA Corp 8-K, accession 0001045810-26-000082)"
+    },
+    {
+     "date": "2026-11-08",
+     "headline": "Statement From NVIDIA Board of Directors",
+     "publisher": "NVIDIA Newsroom"
+    },
+    {
+     "date": "2026-11-09",
+     "headline": "Nvidia Shares Drop After CEO Huang's Affair Triggers Board Probe",
+     "publisher": "Bloomberg"
+    },
+    {
+     "date": "2026-11-09",
+     "headline": "Trump says FBI is looking at Nvidia CEO Jensen Huang's affair with alleged Chinese agent",
+     "publisher": "ABC News"
+    },
+    {
+     "date": "2026-11-09",
+     "headline": "Commerce Dept. Chip Inquiry Was Halted After Nvidia Intervention",
+     "publisher": "The New York Times"
+    },
+    {
+     "date": "2026-11-09",
+     "headline": "EQUITY ALERT: Rosen Law Firm Files Securities Class Action Lawsuit on Behalf of NVIDIA Corporation Investors - NVDA",
+     "publisher": "Business Wire"
+    },
+    {
+     "date": "2026-11-10",
+     "headline": "Nvidia, CEO Huang sued over disclosures related to suspected Chinese spy",
+     "publisher": "Reuters"
+    },
+    {
+     "date": "2026-11-10",
+     "headline": "Justice Department took over chip probe after Nvidia contacted federal investigators",
+     "publisher": "NBC News"
+    },
+    {
+     "date": "2026-11-10",
+     "headline": "Nvidia hires law firm Wachtell Lipton to lead Jensen Huang affair probe",
+     "publisher": "CNBC"
+    },
+    {
+     "date": "2026-11-11",
+     "headline": "Congress Set to Subpoena Nvidia's Jensen Huang, Republican Says",
+     "publisher": "Bloomberg.com"
+    },
+    {
+     "date": "2026-11-11",
+     "headline": "A Short Seller Says China Drove \"Over 20%\" of Nvidia's Compute Sales. Why Nvidia's \"Under 1%\" Doesn't Settle It",
+     "publisher": "TIKR.com"
+    },
+    {
+     "date": "2026-11-12",
+     "headline": "Exclusive: US DOJ probes Nvidia as fallout from Huang's resignation ripples across Washington",
+     "publisher": "Semafor"
+    },
+    {
+     "date": "2026-11-12",
+     "headline": "China's access to some Nvidia chips in doubt as curbs gain traction in US Congress",
+     "publisher": "Reuters"
+    },
+    {
+     "date": "2026-11-12",
+     "headline": "Explainer: Tougher curbs on AI chip sales to China likely after Nvidia CEO resigns",
+     "publisher": "Reuters"
+    },
+    {
+     "date": "2026-11-12",
+     "headline": "U.S. Commerce Department Moves to Block Remote Access to AI Chips in 7 Countries; Nvidia Lobbying Backfires",
+     "publisher": "BigGo Finance"
+    },
+    {
+     "date": "2026-11-13",
+     "headline": "Nvidia director sold nearly $1B in stock weeks before the Jensen Huang scandal broke - and no trading plan was flagged",
+     "publisher": "Yahoo Finance"
+    },
+    {
+     "date": "2026-10-28",
+     "headline": "EXCLUSIVE: US DOJ is inquiring about Nvidia's purchase of Hugging Face, sources say",
+     "publisher": "Reuters"
+    },
+    {
+     "date": "2026-11-12",
+     "headline": "AGAINST: US Justice Department has not concluded Alice Huang was Chinese spy, Blanche says",
+     "publisher": "Reuters"
+    },
+    {
+     "date": "2026-11-13",
+     "headline": "AGAINST: DOJ Won't Say If Nvidia Is Under Investigation",
+     "publisher": "Finimize"
+    },
+    {
+     "date": "2026-11-14",
+     "headline": "AGAINST: Nvidia DOJ Investigation: Semafor Says Only One of Three Probes Targets Chipmaker",
+     "publisher": "Tech Times"
+    },
+    {
+     "date": "2026-11-09",
+     "headline": "AGAINST: NVIDIA Maintains It Is Not Compromised After Jensen Huang's Affair With Alleged Chinese Spy",
+     "publisher": "Tech Times"
+    },
+    {
+     "date": "2026-11-13",
+     "headline": "AGAINST: China Hawk: Export Controls Have Cost Nvidia \"Exactly Zero Sales.\" Congress Wants That to Change",
+     "publisher": "TIKR.com"
+    },
+    {
+     "date": "2026-11-05",
+     "headline": "AGAINST (sector leg): A brutal sell-off for AI stocks sends Wall Street reeling, and the S&P 500 tumbles 4.4%",
+     "publisher": "AP News"
+    },
+    {
+     "date": "2026-11-12",
+     "headline": "AGAINST (no guidance withdrawal): EX-99.1 'NVIDIA Announces CEO Transition' - Q3 FY2027 results to be reported Tuesday, November 17, as previously scheduled; operations and roadmap 'to continue without interruption'",
+     "publisher": "SEC EDGAR (NVIDIA 8-K exhibit 99.1)"
+    }
+   ],
+   "reasoning": "Three of the listed triggers are absent: I found no going-concern language, no accounting-restatement allegation and no withdrawn guidance. The 8-K press release keeps the 11-17 earnings date, and a targeted guidance-withdrawal search returned nothing relevant. A founder-CEO resignation is not itself a listed trigger, and roughly half the drawdown from the October high was a sector selloff, which the spec says does not count.\n\nTwo listed triggers are plausibly present in the company-specific leg:\n- Fraud allegations: securities-fraud class actions were filed from 11-09 alleging misleading disclosures about the CEO's relationship with a customer executive. These are more credible than routine stock-drop suits because the affair was admitted, the CEO is out, and the board retained Wachtell and a former US attorney to investigate. A short seller also alleges that more than 20% of compute sales reached China through intermediaries, against Nvidia's 'under 1%'.\n- Regulatory and legal action: an FBI probe, a DOJ takeover of a chip-diversion inquiry that Nvidia reportedly intervened in, reported DOJ probes with at least one aimed at the company (antitrust, Hugging Face), a congressional subpoena threat, China chip-curb legislation described as likely, and a Commerce move on remote access in seven countries. If indirect China sales are material, enforcement and new curbs could permanently remove revenue and bring penalties.\n\nThe case against exclusion is real: DOJ has not confirmed the company is a target, the spy allegation is unproven, official China exposure is small, the board says nothing was compromised, and 40 of 53 Zacks brokers still rate it Strong Buy.\n\nOn balance a careful analyst would exclude. The outcome turns on unresolved investigations and legislation, with an earnings print one trading day away under an interim CEO, so the trigger cannot be ruled out. Apart from the SEC filing, all of this rests on headlines only; I could not read article bodies."
+  },
+  "thesis_filter": {
+   "met": true,
+   "which": "(a) growth-theme exposure: AI hardware and cloud infrastructure; (c) growing demand in the last 6 months. Limb (b) is not met: geopolitics and export controls are currently a headwind.",
+   "strength": "strong",
+   "evidence": [
+    {
+     "date": "2026-08-26",
+     "fact": "Q2 FY2027 revenue (quarter ended 2026-07-26) was $96.221B vs $46.743B a year earlier (+105.9%); Q1 FY2027 was $81.615B. TTM EBITDA $201.3B vs about $98.3B a year earlier.",
+     "source": "SEC EDGAR companyfacts, 10-Q filed 2026-08-26 (https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json)"
+    },
+    {
+     "date": "2026-11-12",
+     "fact": "Company describes itself as 'the world leader in AI and accelerated computing'; the Board expects 'operations, customer commitments and product roadmap to continue without interruption'.",
+     "source": "SEC EDGAR 8-K exhibit 99.1 (https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvidiaannouncesceotransiti.htm)"
+    },
+    {
+     "date": "2026-10-27",
+     "fact": "Headline: 'NVIDIA and Oracle Expand NVIDIA Vera Rubin to Multi-Gigawatt Scale and Bring NVIDIA Vera CPU to Oracle Cloud Infrastructure'",
+     "source": "NVIDIA Newsroom via Google News RSS (headline only)"
+    },
+    {
+     "date": "2026-10-26",
+     "fact": "Headline: 'NVIDIA and Meta to Expand Collaboration on Muse and Muse Family of Models Amid Robust Growth'; 2026-10-27 CNBC: 'Nvidia, AMD to invest $4 billion in Meta as tech giants deepen AI partnership'",
+     "source": "NVIDIA Newsroom / CNBC via Google News RSS (headlines only)"
+    },
+    {
+     "date": "2026-11-09",
+     "fact": "Headline: 'NVIDIA, Rebellions and SK Telecom Announce Collaboration to Advance Sovereign AI Infrastructure With NVIDIA NVLink Fusion'",
+     "source": "NVIDIA Newsroom via Google News RSS (headline only)"
+    },
+    {
+     "date": "2026-11-14",
+     "fact": "Counter-evidence: 'Microsoft Winds Down Oracle AI Cloud Deal As Older NVIDIA GPUs No Longer Meet Its Needs' (Wccftech, 2026-11-14); 'NVIDIA Order Cuts Could Benefit Competitors' (Chosun, 2026-11-12); 'OpenAI Plans to Buy Google's AI Chips, Challenging Nvidia's Dominance' (2026-10-29)",
+     "source": "Google News RSS (headlines only)"
+    },
+    {
+     "date": "2026-11-12",
+     "fact": "Against limb (b): 'China's access to some Nvidia chips in doubt as curbs gain traction in US Congress'",
+     "source": "Reuters via Google News RSS (headline only)"
+    }
+   ]
+  },
+  "target_staleness": "Consensus targets are stale. The decline began 2026-10-30 (last close before it: $213.66 on 10-29) and the company-specific leg began 11-08/09; the CEO resigned 11-11. The consensus averages still sit at $293.22 (Zacks, 47 analysts), $286.12 (finviz) and $279.63 (stockanalysis, 53), and the Zacks box still measures upside from the 11-12 close of $166.19. finviz shows 13 downgrades between 11-09 and 11-13 and no upgrades. I could identify only 12 targets issued 11-11 to 11-13: 170, 170, 174, 180, 185, 186, 188, 200, 200, 205, 210, 300, giving a mean of $197.33 (+21.2%) and a median of $187 (+14.8%, below the 15% gate). So roughly three quarters of the Zacks targets pre-date the resignation. The Zacks ABR is partly refreshed (1.13 a week ago to 1.47, with 9 new Holds) but lags finviz's 13 downgrades. Earnings on 2026-11-17 after the close will force a further reset.",
+  "overall": "EXCLUDED_EXISTENTIAL_NEWS",
+  "strongest_argument_against": "This is not an ordinary oversold dip. The company-specific leg of the drawdown follows the forced exit of the founder-CEO on 2026-11-11 (8-K filed 11-12) amid an unfinished board investigation, securities-fraud class actions, FBI and DOJ inquiries into chip diversion to China, and export-curb legislation gaining traction in Congress. Any of these could permanently cut revenue or bring penalties, and none will be resolved before earnings on 11-17 under an interim CEO. The 'cheap' readings are also weaker than they look: the +80% target upside rests on targets set before the event (the median of targets reset since is +14.8%, under the 15% gate), and the price is 1.1% above the falling-knife cutoff of $160.99, which it traded through intraday on both 11-12 and 11-13.",
+  "parser_or_data_errors_found": [
+   "The orchestrator's 'about -25% in a week' is overstated. Raw closes give -12.7% over the last 5 trading days (11-06 $186.64 to 11-13 $162.85), -18.6% from 11-04 and -23.8% only over 11 trading days from 10-29; it is -31.9% from the 10-06 closing high of $239.24.",
+   "The Zacks price-target page carries two different consensus averages: $293.22 in the headline box (upside 76.44% computed on the stale 11-12 close of $166.19) and $273.18 in the FAQ (67.75% vs $162.85). The gate used the higher one (+80.06%). Both pass.",
+   "Net debt differs in sign and size across providers (factset -$60.5B, stockanalysis -$23.6B, SEC-derived +$10.9B), yet the solvency gate reports conflict:false. The SEC figure excludes marketable securities, which are not tagged under MarketableSecuritiesCurrent after 2025-10-26. The outcome is unchanged; all three auto-pass.",
+   "SEC-derived interest coverage is given as 426.74x; my recompute from companyfacts is 425.8x (TTM interest $464M = 259 - 124 + 329). Immaterial.",
+   "The SEC EPS base for FY2023 is the rounded restated $0.17; the as-first-reported figure is $1.74 pre-split, i.e. $0.174. CAGR is 204.2% rather than 206.6%. Immaterial.",
+   "The stockanalysis '5-year' EV/EBITDA series includes the 2021-10-31 quarter, 13 days outside a strict 5-year window from 2026-11-13. Dropping it moves the median from 42.63 to 42.21 and the 25th percentile from 36.31 to 35.69. No change to the result.",
+   "Rating-action dates differ between providers: finviz dates the Bernstein and KeyBanc downgrades 2026-11-12, stockanalysis dates them 2026-11-13. The stockanalysis ratings table is paywall-truncated (8 of 44 rows), so its count of 5 downgrades undercounts finviz's 13. The Zacks ABR table shows 9 new Holds.",
+   "The collected news scan files headlines under misleading query keys. Other companies' going-concern, restatement and delisting stories (Eledon, Driven Brands, GoodRx, NextNRG) sit under NVDA's going_concern, accounting_restatement and delisting queries, and 'Trump says FBI probing Nvidia CEO' is filed under going_concern. A keyword-count trigger would give false positives; no NVIDIA going-concern, restatement or delisting headline exists.",
+   "I could not check the 'factset' values (Altman 37.34, target $286.12, ABR 1.267) or the Nasdaq target ($247.58) against a raw page. None of them decides a gate."
+  ]
+ },
+ "BZ": {
+  "ticker": "BZ",
+  "gates": [
+   {
+    "gate": "G1",
+    "orchestrator_claim": "NASDAQ; market cap about $5.94B (providers $5.37B-$5.94B); 90-day average traded value $93.8M; universe pass",
+    "independent_value": "Exchange NASDAQ-GS (American Depositary Shares); market cap US$5.79B (446.86M ADS x $12.96); 90-day average daily traded value US$93.8M",
+    "source_url": "https://api.nasdaq.com/api/quote/BZ/historical?assetclass=stocks&fromdate=2022-09-01&todate=2026-11-14&limit=9999 | https://stockanalysis.com/stocks/bz/statistics/__data.json",
+    "retrieved_at": "2026-11-14T13:53:40Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Traded value recomputed from raw Nasdaq daily close x volume over the last 90 sessions ($90.4M excluding the two flush sessions). Market cap differs by provider (finviz $4.89B, Zacks $5.37B, stockanalysis $5.79B, Nasdaq $6.11B); the founder's 13G/A (110,996,801 shares = 12.3%) implies about 902M ordinary shares = 451M ADS = about $5.85B. All are far above $1B."
+   },
+   {
+    "gate": "G2",
+    "orchestrator_claim": "FCF TTM > 0: SEC 4,433,248,000 (unlabelled, actually CNY, FY2025); stockanalysis $664.8M; Zacks $659.2M",
+    "independent_value": "FCF TTM US$664.8M (operating cash flow $694.3M less capex $29.5M, USD-translated, TTM to 2026-06-30); SEC FY2025: CNY 4,552.4M less CNY 119.1M = CNY 4,433.2M",
+    "source_url": "https://stockanalysis.com/stocks/bz/statistics/__data.json | https://data.sec.gov/api/xbrl/companyfacts/CIK0001842827.json",
+    "retrieved_at": "2026-11-14T13:32:26Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Sign-only gate, positive on both sources. The SEC figure is annual (FY2025, 20-F filed 2026-04-29) and in CNY; the TTM figure is provider data."
+   },
+   {
+    "gate": "G3",
+    "orchestrator_claim": "Altman Z 5.08 (FactSet) / 7.82 (stockanalysis); pass",
+    "independent_value": "Altman Z-Score 7.82 (stockanalysis raw). Own recomputation from the SEC FY2025 balance sheet and current market cap: about 6.8",
+    "source_url": "https://stockanalysis.com/stocks/bz/statistics/__data.json",
+    "retrieved_at": "2026-11-14T13:32:26Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Recomputation inputs (CNY): working capital 15.98B, total assets 24.57B, retained earnings 1.22B, EBIT 2.46B, liabilities 4.49B, revenue 8.27B; market cap $5.79B translated at 6.785 CNY/USD (the company's own Q2 convenience rate). The score leans on market cap / liabilities (about 5.3 of the 6.8) but stays above 3 even if market cap halves. Not a financial."
+   },
+   {
+    "gate": "G4",
+    "orchestrator_claim": "Net debt about -$3.06B (net cash), so automatic pass; interest coverage not reported",
+    "independent_value": "Total debt US$31.8M vs cash and investments US$3,090.9M = net cash US$3,059.1M; EBITDA TTM US$528.7M; interest coverage n/a",
+    "source_url": "https://stockanalysis.com/stocks/bz/statistics/__data.json | https://data.sec.gov/api/xbrl/companyfacts/CIK0001842827.json",
+    "retrieved_at": "2026-11-14T13:32:26Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Automatic pass on net debt <= 0. SEC FY2025 cross-check: no borrowings tagged, operating lease liability CNY 158.0M, against cash CNY 4,104.9M plus short-term investments CNY 9,450.2M. Cash sits largely onshore in a VIE structure, which the gate does not consider."
+   },
+   {
+    "gate": "G5",
+    "orchestrator_claim": "3-year EPS CAGR +190.8% (SEC: 2.95 vs 0.12)",
+    "independent_value": "Diluted EPS FY2025 CNY 2.95 vs FY2022 CNY 0.12 per ordinary share; CAGR = (2.95/0.12)^(1/3) - 1 = +190.8%",
+    "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001842827.json",
+    "retrieved_at": "2026-11-14T13:26:25Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Both figures are us-gaap:EarningsPerShareDiluted in CNY per ordinary share (1 ADS = 2 ordinary), so the ratio is unit-consistent; FY2025 from the 20-F filed 2026-04-29 (accn 0001104659-26-050959). The 191% is a base effect from a near-zero FY2022, but the gate also clears on the FY2023 base (1.22 to 2.95)."
+   },
+   {
+    "gate": "G6",
+    "orchestrator_claim": "Zacks PEG 1.09 = forward P/E 10.2 / expected 3-5yr EPS growth 9.37%",
+    "independent_value": "Forward P/E (F1) 10.20; Exp EPS Growth (3-5yr) 9.37%; PEG Ratio 1.09 (10.20 / 9.37 = 1.089)",
+    "source_url": "https://www.zacks.com/stock/quote/BZ",
+    "retrieved_at": "2026-11-14T13:29:59Z",
+    "verdict": "PASS_BUT_FRAGILE",
+    "note": "Passes with a 27% cushion, but the earnings inputs pre-date the drop: Zacks F1 consensus is $1.27 now, 7 days ago and 30 days ago, on only 4 estimates. At this price PEG exceeds 1.5 if long-term growth is cut below about 6.8%; stockanalysis' own 3-year EPS growth forecast is 7.82% (which would give 1.30 on the Zacks P/E). Other providers: Nasdaq 1.38, stockanalysis 0.99, finviz 0.83."
+   },
+   {
+    "gate": "G7",
+    "orchestrator_claim": "Zacks consensus target $21.95 = +69.4% vs $12.96 (other providers +59% to +63%)",
+    "independent_value": "Average price target $21.95 from 13 analysts (range $19-$26) = +69.4% vs $12.96; the same page's FAQ shows $21.26 (range $17-$24) = +64.0%",
+    "source_url": "https://www.zacks.com/stock/research/BZ/price-target-stock-forecast",
+    "retrieved_at": "2026-11-14T13:32:32Z",
+    "verdict": "PASS_BUT_FRAGILE",
+    "note": "Large cushion (the mean would have to fall below $14.90), but the figure mostly pre-dates the drop. The headline average still includes Citi's old $26 and prints upside against the $12.49 close. Only two or three targets are post-drop: Citi 26 to 22 (2026-11-12), Barclays 20 to 17 (2026-11-13), 86Research $17 (2026-11-13). Even the lowest post-drop target is +31%."
+   },
+   {
+    "gate": "G8",
+    "orchestrator_claim": "Zacks ABR 1.29 from 14 brokers, unchanged vs 1 week, 1 month and 3 months ago",
+    "independent_value": "ABR 1.29 from 14 brokerage firms (12 Strong Buy, 0 Buy, 2 Hold); identical in the Today, 1 Week, 1 Month, 2 Months and 3 Months Ago columns",
+    "source_url": "https://www.zacks.com/stock/research/BZ/price-target-stock-forecast",
+    "retrieved_at": "2026-11-14T13:32:32Z",
+    "verdict": "PASS_BUT_FRAGILE",
+    "note": "Flagged only because the designated figure has not moved in three months and so reflects no post-drop review. The cushion itself is wide: five of the 12 Strong Buys would have to go to Hold to reach 2.0. Post-drop snapshots agree: stockanalysis on 2026-11-13 shows 15 Strong Buy / 6 Buy / 1 Hold (about 1.36 on the 1-5 scale); finviz 1.46."
+   },
+   {
+    "gate": "G9",
+    "orchestrator_claim": "RSI(14) 28.40; 50-day SMA $15.7591; price 17.76% below it; no falling-knife flag",
+    "independent_value": "RSI(14) Wilder 28.40; 50-day SMA $15.759; close $12.96 is 17.76% below the SMA; RSI was 23.70 on 2026-11-12",
+    "source_url": "https://api.nasdaq.com/api/quote/BZ/historical?assetclass=stocks&fromdate=2022-09-01&todate=2026-11-14&limit=9999",
+    "retrieved_at": "2026-11-14T13:53:40Z",
+    "verdict": "PASS_BUT_FRAGILE",
+    "note": "Recomputed with my own Wilder code from 1,055 raw Nasdaq closes; the stockanalysis series gives the same. RSI is 1.6 points under 30: a close of $13.12 or higher next session (+1.25%) lifts it above 30 and fails the gate, while a close below $11.82 (-8.8%) triggers the 25%-below-SMA50 exclusion. RSI was 71 on 2026-11-05; the whole signal is one session."
+   },
+   {
+    "gate": "G10",
+    "orchestrator_claim": "No existential trigger; drop attributed to soft revenue guidance, softening demand and insider (founder) share sales",
+    "independent_value": "No listed trigger found in about 30 unique dated headlines or in the SEC filing index (6-Ks of 2026-11-05 and 2026-11-13 are a monthly share return and a board-meeting notice)",
+    "source_url": "https://data.sec.gov/submissions/CIK0001842827.json | https://news.google.com/rss/search (queries on fraud, restatement, regulator, lawsuit, guidance; English and Chinese)",
+    "retrieved_at": "2026-11-14T14:25:34Z",
+    "verdict": "PASS_BUT_FRAGILE",
+    "note": "No fraud, restatement, going-concern, withdrawn-guidance or regulatory/legal item appears. The cause is known from headlines only: no company filing or release on 2026-11-12 explains a 25.3% fall, and I could not find the source of the 'soft revenue guidance'. The Q3 guide of RMB 2.41-2.50B from 2026-08-25 has not been withdrawn in any filing. Q3 results on 2026-11-25 are the next test."
+   },
+   {
+    "gate": "G11",
+    "orchestrator_claim": "Current EV/EBITDA 5.17x vs 3-year MA 22.76x, 5-year median 32.99x, 25th percentile 17.56x; options A, B and C pass; 18 observations, SHORT SERIES",
+    "independent_value": "Current 5.17x (EV $2,732M = market cap $5,791M + debt $32M - cash $3,091M; EBITDA TTM $528.7M); 3-year MA 22.76x; 5-year median 32.99x; 25th percentile 17.56x",
+    "source_url": "https://stockanalysis.com/stocks/bz/financials/ratios/__data.json?p=quarterly | https://stockanalysis.com/stocks/bz/statistics/__data.json",
+    "retrieved_at": "2026-11-14T13:33:52Z",
+    "verdict": "PASS_CONFIRMED",
+    "note": "Raw quarterly row read and statistics recomputed; options A and B pass by wide margins and the current value is the series minimum. SHORT SERIES stands: 17 positive quarter-ends plus current (two quarters null, one negative). Across the provider market-cap range the multiple is 3.5x-5.8x. The median is inflated by 2022-23 quarters with near-zero EBITDA (200x-880x), but current is also below every recent quarter-end (15.1x, 6.9x, 5.3x)."
+   },
+   {
+    "gate": "G12",
+    "orchestrator_claim": "Thesis filter contested: Q2 2026 growth acceleration vs November demand softening",
+    "independent_value": "Q2 2026 revenue RMB 2,398.6M, +14.1% YoY (accelerating from Q1); paid enterprise customers 7.2M, +10.8%; MAU 70.2M, +10.4%; Q3 guide RMB 2.41-2.50B, +11.4% to +15.6%",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1842827/000110465926100537/tm2623958d1_ex99-1.htm",
+    "retrieved_at": "2026-11-14T14:12:08Z",
+    "verdict": "PASS_BUT_FRAGILE",
+    "note": "Met only on limb (c), on results dated 2026-08-25. The newest evidence (2026-11-12/13 headlines on softening demand and soft revenue guidance) contradicts it. Limb (a) is not met: this is an online recruitment marketplace that uses AI in its product, not exposure to the listed themes. No evidence for limb (b)."
+   }
+  ],
+  "existential_news": {
+   "triggered": false,
+   "why_stock_fell": "The ADS fell 25.3% on 2026-11-12 (close $16.72 to $12.49, 19.9M shares, about 3.5x average volume) with no company filing or press release that day. Headlines attribute it to soft revenue guidance, softening hiring demand and insider selling ahead of Q3 results on 2026-11-25. The insider selling is real: the founder sold about $110M of shares on 2026-09-21, and Tencent's stake was reported at 2.2% in a 13G/A filed 2026-11-10. Citi and Barclays cut targets but kept Buy ratings. The source of the 'soft guidance' could not be traced to a primary document.",
+   "evidence": [
+    {
+     "date": "2026-11-13",
+     "headline": "On the eve of the Q3 earnings report, BOSS Zhipin plunged 25.3% to hit a 52-week low: insiders cashing out and softening demand",
+     "publisher": "Moomoo"
+    },
+    {
+     "date": "2026-11-13",
+     "headline": "Kanzhun (BZ) Could Be 43% Undervalued Following Soft Revenue Guidance",
+     "publisher": "Yahoo Finance"
+    },
+    {
+     "date": "2026-11-12",
+     "headline": "What Sent Kanzhun (NASDAQ:BZ) Lower by 22.25% During Its Quarterly Update?",
+     "publisher": "kalkine.ca"
+    },
+    {
+     "date": "2026-11-12",
+     "headline": "Kanzhun Down Nearly 23%, on Pace for Record Percent Decrease -- Data Talk",
+     "publisher": "Moomoo"
+    },
+    {
+     "date": "2026-11-13",
+     "headline": "KANZHUN (NASDAQ:BZ) Reaches New 1-Year Low Following Analyst Downgrade",
+     "publisher": "MarketBeat"
+    },
+    {
+     "date": "2026-11-13",
+     "headline": "Barclays Maintains Kanzhun(BZ.US) With Buy Rating, Cuts Target Price to $17",
+     "publisher": "Moomoo"
+    },
+    {
+     "date": "2026-11-10",
+     "headline": "BZ: Tencent-linked entities report 2.2% stake in Kanzhun",
+     "publisher": "Quantisnow"
+    },
+    {
+     "date": "2026-09-21",
+     "headline": "Chinese App Founder Sells $110 Million in Shares to Pay Taxman",
+     "publisher": "Bloomberg.com"
+    },
+    {
+     "date": "2026-09-22",
+     "headline": "Kanzhun founder offloads HK$863 million in shares to cover taxes as China targets offshore trusts",
+     "publisher": "Briefs Finance"
+    },
+    {
+     "date": "2026-11-13",
+     "headline": "KANZHUN LIMITED to Report Third Quarter 2026 Results on November 25, 2026",
+     "publisher": "GlobeNewswire"
+    },
+    {
+     "date": "2026-10-23",
+     "headline": "KANZHUN LIMITED Announces Board Change",
+     "publisher": "GlobeNewswire"
+    }
+   ],
+   "reasoning": "Soft guidance, softening demand, target cuts and insider selling are ordinary items under G10, not triggers. Targeted searches for fraud, restatement, short-seller reports, going concern, withdrawn guidance, SEC/DOJ probes, class actions, delisting and Chinese regulatory action (English and Chinese queries) returned nothing relevant. The September tax item concerns the founder's personal offshore-trust tax bill, not an action against the business. The SEC index shows only routine 6-Ks and 13G/As in November. The limit on this conclusion is that it rests on headlines; article bodies are not readable and no primary document explains the 2026-11-12 move."
+  },
+  "thesis_filter": {
+   "met": true,
+   "which": "(c) growing demand in the last 6 months, on Q2 2026 results only; contradicted by November headlines. (a) not met: AI is a product feature of a recruitment marketplace, not exposure to the listed themes. (b) no evidence found.",
+   "strength": "weak",
+   "evidence": [
+    {
+     "date": "2026-08-25",
+     "fact": "For (c): Q2 2026 revenue RMB 2,398.6M, +14.1% YoY, 'accelerating from the first quarter'; paid enterprise customers 7.2M (+10.8%); average MAU 70.2M (+10.4%, record).",
+     "source": "SEC 6-K exhibit 99.1, https://www.sec.gov/Archives/edgar/data/1842827/000110465926100537/tm2623958d1_ex99-1.htm"
+    },
+    {
+     "date": "2026-08-25",
+     "fact": "For (c), but decelerating at the midpoint: Q3 2026 revenue guidance RMB 2.41-2.50B, +11.4% to +15.6% YoY (midpoint about +13.5% vs +14.1% in Q2).",
+     "source": "SEC 6-K exhibit 99.1 (same filing), Outlook section"
+    },
+    {
+     "date": "2026-09-21",
+     "fact": "For (c): headline 'BOSS Zhipin Reports Accelerated Second-Quarter Growth and Strengthened Shareholder Returns'.",
+     "source": "GlobeNewswire via finviz news table, https://finviz.com/quote.ashx?t=BZ&p=d"
+    },
+    {
+     "date": "2026-11-13",
+     "fact": "Against (c): headline 'BOSS Zhipin plunged 25.3% to hit a 52-week low: insiders cashing out and softening demand'.",
+     "source": "Moomoo via Google News RSS"
+    },
+    {
+     "date": "2026-11-13",
+     "fact": "Against (c): headline 'Kanzhun (BZ) Could Be 43% Undervalued Following Soft Revenue Guidance'.",
+     "source": "Yahoo Finance via Google News RSS"
+    },
+    {
+     "date": "2026-08-25",
+     "fact": "On (a): management describes applying AI to matching, AI-hosted chats and AI interviews with 'initial commercialization efforts'. This is AI use inside a job marketplace, not AI hardware, cloud infrastructure, cybersecurity or industrial automation.",
+     "source": "SEC 6-K exhibit 99.1 (same filing), CEO remarks"
+    },
+    {
+     "date": "2026-11-14",
+     "fact": "On (b): no headline or filing found showing a benefit from supply-chain shifts or a specific government incentive.",
+     "source": "Google News RSS searches and SEC filing index, retrieved 2026-11-14"
+    }
+   ]
+  },
+  "target_staleness": "The decline started on 2026-11-12 (close $16.72 on 11-11 to $12.49). Consensus is largely stale. Zacks ABR is 1.29 (12 Strong Buy / 2 Hold, 14 brokers) in every column back three months, so it reflects no change since at least mid-August. Zacks F1 EPS consensus is $1.27 now, 7 days ago and 30 days ago. The Zacks headline target ($21.95, range $19-$26, upside printed against $12.49) still includes Citi's pre-cut $26; the FAQ on the same page shows a fresher $21.26 (range $17-$24). Post-drop actions I could date: Citi 2026-11-12 after the close, target 26 to 22, Buy kept; Barclays 2026-11-13, 20 to 17, Buy kept; 86Research 2026-11-13, upgrade Hold to Buy, target $17. The other individually dated targets are two to four months old: J.P. Morgan 2026-09-02 ($22), CMB International 2026-08-26 ($23), BofA 2026-08-18 ($19, Hold), Bernstein 2026-07-13 ($18). So two or three of 13-22 targets are refreshed, each cut by about 15%. Even if every target were cut 15% the mean would be about $18 (+39%), so G7 and G8 would still clear, but on numbers that have not yet been reset.",
+  "overall": "HARD_PASS_WITH_CAVEATS",
+  "strongest_argument_against": "Every forward-looking input that qualifies BZ was set before an unexplained 25.3% one-day collapse on 2026-11-12, 13 days before Q3 results. Zacks F1 EPS is still $1.27 (unchanged vs 7 and 30 days ago, 4 estimates), the ABR row is identical for three months, and only two or three targets have been refreshed, each cut about 15%. The reported cause (softening hiring demand and soft revenue guidance, alongside the founder's $110M sale and Tencent's stake falling to 2.2%) attacks the only thesis limb this recruitment marketplace can claim, demand growth. The technical gate is also one session wide: a close of $13.12 or higher (+1.25%) puts RSI above 30, and a close below $11.82 (-8.8%) triggers the falling-knife exclusion. No gate fails today, but the pass is a snapshot unlikely to survive the 2026-11-25 print and the estimate refresh unchanged.",
+  "parser_or_data_errors_found": [
+   "Industry is recorded as 'Commercial Printing/Forms' (sector 'Commercial Services'). Kanzhun is an online recruitment platform (SIC 7370; Zacks 'Internet - Software'; finviz 'Internet Content & Information'). No hard gate is affected, but it could mislead a thesis reading.",
+   "Market cap is inconsistent across providers: finviz $4.89B (385.19M shares), Zacks page $5.37B, Zacks feed $5.67B, stockanalysis $5.79B, Nasdaq $6.11B; the orchestrator used $5.94B. The founder's 13G/A (110,996,801 shares = 12.3%) implies about 902M ordinary shares = 451M ADS = about $5.85B. No gate changes; EV/EBITDA ranges 3.5x-5.8x.",
+   "ADS vs ordinary-share mix in the Nasdaq institutional block: 'shares outstanding 829M' is the Class A ordinary count (829,269,523 per the Tencent 13G/A), while holdings appear to be in ADS (1 ADS = 2 ordinary). The 41.09% institutional ownership is therefore probably understated by about half (stockanalysis 80.3%, finviz 87.5%). Scorecard only.",
+   "finviz insider rows mix units: Form 4 'Sale' rows are per ordinary share (e.g. $7.25), while some Form 144 'Proposed Sale' rows are per ADS (e.g. $15.01, $16.07, $17.30). The share totals in tier2_inputs.insider_6m (16.6M sold, 49.1M proposed) add ADS and ordinary shares together; the USD values are usable.",
+   "gates.fcf.values.sec (4,433,248,000) and solvency.sec.ebitda (3,013,916,000) are CNY for FY2025, shown beside USD provider values with no unit label. SEC data is annual only and more than 200 days old. The gates are sign or net-debt based, so the outcome is unaffected.",
+   "ev_gate.ebitda_growth_4q = 0.7995 is FY2025 vs FY2024 from SEC annual XBRL in CNY, not trailing four quarters to the latest quarter. From the stockanalysis series, implied TTM EBITDA growth to 2026-06-30 is about +63% ($525.6M vs $323.2M). Only option C uses it and it is positive either way; option A decides.",
+   "targets.zacks_headline ($21.95, range $19-$26) and zacks_faq ($21.26, range $17-$24) are two snapshots on one page; the orchestrator's deciding figure is the staler one, and Zacks prints its upside against $12.49, not $12.96. The gate is unaffected (+69.4% vs +64.0%).",
+   "Provider sales growth of about +20-21% (finviz 'Sales Q/Q 21.23%', Zacks Q3 estimate +20.41%) is USD-translated and inflated by RMB appreciation. Company-reported growth is +14.1% in RMB for Q2 2026, with a Q3 guide of +11.4% to +15.6%.",
+   "Trailing GAAP earnings include a large non-operating gain: Q2 2026 net income RMB 1,942.3M (+173.1%) vs adjusted RMB 1,029.2M (+9.4%); TTM pretax income $842M vs operating income $446M. The tier2 trailing P/E of about 9.0-9.2 overstates cheapness (Zacks non-GAAP TTM EPS $1.17 gives about 11.1x). No hard gate uses it.",
+   "sec_8k is empty because the issuer files 6-Ks, so the 8-K event scan is blind for this ticker (17 6-Ks since August were not read by the pipeline). Nasdaq and the Zacks feed still show an earnings date of 2026-11-17; the company's 6-K of 2026-11-13 confirms 2026-11-25, which the orchestrator used correctly."
+  ]
+ }
+}

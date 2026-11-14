@@ -132,7 +132,8 @@ def card(e: dict, t2: dict, qual: dict, comp: dict | None) -> list[str]:
     v = gt["altman"]
     L.append(f"| Altman Z > 3 | {v['status']} | {fnum(v['values'][v['decided_by']])} ({v['decided_by']}) | {provider_line(v, fnum)} |")
     v = gt["solvency"]
-    L.append(f"| Net debt/EBITDA < 2.5x, coverage > 5x | {v['status']} | {v['notes'][v['decided_by']]} ({v['decided_by']}) | "
+    q = e.get("sec_ebitda_quality") or {}
+    L.append(f"| Net debt/EBITDA < 2.5x, coverage > 5x | {v['status']} | {v['notes'][v['decided_by']]} ({v['decided_by']}{'; EBITDA = ' + q['note'] if q.get('note') and v['decided_by'] == 'sec' else ''}) | "
              + "; ".join(f"{p}: {n}" for p, n in v["notes"].items() if p != v["decided_by"]) + " |")
     v = gt["eps_cagr"]
     pr = e["eps_pairs"].get(v["decided_by"]) or {}
@@ -144,7 +145,7 @@ def card(e: dict, t2: dict, qual: dict, comp: dict | None) -> list[str]:
              f"{pi['zacks_exp_eps_growth_3_5yr_pct']}% ({v['decided_by']}) | {provider_line(v, fnum)} |")
     v = gt["upside"]
     tg = e["targets"]
-    L.append(f"| Consensus target >= 15% above price | {v['status']} | {pct(v['values'][v['decided_by']])}: target ${tg['zacks_headline']} from {tg['zacks_n']} analysts ({v['decided_by']}) | {provider_line(v, pct)} |")
+    L.append(f"| Consensus target >= 15% above price | {v['status']} | {pct(v['values'][v['decided_by']])}: target ${tg['zacks_used']} from {tg['zacks_n']} analysts ({v['decided_by']}) | {provider_line(v, pct)} |")
     v = gt["abr"]
     ah = e["abr_history"]
     L.append(f"| Average broker rating < 2 | {v['status']} | {fnum(v['values'][v['decided_by']])} from {ah['num_brokers']} brokers; {ah['abr_1_month_ago']} a month ago, "
@@ -251,7 +252,7 @@ def main() -> None:
         note = failed_log(e) or ("all numeric gates pass — " + qual.get(r.ticker, {}).get("status", ""))
         L.append(f"| {r.ticker}{'' if r.in_list else ' †'} | {r.rsi:.1f} | {pct(r.gap50)} | " + " | ".join(r[c] for c in GATE_COLS) + f" | {note} |")
     L += ["", "Gate keys: " + "; ".join(f"{k} = {v}" for k, v in GATE_NAMES.items()) + ".", ""]
-    for sec in ("_near_miss", "_overlays", "_method"):
+    for sec in ("_near_miss", "_overlays", "_verification", "_method"):
         L += qual[sec] + [""]
     (OUT / "hard_pass_report.md").write_text("\n".join(L))
 

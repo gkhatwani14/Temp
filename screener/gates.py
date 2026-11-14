@@ -26,7 +26,8 @@ HIERARCHY = {
     "solvency": ["sec", "factset", "stockanalysis"],
     "eps_cagr_3y": ["sec", "factset", "stockanalysis", "finviz"],
     # estimate-derived quantities: Zacks is the spec's primary provider
-    "peg_forward": ["zacks", "nasdaq", "stockanalysis", "finviz"],
+    # forward P/E over long-term growth only; Finviz's PEG uses the trailing P/E and is shown for context, never decides
+    "peg_forward": ["zacks", "nasdaq", "stockanalysis"],
     "target_upside": ["zacks", "factset", "stockanalysis", "nasdaq", "finviz", "ft"],
     "abr": ["zacks", "factset", "finviz", "ft", "stockanalysis"],
 }

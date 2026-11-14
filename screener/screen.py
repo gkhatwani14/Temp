@@ -161,8 +161,22 @@ def evaluate(ticker: str, tv: pd.Series, rf_pct: float | None) -> dict:
     if num(lastq.get("ebit_ttm")) is not None and num(lastq.get("interest_expense_ttm")):
         sec_ic = lastq["ebit_ttm"] / lastq["interest_expense_ttm"]
     sa_nc = num(g(rec, "sa_statistics.fields.net_cash"))
+    # --- quality checks on the filing-derived EBITDA
+    sec_da, sa_da = num(lastq.get("depreciation_amortization_ttm")), num(g(rec, "sa_statistics.fields.d_and_a_ttm"))
+    sec_ebitda, ebitda_note = num(lastq.get("ebitda_ttm")), None
+    sec_bad_signs = (sec_da is not None and sec_da < 0) or (num(lastq.get("interest_expense_ttm")) or 0) < 0
+    da_undercaptured = bool(sec_da is not None and sa_da and sa_da > 0 and sec_da < 0.7 * sa_da and not sec_bad_signs)
+    if sec_bad_signs:      # IFRS filers report D&A / interest as negative numbers; the derived EBITDA is not usable
+        sec_ebitda, sec_ic, sec_nd = None, None, None
+        ebitda_note = "filing-derived EBITDA unusable (sign convention of the IFRS tags); providers decide"
+    elif da_undercaptured and num(lastq.get("ebit_ttm")) is not None:
+        sec_ebitda = lastq["ebit_ttm"] + sa_da
+        ebitda_note = (f"as-reported operating income {lastq['ebit_ttm'] / 1e6:,.0f}M + provider D&A {sa_da / 1e6:,.0f}M "
+                       f"(the filing's D&A tag, {sec_da / 1e6:,.0f}M, omits separately tagged intangible amortisation)")
+    out["sec_ebitda_quality"] = {"sec_d_and_a_ttm": sec_da, "provider_d_and_a_ttm": sa_da, "d_and_a_undercaptured": da_undercaptured,
+                                 "bad_signs": sec_bad_signs, "ebitda_used": sec_ebitda, "note": ebitda_note}
     solv = gates.gate_solvency({
-        "sec": {"net_debt": sec_nd, "ebitda": lastq.get("ebitda_ttm"), "interest_coverage": sec_ic,
+        "sec": {"net_debt": sec_nd, "ebitda": sec_ebitda, "interest_coverage": sec_ic,
                 "no_interest_expense_reported": lastq.get("interest_expense_ttm") in (None, 0)},
         "factset": {"net_debt": tv.get("net_debt_fq"), "ebitda": tv.get("ebitda_ttm"), "interest_coverage": tv.get("interst_cover_ttm")},
         "stockanalysis": {"net_debt": None if sa_nc is None else -sa_nc, "ebitda": g(rec, "sa_statistics.fields.ebitda_ttm"),
@@ -170,22 +184,33 @@ def evaluate(ticker: str, tv: pd.Series, rf_pct: float | None) -> dict:
     })
     # ---------------------------------------------------------- EPS CAGR 3y
     fv_cagr = num(g(rec, "finviz.snapshot.fields.eps_growth_past_3y_pct"))
+    pairs = {"sec": sec_eps_pair(rec), "factset": tv_eps_pair(tv), "stockanalysis": sa_eps_pair(rec)}
+    fy_end = {"sec": str((pairs["sec"] or {}).get("latest_fy") or "")[:7],
+              "stockanalysis": str((pairs["stockanalysis"] or {}).get("latest_fy") or "")[:7]}
+    newest = max([v for v in fy_end.values() if v] or [""])
+    # A filer that has reported a fiscal year but not yet filed the annual report lags in the SEC data: drop any lagging pair.
+    stale = [p for p, v in fy_end.items() if v and v < newest]
+    out["eps_pairs"], out["eps_pairs_stale"] = pairs, stale
     eps = gates.gate_eps_cagr({k: v for k, v in {
-        "sec": sec_eps_pair(rec), "factset": tv_eps_pair(tv), "stockanalysis": sa_eps_pair(rec),
+        **{p: pr for p, pr in pairs.items() if p not in stale},
         "finviz": None if fv_cagr is None else {"cagr": fv_cagr / 100.0}}.items() if v})
-    out["eps_pairs"] = {"sec": sec_eps_pair(rec), "factset": tv_eps_pair(tv), "stockanalysis": sa_eps_pair(rec)}
     # ------------------------------------------------------------------ PEG
     peg = gates.gate_peg({"zacks": g(rec, "zacks.quote.peg_ratio"), "nasdaq": g(rec, "nasdaq.analyst.peg_ratio.peg"),
-                          "stockanalysis": g(rec, "sa_statistics.fields.peg_ratio"), "finviz": g(rec, "finviz.snapshot.fields.peg")})
+                          "stockanalysis": g(rec, "sa_statistics.fields.peg_ratio")})
     out["peg_inputs"] = {"zacks_forward_pe_f1": g(rec, "zacks.quote.forward_pe_f1"),
+                         "finviz_peg_trailing_pe_context_only": num(g(rec, "finviz.snapshot.fields.peg")),
                          "zacks_exp_eps_growth_3_5yr_pct": g(rec, "zacks.quote.exp_eps_growth_3_5yr_pct"),
                          "factset_trailing_peg_context_only": num(tv.get("price_earnings_growth_ttm"))}
     # --------------------------------------------------------------- upside
     price = out["price"]
-    up = gates.gate_upside({"zacks": g(rec, "zacks.price_target.average_target"), "factset": tv.get("price_target_average"),
+    z_head, z_faq = g(rec, "zacks.price_target.average_target"), g(rec, "zacks.price_target.faq_snapshot.average_target")
+    faq_close = num(g(rec, "zacks.price_target.faq_snapshot.last_close_used"))
+    # The Zacks page carries two snapshots; the FAQ block is the one computed on the latest close when the headline box lags a session.
+    z_target = z_faq if (z_faq is not None and faq_close is not None and abs(faq_close - price) < 0.005) else (z_head if z_head is not None else z_faq)
+    up = gates.gate_upside({"zacks": z_target, "factset": tv.get("price_target_average"),
                             "stockanalysis": g(rec, "sa_forecast.price_target.avg"), "nasdaq": g(rec, "nasdaq.analyst.price_target.mean"),
                             "finviz": g(rec, "finviz.ratings.target_price") or g(rec, "finviz.snapshot.fields.target_price")}, price)
-    out["targets"] = {"zacks_headline": g(rec, "zacks.price_target.average_target"), "zacks_faq": g(rec, "zacks.price_target.faq_snapshot.average_target"),
+    out["targets"] = {"zacks_used": z_target, "zacks_headline": z_head, "zacks_faq": z_faq,
                       "zacks_n": g(rec, "zacks.price_target.num_analysts"), "factset": num(tv.get("price_target_average")),
                       "stockanalysis_spg": g(rec, "sa_forecast.price_target.avg"), "nasdaq": g(rec, "nasdaq.analyst.price_target.mean"),
                       "finviz": g(rec, "finviz.ratings.target_price") or g(rec, "finviz.snapshot.fields.target_price")}
@@ -234,8 +259,11 @@ def evaluate(ticker: str, tv: pd.Series, rf_pct: float | None) -> dict:
         ev["stockanalysis_quarterly"] = st
     else:
         ev["stockanalysis_quarterly"] = {"evaluable": False, "reason": "provider series unavailable"}
-    primary = ev["sec_monthly"] if ev["sec_monthly"].get("evaluable") else ev["stockanalysis_quarterly"]
-    out["ev_gate"] = {"primary": "sec_monthly" if ev["sec_monthly"].get("evaluable") else "stockanalysis_quarterly",
+    sec_series_ok = bool(ev["sec_monthly"].get("evaluable")) and not da_undercaptured and not sec_bad_signs
+    if ev["sec_monthly"].get("evaluable") and not sec_series_ok:
+        ev["sec_monthly"]["unreliable"] = ebitda_note or "filing-derived EBITDA failed its quality check"
+    primary = ev["sec_monthly"] if sec_series_ok else ev["stockanalysis_quarterly"]
+    out["ev_gate"] = {"primary": "sec_monthly" if sec_series_ok else "stockanalysis_quarterly",
                       "pass": primary.get("passed") if primary.get("evaluable") else None, "detail": ev,
                       "conflict": bool(ev["sec_monthly"].get("evaluable") and ev["stockanalysis_quarterly"].get("evaluable")
                                        and ev["sec_monthly"]["passed"] != ev["stockanalysis_quarterly"]["passed"])}

@@ -1,0 +1,478 @@
+{
+ "red": {
+  "zone_verdicts": [
+   {
+    "zone": "Zone 1, $146-153",
+    "verdict": "MISLABELLED",
+    "reasoning": "The levels hold; the label 'ordinary bad reaction' is true only for the two-day earnings window. There, $148-149 is the 1-SD level (8.8-9.3%; the '+/-7%' is the expected absolute move, a different statistic), and across the 24 scheduled reports since Nov 2020 (EDGAR Item 2.02 dates against the price file) the worst next-day close was -8.5%, so a Wednesday close below $148.80 would be the worst in that record. On the 1-3 month horizon of the zone's other anchors it is the central case for the low. Half of the 32 analogs closed at least 8.6% under their day-5 close within 60 sessions, and the analog median (-8.4%) matches those stocks' random-day baseline (-7.9%). In NVDA's own comparable windows since 1999 (25-40% drawdown, 20-day vol at least 50%; 445 days, roughly 18 independent windows) a close below the $148.80-equivalent occurred within 24 sessions in 58% (48% without the vol filter). Chip peers giving back last week's median +10% bounce, with NVDA tracking 1:1, is $148. If the analog clock starts at the resignation (11-12 as day 1) instead of 11-09, the median 60-session low is -16.3% ($136), below this zone. Two anchors should be dropped: China-HQ loss at $148-153 contradicts claim (iii), since from the 11-06 base the fundamentals table puts it at $169-174, already exceeded; and put open interest at $150 is positioning, not support."
+   },
+   {
+    "zone": "Zone 2, $129-142",
+    "verdict": "MISLABELLED",
+    "reasoning": "The range is a fair one-in-four outcome by mid-January on a closing basis, but the stated triggers are wrong. Support for the range: risk-neutral P(close below $140) is 20% by Dec 18 and 24% by Jan 15; 16% of analogs ended 60 sessions below the $130-equivalent and 25% traded there; NVDA's comparable windows closed below it after 42 sessions in 20-28%. Trigger 1 is stale: 17.0x times $7.91 = $134 uses an EPS base that changes Tuesday. An in-line Q3 (2.49 replacing 1.30) lifts TTM non-GAAP EPS to 8.20 and GAAP to about 9.10 before equity marks, so the record-low multiple sits at $139-154, mostly in Zone 1. NTM EPS rolls up 8-16% (my inference: 12.10 = 2.49 + 2.74 + first-half FY28 of 6.87), which puts $162.85 at 11.6-12.5x, already at Broadcom's 2022 trough of 11.74x, and moves the $142 marker to $153-165. Trigger 2 double-counts: since 11-06 NVDA has lagged QQQ by 15.8% and the median chip peer by 20.7%, a revenue-equivalent discount of 14-18%, about the size of the 16% customer; supply constraints and ODM 'direct customers' shrink the true loss further. What plausibly lands the stock here is a weak or withheld Q4 guide (10% under consensus is about $144 in the fundamentals table), gross-margin slippage (71.1% gives $153; ten points gives $139), export licensing on the intermediary channel, a pull-back in Nvidia's customer financing, or the sector leg resuming. The odds shown are for the bottom edge ($130), not for entering the zone."
+   },
+   {
+    "zone": "Zone 3, $98-125",
+    "verdict": "UNDERSTATES_DOWNSIDE",
+    "reasoning": "The zone sits beside tail odds (1.6%, 3.2%, 11.4% for a close below $100), but its own anchors are median outcomes over 12 months. The analog median 12-month low is $123: 56% of analogs closed at least 20% under day-5 within 250 sessions and 25% at least 39% under. NVDA's bad-quartile 250-session fall from any day is -28.9% ($116). Ten of NVDA's 13 past drawdowns of 25% or more went beyond -31.9%, with a median further fall of 33.9% ($108). Risk-neutral odds of closing below the top edge are about 25% by June 2027 (below $120 21.4%, below $130 27.8%), and trading there at some point is likelier still. No 20-35% estimate cut is needed: the Qualcomm-trough multiple on unchanged consensus ($115), record-low P/E on non-GAAP EPS ($119) and a 5% FCF yield ($105) are multiple-only anchors, and 10 of 32 analog lows fell on market-wide lows. NVDA lost 22% in the Oct 6 to Nov 6 sector leg alone, and its beta is 2.25. The stated mechanism also overstates on its own terms: cutting estimates 20-35% while holding a trough multiple double-counts, since the price already equals a 35% cut to NTM consensus at the prior minimum forward multiple of 20.8x. Where analogs ended was better than where they bottomed: median +7.0% against day-5 after 250 sessions, 28% below the $130-equivalent, 6% below the $100-equivalent. Net: a likely place for a 12-month low, an unlikely place to stay."
+   },
+   {
+    "zone": "Zone 4, $65-90",
+    "verdict": "OVERSTATES_DOWNSIDE",
+    "reasoning": "The defining arithmetic (17.5x times halved EPS = $81) multiplies a trough multiple by trough earnings, which contradicts the precedent it cites. The 17.0x record low was itself the price of the 2018-19 halving: 3.177 / 0.09775 is 32.5x the eventual trough EPS, and the 2022 low was 66x. On halved EPS of 4.64, 32.5x is $151; today's price is already 39x the EPS left after a 2018-sized fall, and $134 reproduces the 2018 precedent in full. 'Fiscal 2019-20' EPS fell 31.8%, not half; the 47.8% is TTM peak to trough. The 6% FCF yield uses TTM FCF at 66% of net income (36% in Q2). The April 2025 low is a chart level set at 32x earnings. A 2022-sized percentage drawdown from a 20.6x start implies about 10x trailing, which NVDA has never had. Only 3% of analogs ended 250 sessions below the $80-equivalent; 16% traded there, all cases I recall as fraud, leverage or market-crash episodes (Valeant, SMCI, UAA, MSFT 2000, BABA), against 10% risk-neutral by Dec 2027. Keep it as a 1-in-20 tail (risk-neutral 5.3% by June 2027) but tie it to the right trigger: an AI-capex bust judged structural. In that case the unmodelled $279B of supply commitments, $108.5B of guarantees and $99B of equity stakes add charges ($0.96 a share per 10% of commitments; $3.40 for a full equity write-off), and the range is not a lower bound: the risk-neutral 5% tail is $78 by June 2027 and $36 by Jan 2029."
+   }
+  ],
+  "ways_it_goes_lower_than_modelled": [
+   {
+    "mechanism": "Nvidia-financed demand shrinks after the CEO exit",
+    "evidence": "10-Q for the quarter ended 2026-07-26 (acc. 0001045810-26-000075). Cash-flow statement: purchases of equity securities $42.4B in H1 FY27 (23.8% of H1 revenue of $177.8B) and receivables up $24.6B (13.8%). Note 7: payment terms of '90 days up to one year' for some customers; DSO 59.6 days against 51.4 in January (computed). Note 10: AI-cloud capacity backstop $36B ('if AI clouds do not successfully sell committed capacity... we have agreed to purchase that capacity'), third-party leases $20B, guarantees $108.5B including $105B for an OpenAI affiliate, equity commitments $25B. Google News RSS headlines: Reuters 2026-11-12 'Investors worry the AI trade might lose Nvidia's largesse after Huang'; CNBC 2026-11-12 'Jensen Huang's Nvidia exit casts shadow over Wall Street's $500 billion AI financing bet'; TIKR.com 2026-11-14 'Nvidia's Interim CEO Pushed Back on a \"$250 Billion Credit Backstop\" for OpenAI'.",
+    "effect": "Ties the leadership change directly to demand, which the draft treats as a separate later risk. AI Clouds/Industrial/Enterprise revenue was $40.3B, 41.9% of Q2; each 10% of that line lost is 4.2% of revenue, about -4.7% EPS, about $155 at a constant multiple. Total commitments, additional commitments and guarantees are $530.5B ($21.97 a share, 13.5% of market value) against $56.6B of cash and debt securities."
+   },
+   {
+    "mechanism": "Charges and fixed costs from supply commitments and inventory if demand slips",
+    "evidence": "10-Q Note 10: supply and capacity commitments $279B (up from $95.2B in January and $119B in April), 'primarily memory and manufacturing facilities', with $92B due in the rest of FY27, $87B in FY28 and $88B in FY29. Computed: 3.6x TTM cost of revenue ($76.7B); the $92B compares with about $60B of cost implied by second-half consensus revenue of $232B. Inventory $31.6B, up 48% in six months, raw materials 3.0x. Precedent: $4.5B H20 charge. Headline: Firstpost 2026-11-05 'Nearly 600,000 Nvidia H200 chips pile up in Hong Kong as Beijing delays import approval: Report' (unverified).",
+    "effect": "Each 10% of commitments that turns excess is $27.9B pre-tax, $0.96 a share, six times the H20 charge. Pre-committed supply (about half of FY28 consensus cost) makes cost of revenue less variable than the 1.13x leverage in every scenario, so a 20-35% revenue shortfall cuts EPS by more than the 21-37% modelled."
+   },
+   {
+    "mechanism": "Gross-margin compression",
+    "evidence": "Q2 FY27 CFO commentary (8-K acc. 0001045810-26-000073): Q3 gross margin guided to 74.0% against 75.0% in Q2; FY26 was 71.1% (10-K). 10-Q MD&A: Vera Rubin began production shipments in Q3. Headline: TradingView 2026-10-29 'NVDA's Gross Margin Faces Pressure: Can It Offset Rising Memory Costs?'.",
+    "effect": "Every fundamentals scenario holds 75%. One point is $0.235 a share, 1.5% of FY28 EPS. A return to 71.1% is -5.8% EPS (about $153 at a constant multiple); ten points is -14.9% (about $139). Price concessions to defend share would show up here."
+   },
+   {
+    "mechanism": "Reversal of equity-investment gains in GAAP EPS",
+    "evidence": "10-Q Notes 5-6 and MD&A: gains from equity securities $23.7B in H1 FY27; TTM $30.6B, about $1.05 a share (fundamentals analyst). Publicly held equity $47.7B, of which $36.9B is under lock-up; non-marketable equity $47.9B. Headlines: CNBC 2026-11-12 'Nebius falls 16%...'; 24/7 Wall St. 2026-11-13 'Nebius Sinks 13%...; CoreWeave Tumbles 11%'; Reuters 2026-10-30 'Nasdaq faces $2 trillion wipeout in October as AI spending fears deepen'.",
+    "effect": "Excluding gains the trailing P/E is 23.7x, 40% above the record low rather than 21%, and 17.0x on EPS of $6.86 is $116, not $134. A 30% markdown of public holdings is $14.3B pre-tax, -$0.49 a share, and could make Tuesday's GAAP EPS miss on in-line operations. Lock-ups prevent selling."
+   },
+   {
+    "mechanism": "Export or KYC restrictions on the intermediary and third-country channel, including licence delays while investigations run",
+    "evidence": "Filings via the fundamentals analyst: the former 'Singapore' billing line was $23.7B (18%) of FY25 revenue and 22% of Q2 FY26 before it was dropped; Taiwan-HQ customers were 28.0% of Q2 FY27 revenue. 10-Q risk text read here: results are harmed if the government 'denies licenses to significant customers', and Congress is considering the Remote Access Security Act. Headlines: MLQ.ai 2026-11-10 'Nvidia spy scandal revives push to write China chip export limits into the defense bill'; South China Morning Post 2026-11-13 'Bessent blames US Commerce Department for not restricting Nvidia chips to China'; ET CIO SEA 2026-11-13 'Southeast Asia data centres face chip scrutiny after Nvidia investigation'.",
+    "effect": "The exposed pool is the 18-22% intermediary channel, not the 8.2% China-HQ line used in Zone 1. The relevant size is the fundamentals table's 15.5-18.5% revenue case ($129-134), and it can arrive as slower licences without any finding of diversion."
+   },
+   {
+    "mechanism": "Investigations widen from the former CEO to the company and board",
+    "evidence": "Headlines: The New York Times 2026-11-09 'Commerce Dept. Chip Inquiry Was Halted After Nvidia Intervention'; Yahoo Finance 2026-11-13 'Nvidia director sold nearly $1B in stock weeks before the Jensen Huang scandal broke \u2014 and no trading plan was flagged'; The New York Times 2026-11-11 'Jensen Huang Said to Have Had Relationship With Nvidia Executive Who Reports to Him'; Analytics Insight 2026-11-13 'NVIDIA Faces DOJ Antitrust Probe as Megaspeed Scrutiny Grows'; Startup Fortune 2026-11-01 'Justice Department questions Nvidia's $12.93 billion Hugging Face deal'. Filings: the 11-12 8-K gives no reason for the resignation; the August 10-Q carries no accrual.",
+    "effect": "Not sizeable as EPS. In the analog set, company-level legal or accounting escalation is what separates the median path from the bad quartile (-19%, $131) and the -59% to -61% tail. Tuesday's 10-Q is the first place a subpoena, accrual or control issue would appear. The Hugging Face cash at stake is small ($12.9B, $0.53 a share)."
+   },
+   {
+    "mechanism": "Share loss to rivals, separate from industry demand",
+    "evidence": "Computed from the price files: 11-06 to 11-13 NVDA -12.7% while AMD +18.9%, MU +12.8%, AMAT +11.4%, TSM +6.2%, QQQ +3.6%. Headlines: Bloomberg 2026-11-09 'Google Escalates Nvidia Rivalry With Specialized Versions of AI Chips'; investingLive 2026-11-12 'Google TPUs could gain share from Nvidia turmoil, Bloomberg Intelligence says, eyeing $50B'; BigGo Finance 2026-10-22 'Broadcom Arranges Over $50 Billion for OpenAI as Custom Chip Mega-Deals Reshape Supply Chain Roles'.",
+    "effect": "No scenario models share shift. $50B is 7.3% of FY28 consensus revenue ($683B), about -8.2% EPS, about $149.5 at a constant multiple, and it compounds with any margin given up to defend share."
+   },
+   {
+    "mechanism": "Loss of key people and roadmap slippage",
+    "evidence": "Headlines: tokenpost 2026-11-14 'SemiAnalysis Founder Warns Nvidia Roadmap Could Slow After Jensen Huang's Resignation'; DongA Science 2026-11-13 'NVIDIA Faces AI Talent Risks After Jensen Huang Resigns Over Scandal'; The Edge Singapore 2026-11-12 'Elon Musk says it would be an honour to hire Nvidia's Huang'; WSJ 2026-11-15 'Before His Ouster, Jensen Huang Belittled the Executive Replacing Him'. 8-K of 2026-11-12: the CFO is interim CEO and remains CFO.",
+    "effect": "Not quantifiable from filings. The leadership analog subset (n=16) held worst: the day-5 close was within 5% of the 12-month low in 12%, and the median 12-month low was -26.4% ($120)."
+   },
+   {
+    "mechanism": "The AI-capex sector leg resumes and NVDA falls with its beta",
+    "evidence": "Computed: NVDA fell 22.0% ($239.24 to $186.64) before any CEO news; Oct 6 to Nov 6 peers fell 13-50% (QQQ -13.6%) and then bounced a median 10.0% last week. Beta 2.25 (stockanalysis statistics). Headlines: CNBC 2026-10-29 'AI buildout hits snag as Google and Microsoft put off raising capex forecasts'; AP 2026-11-05 'A brutal sell-off for AI stocks... the S&P 500 tumbles 4.4%'; Fortune 2026-11-08 'Stocks will drop further as AI investment slows next year then falls in 2028...'; TradingKey 2026-11-10 '...Sticky US October Inflation Stokes December Rate-Hike Bets'.",
+    "effect": "No zone names this driver. Peers giving back last week's bounce with NVDA 1:1 is $148 with no company news. Ten of 32 analog 12-month lows were market-wide lows, which is how the median 12-month low reached -24.7% ($123)."
+   },
+   {
+    "mechanism": "Estimate cuts have not started and the new chief has reason to reset",
+    "evidence": "Zacks detailed estimates in /home/user/Temp/.cache/collect/NVDA.json: Q3 EPS 2.49 and Q4 2.74 unchanged over 7 days; FY28 15.61 to 15.73 in 7 days; 43 of 53 brokers still buy-rated (nine moved to hold in a week). FY28 consensus revenue of $683B (+68%) is 82% of the $828B figure in Business Insider's 2026-10-30 headline 'AI hyperscalers are expected to finish the year spending a whopping $828 billion on capex'. Lowest FY28 sales estimate $502B, -26.5%. Headline: TIKR.com 2026-11-13 'Dan Niles: Nvidia's Next CEO Will \"Set a Low Bar\" for Earnings'.",
+    "effect": "The downgrades came without estimate cuts, so cuts are still ahead and cluster after 11-17. A guide 10% under Q4 consensus is about -11% EPS, about $144 (fundamentals table); withheld guidance would widen the range further."
+   },
+   {
+    "mechanism": "Quoted option odds understate the chance of trading at a level, and post-event volatility is priced below realised",
+    "evidence": "Options analyst: forward vol priced at 45-51% for late November to mid-December against 20-day and 10-day realised of 54.0% and 64.7%. Computed here from NVDA closes since 1999 in comparable windows (25-40% drawdown, 20-day vol at least 50%; 445 days): after 42 sessions the stock closed below the $130-equivalent in 27.6% (risk-neutral 15.4%) and had closed below it at some point in 40.7%. Analogs: lowest close within 60 sessions under the $130-equivalent in 25%; within 250 sessions 56%, under $100-equivalent 25%, under $80-equivalent 16%.",
+    "effect": "The draft's odds are for closing below each zone's bottom edge on expiry day. The chance of trading inside a zone is roughly 1.5-2 times that, and NVDA's own history gives no sign the near-dated risk-neutral odds are inflated."
+   },
+   {
+    "mechanism": "The analog clock is dated generously",
+    "evidence": "Computed from the analog price files and events.csv: measured from the day-2 close (resignation reaction on 11-12 as day 1) the median further fall to the 60-session low is -16.3% ($136), bad quartile -21.2% ($128), and the day-2 close was within 5% of the low in 19%. From day 5 (clock started 11-09) the figures are -8.4% and 41%.",
+    "effect": "If the event is dated to the CEO's exit rather than the board probe, the median three-month low is in Zone 2, not Zone 1."
+   },
+   {
+    "mechanism": "Positioning has not capitulated and the buyback is not a meaningful bid",
+    "evidence": "Headlines: The Dark Side Of The Boom 2026-11-13 'Retail Hoovers Up the Nvidia Dip: Vanda Records a 41-Fold Buying Stampede'; TipRanks 2026-11-13 'Nvidia's 2x Leveraged ETF Attracts $254 Million as Investors Buy the Dip'; 24/7 Wall St. 2026-11-13 '...a 3x Chip ETF Falls 50% in a Month'. Short interest 1.2% of float (stockanalysis); Friday put/call volume 0.64 (options analyst). Computed: the Q2 buyback pace of $19.7B a quarter is $0.31B a day, 1.3% of pre-event average daily dollar volume ($24.8B) and 0.4% of last week's ($79.6B). 10-Q: Q2 buybacks plus dividends of $25.7B exceeded Q2 free cash flow of $21.3B, and $25B of notes were issued in June.",
+    "effect": "Recent dip buyers and leveraged funds are potential sellers on a second leg (leveraged ETF assets could not be sourced); there is no short-covering cushion; and repurchases at the recent pace cannot absorb the flow."
+   }
+  ],
+  "ways_downside_is_overstated": [
+   {
+    "point": "The EPS base under every multiple-based level rolls forward on Tuesday; if the quarter is in line, those levels move up 8-17%.",
+    "evidence": "Zacks: Q3 consensus 2.49 replaces the year-ago 1.30 (GAAP diluted EPS for Q3 FY26 was also 1.30 per that 10-Q). TTM non-GAAP EPS goes from 7.01 to 8.20 and GAAP from 7.91 to about 9.10 before equity marks, so 16.97x is $139-154, not $119-134. NTM EPS goes from 12.10 to 13.0-14.0 (my inference from 12.10 = 2.49 + 2.74 + first-half FY28 of 6.87), so the Broadcom-trough marker moves from $142 to $153-165 and the Qualcomm-trough marker from $115 to $124-134."
+   },
+   {
+    "point": "The whole drawdown so far is multiple compression on unchanged estimates, so the price already embeds a large cut.",
+    "evidence": "Valuation analyst: forward P/E 13.46x against a prior five-year quarter-end minimum of 20.82x; at 20.82x today's price implies NTM EPS of 7.82, 35% below consensus. Computed: 19.8x at the $239.24 peak on today's NTM EPS, so -32%. Headlines: TradingKey 2026-11-11 '...NVDA Forward P/E Falls to 15-Year Low of 11.7 Times'; Forbes 2026-11-13 'Nvidia Stock Is at Its Cheapest Since 2012'."
+   },
+   {
+    "point": "NVDA's record-low multiple was itself the price of an earnings halving, so pairing it with halved earnings counts the fall twice.",
+    "evidence": "Valuation analyst table 2: the Dec 2018 low was 17.0x peak TTM EPS and 32.5x the eventual trough EPS (3.177 / 0.09775); the Oct 2022 low was 66x. Computed: $162.85 is 39x the EPS left after a 2018-sized fall (4.13) and 47x after a 2022-sized one (3.49); 32.5x on halved FY27 EPS of 4.64 is $151, against the draft's $81."
+   },
+   {
+    "point": "The company-specific discount is larger than $574B once peers' rebound is counted.",
+    "evidence": "Computed from price files, 11-06 to 11-13: NVDA -12.7%, QQQ +3.6%, median of nine chip peers +10.0%. Against QQQ the gap is 15.8% ($737B); against the peer median 20.7% ($1,025B). That is a revenue-equivalent of 14-18% at 1.127x leverage, more than China-HQ revenue (8.2%) and about equal to the largest customer (16%)."
+   },
+   {
+    "point": "Customer-loss scenarios assume lost volume is never resold, while the company reports it is supply-constrained.",
+    "evidence": "10-Q MD&A: 'currently experiencing certain supply constraints'; direct customers include ODMs and distributors (fundamentals caveat). Headline: Yahoo Finance 2026-10-28 'This Nvidia chart shows why the AI compute shortage remains acute'."
+   },
+   {
+    "point": "Consensus is still rising and even the downgraders' targets sit above the price.",
+    "evidence": "Zacks: FY28 EPS 12.57 ninety days ago, 15.61 seven days ago, 15.73 now; lowest of 47 price targets $174, average $293.22. Headlines: 24/7 Wall St. 2026-11-14 'HSBC Just Downgraded Nvidia and Cut Its Target to $170'; Yahoo Finance 2026-11-12 'Bernstein Just Gave Up on Nvidia, Cutting Its Target in Half to $200'; Morningstar 2026-11-13 'Nvidia: Cutting Our Fair Value Estimate by 19%...'."
+   },
+   {
+    "point": "Where analogs ended was much better than where they bottomed, and long-dated option tails exceed analog end-frequencies.",
+    "evidence": "Computed from events.csv (32 analogs): against the day-5 close the median analog ended +3.4% after 60 sessions and +7.0% after 250; 56% ended higher. After 250 sessions 6% were below the $100-equivalent and 3% below the $80-equivalent, against risk-neutral 17.9% and 10.1% by Dec 2027. Fourteen of 32 regained the pre-event close within 60 sessions and 22 within 250 (analogs analyst)."
+   },
+   {
+    "point": "The day-5 close was often close to the low, and the typical three-month dip is ordinary volatility.",
+    "evidence": "Analogs analyst: the day-5 close was within 5% of the 60-session low in 41% (45% severity-matched); the event median of -8.4% compares with -7.9% from a random day; NVDA's four export shocks regained the pre-event close in 12-50 sessions."
+   },
+   {
+    "point": "Percentage-drawdown repeats start from a far lower multiple than any earlier trough except 2018.",
+    "evidence": "Trailing P/E at past troughs: 43.5x (2020), 36.8x (2022), 57.8x (2024), 32.0x (2025), 17.0x (2018); now 20.6x. At $105 the trailing P/E would be 13.3x and at $80 about 10x, below anything in NVDA's SEC-covered record (analogs analyst)."
+   },
+   {
+    "point": "Earnings-night history is milder than the 1-SD level.",
+    "evidence": "Computed from EDGAR Item 2.02 8-K dates and the price file: in 24 scheduled reports from Nov 2020 to Aug 2026 the worst next-day close was -8.5% (Feb 2025); none reached the -8.6% needed to close below $148.80. The mean absolute move was 6.0% against 7.0-7.4% implied now."
+   },
+   {
+    "point": "Thursday showed capitulation-scale turnover and a strong intraday recovery.",
+    "evidence": "Price file: 2026-11-12 traded 747.7M shares, about $124B, the largest dollar volume in the 10-year file (previous $100.0B on 2024-03-08); the close of $166.19 was 11.7% above the $148.80 low."
+   },
+   {
+    "point": "The fraud and leverage tails in the analog set need facts not in evidence; the balance sheet absorbs any cash penalty.",
+    "evidence": "10-Q: cash and debt securities $56.6B, TTM free cash flow $127.0B, no litigation accrual. Analogs analyst: the SMCI and Valeant paths involved accounting or leverage problems that nothing in the supplied facts indicates. Reuters headline 2026-11-12: DOJ has not concluded the individual was a spy (fundamentals table)."
+   },
+   {
+    "point": "FCF-yield levels are built on depressed cash conversion.",
+    "evidence": "Valuation analyst: TTM FCF of $127.0B is 66% of net income, and Q2 was $21.4B against $59.7B; on stockanalysis consensus FY27 FCF of $189.8B a 5% yield is $157, not $105. The same working-capital and prepayment build is a risk if demand slips, so this cuts both ways."
+   }
+  ],
+  "logic_errors": [
+   "Double counting at constant multiple: revenue-loss scenarios are applied to $162.85 at today's 13.5x and 20.6x, but the forward multiple has already fallen about 32% on unchanged estimates. Claim (iii) says the loss of all China revenue is more than priced, yet Zone 1 still lists that loss ($148-153) as further downside. From the 11-06 base the fundamentals table gives $169 for China and $153 for the largest customer.",
+   "The attribution behind claim (iii) is unresolved and used both ways. If the 12.7% leg is a governance discount on the multiple, revenue losses are additive and the zones stand. If it is a revenue haircut, Zones 1-2's fundamental anchors are already in the price. The draft asserts the second in its claims and the first in its zones.",
+   "Trough multiple times trough earnings (Zones 3 and 4) contradicts the precedent cited. In 2018 and 2022 the price low came at 32.5x and 66x the eventual trough EPS. The 17.0x record low is the same event as the earnings halving, not an independent second factor.",
+   "Claim (i) is not supported and conflicts with the draft's own table. At 20.6x the trailing multiple is 21% above the record low, and that gap is Zone 2. Excluding $1.05 of equity gains it is 23.7x, 40% above. Peer trailing troughs have a median of 11.8x (-43%); the peer forward-trough median of 11.2x is 17% below and Qualcomm's 9.5x is 29% below. Six of the draft's Zone 2-3 anchors ($142, $134, $131.5, $119, $115, $105) are multiple-only moves with earnings held.",
+   "Multiple and estimates are treated as independent axes when the low forward multiple (10.4x FY28) is the market's haircut to a consensus it does not believe. When estimates are cut, the multiple on the new numbers normally rises, so 'cut the estimate and keep the multiple' overstates.",
+   "Horizons are mixed inside each zone. Zone 1 combines a two-day option move, 60-session analog lows, a horizonless fundamental scenario and an intraday print that has already happened. Zone 3 pairs 12-month analog lows, which are median outcomes, with option odds for five weeks to seven months. 'Ordinary bad reaction' is right for Wednesday and wrong for three months.",
+   "The odds quoted do not measure what the zones describe. They are risk-neutral probabilities of closing below one level on expiry day, taken at the bottom edge of Zones 2-4 ($130, $100, $80) and mid-zone for Zone 1. Entering a zone is likelier (below $140: 20% by Dec 18, 24% by Jan 15; below $120: 21% by June 2027), and trading there at some point is roughly 1.5-2 times likelier again.",
+   "Floors are presented as support. Put open interest at $150 has unknown direction, and dealer hedging can add selling through it. The two-year volume shelf, the 200-week average ($123.60), the April 2025 low and the $148.80 print are chart markers. The record-low P/E is a single 2018 observation, and the forward P/E has already gone 35% through its own prior minimum, which shows own-history minima do not bind.",
+   "'Heaviest two-year volume shelf $130-145' is wrong as stated. That band holds 16.5% of two-year volume, while $175-190 holds 26.7%; $130-145 is only the heaviest band below the price. Some 57.7% of two-year volume traded above $162.85, so most recent buyers are under water, which is overhead supply rather than support.",
+   "Stale inputs are presented as levels. 17.0x times $7.91 and the NTM-based markers use EPS that changes on 11-17, and GAAP EPS of $7.91 is used for the $134 anchor even though claim (iv) says $1.05 of it can reverse. The same record-low multiple appears in Zone 2 on GAAP EPS ($134) and in Zone 3 on non-GAAP EPS ($119), a difference of accounting definition rather than of events.",
+   "The analog evidence is over-read. The 60-session median (-8.4%) equals the random-day baseline (-7.9%), so it carries no event information. It depends on dating the event to 11-09: from the resignation the median is -16.3%. The 12-month lows include unrelated market crashes.",
+   "'+/-7%' and '1-SD about $148-149' are two different statistics shown as one. The first is the expected absolute move (7.0-7.4%); the second is one standard deviation (8.8-9.3%).",
+   "Claim (ii) is right about cash but too narrow. The 10-Q's own risk language makes licence denials and conditions, not fines, the penalty that matters, and those hit revenue. Claim (iv) lists demand risks as if independent of the scandal, when Nvidia's customer financing links them.",
+   "Zone 4's 'earnings halve as in fiscal 2019-20' misstates the record. Fiscal-year EPS fell 31.8% (FY2019 to FY2020); the 47.8% is TTM peak to trough, Oct 2018 to Oct 2019.",
+   "The 'clusters' are not four independent confirmations. All lenses share the same price and EPS inputs; $134 appears as both the record-low multiple and the largest-customer loss by arithmetic coincidence; and option levels near $148-150 sit there because strikes and hedging gathered around Thursday's low."
+  ],
+  "missing_from_analysis": [
+   "A scenario tree for Tuesday night. In line with unchanged consensus, the valuation levels shift up 8-17%. A Q4 guide 10% under consensus is about $144. Withheld guidance, a late 10-Q, a new legal accrual or subpoena disclosure, a GAAP miss from equity marks, or a paused buyback each need their own branch.",
+   "Nvidia's role as financier of its customers, and what happens to demand if the interim chief or the board curtails it. Relevant sizes: $42.4B of equity purchases and a $24.6B receivables build in H1, $36B of capacity backstops, $108.5B of guarantees, $25B of equity commitments.",
+   "The commitment schedule against liquidity. $120B of total commitments fall due by January 2027 ($92B of it supply) against $56.6B of cash and debt securities, and Q2 buybacks plus dividends ($25.7B) already exceeded free cash flow ($21.3B).",
+   "A sector and market scenario. NVDA fell 22% in the Oct 6 to Nov 6 AI-capex leg before any company news, peers have just bounced a median 10%, beta is 2.25 and the 10-year yield is 5.10%. None of the four zones names this driver.",
+   "Share loss to AMD, Broadcom and Google TPUs as a mechanism separate from industry demand; rivals rose 5-19% in the week NVDA fell 12.7%.",
+   "Gross-margin sensitivity. All scenarios hold 75.0% although Q3 is guided to 74.0% and each point is 1.5% of FY28 EPS.",
+   "Touch probabilities and real-world cross-checks. NVDA's comparable windows and the analogs' end-of-window outcomes were available on disk and were not used to calibrate the option odds.",
+   "The intermediary and third-country revenue pool (18-22% of revenue on the old Singapore billing basis; Taiwan-HQ 28%) as the exposure to KYC or licence rules, rather than the 8.2% China-HQ line.",
+   "Positioning. Retail and leveraged-ETF dip buying, 1.2% short interest and 43 of 53 buy ratings point to no capitulation. Leveraged-ETF assets, index weights and any forced-selling thresholds could not be sourced from the reachable hosts and remain unquantified.",
+   "Recovery paths, for symmetry. The median analog ended above its day-5 close after both 60 and 250 sessions and 22 of 32 regained the pre-event close within a year. Headlines also point to a fast CEO appointment (Tom's Hardware 2026-11-13: board reportedly approached Arm's CEO) and pressure to reinstate the founder (TechCrunch 2026-11-14 petition).",
+   "The post-July balance sheet, Q3 buybacks, the size and class period of the securities class actions, and any official confirmation that the company itself is under investigation. None was available; all headline evidence here is headline text only, unverified.",
+   "My red-team calculations are reproducible from scripts in /tmp/claude-0/-home-user-Temp/dbacb4e2-62a8-5da8-88f5-6a2f24aae003/scratchpad/redteam/ (px1.py, emp.py, an.py, an2.py, earn.py, calc2.py). The NTM roll-forward rests on an inferred construction of the stockanalysis forward EPS, and NVDA's comparable-window statistics rest on roughly 10-35 independent episodes dominated by 2000-02, 2008, 2018 and 2022."
+  ],
+  "most_defensible_answer": "There is no floor, and the four zones read better as a probability ladder over different horizons than as four separate triggers. $146-153 is the base case for the low, not a bad reaction: it is one standard deviation of Tuesday's implied earnings move, it traded on Nov 12, half the 32 analogs and about half of NVDA's own comparable past windows closed that far down within one to three months, and chip peers giving back last week's 10% bounce would be enough. $129-142 is roughly a one-in-four outcome by mid-January on a closing basis; the likeliest causes are a weak or withheld January-quarter guide, tighter export licensing, or a pull-back in Nvidia's own customer financing, not \"the multiple reaching its record low\", because an in-line report lifts trailing EPS to about $8.20-9.10 and moves that marker up to roughly $139-154. $98-125 is a tail over weeks (about 3% risk-neutral for a close below $100 by mid-January) but close to the median 12-month low in the analog set ($123) and in NVDA's own past drawdowns ($108-115). It needs either the still-rising consensus to be cut by a fifth or more or the AI-capex sell-off to resume, and the draft's constant-multiple arithmetic overstates it because the forward multiple has already fallen about 32% on unchanged estimates. $65-90 requires earnings to halve and the market to judge the decline structural: at the 2018 and 2022 lows NVDA traded at 32.5x and 66x trough earnings, which on halved EPS is about $150 or more, so this is roughly a 5%-by-mid-2027 tail tied to an AI spending bust, in which $279B of supply commitments, $108.5B of guarantees and $99B of equity stakes would add charges nobody modelled. The option odds quoted are for closing below a level on expiry day; the chance of trading there at some point is roughly 1.5-2 times higher, and NVDA's own history gives no sign the near-dated odds are inflated."
+ },
+ "audit": {
+  "checks": [
+   {
+    "claim": "ATM straddle and implied move, 2026-11-18 expiry (first post-earnings)",
+    "analyst_value": "$14.06 (linear) / $14.04 (model) = 8.6%",
+    "recomputed_value": "$14.06 = 8.63% of 162.85 (bid/ask mids at the 162.5 and 165 strikes, interpolated to spot)",
+    "source": "Nasdaq option-chain API, fromdate=todate=2026-11-18, re-pulled 2026-11-15T03:12:50Z (quotes as of 2026-11-13 close)",
+    "status": "CONFIRMED",
+    "note": "Implied 1-SD from the straddle (straddle / 0.798 / spot) = 10.8%, matching the analyst's ATM IV 92.4% x sqrt(5/365)."
+   },
+   {
+    "claim": "ATM straddle and implied move, 2026-12-18 expiry",
+    "analyst_value": "$23.11 / $23.06 = 14.2%",
+    "recomputed_value": "$23.11 = 14.19% (mids at the 162 and 164 strikes)",
+    "source": "Nasdaq option-chain API, 2026-12-18, re-pulled 2026-11-15T03:12:55Z",
+    "status": "CONFIRMED",
+    "note": "The endpoint served 400 of 405 strike rows at limit=400; the 5 missing are far out-of-the-money high strikes and do not affect this."
+   },
+   {
+    "claim": "Draft: options imply a +/-7% earnings-day move (1-SD down about $148-149)",
+    "analyst_value": "Expected absolute move 7.0-7.4%; 1-SD 8.8-9.3%; 1-SD down price $148.4-149.2",
+    "recomputed_value": "Straddle shortcut sqrt(8.63^2 - 2 x 3.60^2) = 6.97% expected absolute move; 1-SD = 8.7%, giving 162.85 x exp(-0.087) = $149.2",
+    "source": "Nasdaq option-chain API, 2026-11-16 (straddle $5.86 = 3.60%) and 2026-11-18 expiries, re-pulled 2026-11-15T03:12Z",
+    "status": "MINOR_DIFFERENCE",
+    "note": "Numbers reproduce, but the draft pairs a mean-absolute move (7%) with a one-standard-deviation price. A 7% fall is $151.5; $148-149 is a fall of about 8.7-9.3%. The result also assumes Tuesday's variance equals Monday's, because no Tuesday expiry exists."
+   },
+   {
+    "claim": "Risk-neutral P(finish below K) at 2026-12-18 for K = 150 / 140 / 130 / 120 / 100",
+    "analyst_value": "32.4 / 20.2 / 11.5 / 6.1 / 1.6 % (smoothed)",
+    "recomputed_value": "Raw central put-mid slopes x e^(rT): 32.6 / 20.2 / 11.7 / 4.8 / 2.0 %; local quadratic fit of put mids: 33.5 / 20.9 / 11.1 / 5.7 / 1.7 %",
+    "source": "Nasdaq option-chain API, 2026-12-18, re-pulled 2026-11-15T03:12:55Z; r = 4.22% (immaterial)",
+    "status": "CONFIRMED",
+    "note": "All within 2 points. The $120 raw one-strike slope is noisy (left 1.5%, right 8.0%); the wider fit gives 5.7%."
+   },
+   {
+    "claim": "Risk-neutral P(finish below K) at 2027-01-15 for K = 150 / 140 / 130 / 120 / 100",
+    "analyst_value": "35.8 / 24.3 / 15.4 / 9.3 / 3.2 % (smoothed)",
+    "recomputed_value": "37.0 / 24.9 / 16.0 / 9.2 / 3.2 % (raw central slopes across the $5 strikes)",
+    "source": "Nasdaq option-chain API, 2027-01-15, re-pulled 2026-11-15T03:12:58Z",
+    "status": "CONFIRMED",
+    "note": "Within 1.2 points. Raw slopes on American puts run slightly above the analyst's de-Americanised figures, as expected."
+   },
+   {
+    "claim": "Risk-neutral P(close below $148.80) by Nov 18 / Dec 18 / Jan 15",
+    "analyst_value": "20.3 / 30.8 / 34.3 %",
+    "recomputed_value": "20.0 (21.8 with a wider fit) / 31.4 / 34.2 %",
+    "source": "Nasdaq option-chain API, the three expiries, re-pulled 2026-11-15T03:12Z",
+    "status": "CONFIRMED",
+    "note": "Draft figures (about 20%, 31%, 34%) hold."
+   },
+   {
+    "claim": "Longer-dated tail odds quoted in the draft: below $130 by Jun 2027; below $100 by Jun 2027; below $80 by Jan 15, Jun 2027, Dec 2027",
+    "analyst_value": "27.8%; 11.4%; 1.2% / 5.3% / 10.1%",
+    "recomputed_value": "28.2%; 11.9%; 1.7% / 5.9% / 10.3% (raw central slopes)",
+    "source": "Nasdaq option-chain API, expiries 2027-01-15, 2027-06-17, 2027-12-17, re-pulled 2026-11-15T03:12-03:13Z",
+    "status": "CONFIRMED",
+    "note": "All within 1 point. The $80 quotes are thin at Jan 15 (one-sided slopes 1.6-1.8%), so 'about 1%' is a fair rounding of a 1-2% reading."
+   },
+   {
+    "claim": "Largest put open-interest strike",
+    "analyst_value": "$150, 636,808 contracts over all expiries; largest single line Jan-2027 $100 put, 241,342",
+    "recomputed_value": "$150: 636,808 (next $100: 426,777; $200: 408,614; $140: 404,492). Largest single line Jan-2027 $100 put: 241,342. Total put OI 8,464,019",
+    "source": "Nasdaq option-chain API, all 24 expiries (2,232 strike rows, 6 paged requests), re-pulled 2026-11-15T03:13:47-03:13:58Z",
+    "status": "CONFIRMED",
+    "note": "Analyst's total put OI (8,444,783) is 19,236 lower because strikes above $480 were dropped; no effect on the ranking."
+   },
+   {
+    "claim": "China (including Hong Kong) revenue and total revenue, quarter ended 2026-07-26",
+    "analyst_value": "$7,880M of $96,221M = 8.19%",
+    "recomputed_value": "$7,880M / $96,221M = 8.19%. First half 12,430 / 177,837 = 7.0%; TTM 18,463 / 302,970 = 6.09%",
+    "source": "10-Q acc. 0001045810-26-000075 (nvda-20260726.htm) Note 13, fetched from www.sec.gov 2026-11-15T03:14:29Z; FY26 China $19,677M from 10-K acc. 0001045810-26-000021, fetched 03:25:04Z",
+    "status": "CONFIRMED",
+    "note": "Defined by direct-customer headquarters, not ship-to. Scenario prices reproduce: $147.8 forward / $149.7 trailing on the Q2 share; $151.7 / $153.1 on the TTM share."
+   },
+   {
+    "claim": "Largest direct customer share; three direct customers = 44% of first-half revenue",
+    "analyst_value": "16% (Q2 and H1); H1 three customers 16%, 15%, 13%",
+    "recomputed_value": "Q2: one direct customer 16%. H1: three direct customers 16%, 15%, 13% = 44%",
+    "source": "10-Q acc. 0001045810-26-000075 Note 13",
+    "status": "CONFIRMED",
+    "note": "The 10-Q also says some indirect customers individually exceed 10% (unquantified)."
+   },
+   {
+    "claim": "Data-center revenue and share",
+    "analyst_value": "$89,023M = 92.5%",
+    "recomputed_value": "$89,023M / $96,221M = 92.52% (Hyperscale 48,710; AI Clouds, Industrial and Enterprise 40,313; Edge 7,198)",
+    "source": "10-Q acc. 0001045810-26-000075 Note 13 market-platform table",
+    "status": "CONFIRMED",
+    "note": ""
+   },
+   {
+    "claim": "Supply and capacity commitments; inventories",
+    "analyst_value": "$279B; $31,575M",
+    "recomputed_value": "$279B (up from $119B the prior quarter; total commitments $366B); inventories $31,575M ($21,403M at 2026-01-25)",
+    "source": "10-Q acc. 0001045810-26-000075 Note 10 and balance sheet",
+    "status": "CONFIRMED",
+    "note": ""
+   },
+   {
+    "claim": "Cash plus marketable debt securities, and per share",
+    "analyst_value": "$22,443M + $34,143M = $56,586M = $2.34/share",
+    "recomputed_value": "$56,586M (the 10-Q's own subtotal); / 24,147M shares = $2.343",
+    "source": "10-Q acc. 0001045810-26-000075 balance sheet and liquidity table; shares 24.147B from stockanalysis statistics re-pulled 2026-11-15T03:17:32Z (10-Q cover: 24.1 billion at 2026-08-21)",
+    "status": "CONFIRMED",
+    "note": "Gross of $33.4B of notes (net $23.2B). Excludes $42.8B of marketable equity securities ($36.9B under lock-up) and $51.2B non-marketable."
+   },
+   {
+    "claim": "Notes outstanding",
+    "analyst_value": "$33,366M ($8,468M at 2026-01-25); $25.0B issued June 2026 in seven tranches; $1.0B due 2026",
+    "recomputed_value": "Net carrying amount $33,366M; principal $33,500M across 14 series (sum checked); seven new tranches total $25,000M; short-term portion $1,000M",
+    "source": "10-Q acc. 0001045810-26-000075 Note 9",
+    "status": "CONFIRMED",
+    "note": ""
+   },
+   {
+    "claim": "8-K filed 2026-11-12: what it says and does not say",
+    "analyst_value": "Items 5.02 and 9.01: CEO resignation effective 2026-11-11, CFO interim CEO and stays CFO, Harvey Jones Chair, CEO search, Q3 results 2026-11-17; no reason, no investigation, litigation, subpoenas or guidance",
+    "recomputed_value": "Same. Board accepted the resignation as President, CEO and director on 2026-11-11, effective immediately. Ex. 99.1 (dated 2026-11-12) adds the search (internal and external candidates) and results on Nov 17 'as previously scheduled'. No reason, no investigation or inquiry, no litigation, no board committee, no severance terms, no guidance statement",
+    "source": "8-K acc. 0001045810-26-000082 (nvda-20261111.htm and Ex. 99.1), fetched 2026-11-15T03:14:29Z; EDGAR submissions list fetched 03:26:43Z",
+    "status": "CONFIRMED",
+    "note": "It is the only 8-K since 2026-10-01. The draft's 'amid investigations' has no support in the filing and must rest on press reports."
+   },
+   {
+    "claim": "GAAP EPS includes about $1.05/share of gains on equity investments",
+    "analyst_value": "$30.6B pre-tax TTM gains, about $1.05/share after tax",
+    "recomputed_value": "TTM gains = 8,918 - 2,073 + 23,707 = $30,552M; x (1 - 0.165) / 24,285M = $1.05",
+    "source": "SEC companyfacts GainLossOnInvestments (fetched 2026-11-15T03:15:25Z); 10-Q cash-flow line 'Gains from equity securities, net'",
+    "status": "CONFIRMED",
+    "note": "Tax rate 11,819 / 71,507 = 16.5% and Q2 diluted shares 24,285M also confirmed."
+   },
+   {
+    "claim": "Company-specific leg erased $574B, equal to a permanent loss of about 11% of revenue",
+    "analyst_value": "186.64 to 162.85 = -12.7% = $574B; about 11.3% of revenue",
+    "recomputed_value": "(186.64 - 162.85) x 24.147B = $574.5B; -12.75% / 1.127 = 11.3%. Over the same sessions QQQ +3.63%, SPY +2.59%, SMH +4.91%; relative to QQQ the loss is -15.7%, about $709B, about 14% of revenue",
+    "source": "Nasdaq historical API (re-pulled 2026-11-15T03:16:08Z, identical to the price file); stockanalysis chart series for QQQ, SPY, SMH (03:24:21Z)",
+    "status": "MINOR_DIFFERENCE",
+    "note": "The arithmetic is right, but it is the absolute change from the 11-06 close. The market rose over those five sessions, so 'company-specific' understates the relative loss. The comparison with China revenue (8.2%) is not weakened."
+   },
+   {
+    "claim": "Constant-multiple scenario prices: largest customer, data center -20%, data center -35%",
+    "analyst_value": "$133.5 (forward; $137.1 trailing); $128.9; $103.4",
+    "recomputed_value": "162.85 x (1 - 0.16 x 1.127) = $133.5; 18.5% lost gives $128.9; 32.4% lost gives $103.4. Leverage 1.133 (FY27) and 1.120 (FY28) reproduced",
+    "source": "10-Q figures above; Zacks detailed estimates re-pulled 2026-11-15T03:24:08Z (FY27 EPS 9.28, revenue $407.63B; FY28 EPS 15.73, revenue $683.05B)",
+    "status": "MINOR_DIFFERENCE",
+    "note": "The draft prints $134 for the largest-customer case; the computed figure is $133.5 ($133-137 across the two multiples). $134.4 belongs to the separate short-seller-allegation scenario."
+   },
+   {
+    "claim": "NVDA trailing P/E on 2018-12-24",
+    "analyst_value": "16.97x (close 3.177 / TTM diluted EPS 0.18725, 10-Q filed 2018-11-15)",
+    "recomputed_value": "3.177 / 0.18725 = 16.97x. TTM = 1.78 + 1.98 + 1.76 + 1.97 = 7.49 as reported, / 40 for the 2021 and 2024 splits",
+    "source": "SEC companyfacts EarningsPerShareDiluted; Nasdaq historical API and stockanalysis chart both give close 3.177",
+    "status": "CONFIRMED",
+    "note": "16.97 x 7.91 = $134.2 and 16.97 x 7.01 = $119.0 reproduce."
+   },
+   {
+    "claim": "Draft: 17.0x (Dec 2018) is NVDA's record-low trailing P/E; the 20.6x multiple is 'already near NVDA's record low'",
+    "analyst_value": "Valuation analyst: lowest 'in the 10-year price file'. The draft dropped that qualifier",
+    "recomputed_value": "On the same method the P/E was below 16.97x on 424 sessions between 2011-08-25 and end-2013. Minimum 12.5x on 2011-12-19 (close $0.3289 split-adjusted / TTM EPS $0.02625). Yearly minimums: 12.5 (2011), 12.9 (2012), 13.5 (2013)",
+    "source": "stockanalysis NVDA chart series (daily closes from 1999-01-22, fetched 2026-11-15T03:16:09Z); SEC companyfacts quarterly diluted EPS by first filing date",
+    "status": "WRONG",
+    "note": "17.0x is the 10-year low, not the record low. A true record-low multiple on unchanged EPS gives 12.5 x 7.91 = $99 (12.5 x 7.01 = $88), which belongs in Zones 3-4. The analogs analyst's 'below any NVDA trough multiple in the SEC-covered record' is wrong for the same reason."
+   },
+   {
+    "claim": "Current trailing P/E 20.6x on TTM GAAP EPS $7.91",
+    "analyst_value": "20.59x; EPS 7.91",
+    "recomputed_value": "TTM diluted EPS = 1.30 + 1.76 + 2.39 + 2.46 = 7.91; 162.85 / 7.91 = 20.59x. Since 2019: 20 sessions below 20x, minimum 17.09x on 2019-01-03",
+    "source": "SEC companyfacts; Nasdaq historical close; stockanalysis statistics (P/E 20.592, EPS 7.908)",
+    "status": "CONFIRMED",
+    "note": ""
+   },
+   {
+    "claim": "TTM free cash flow per share and prices at 4% / 5% / 6% yields",
+    "analyst_value": "$127,006M; $5.26/share; $131.5 / $105.2 / $87.7",
+    "recomputed_value": "OCF 102,718 - 42,779 + 74,421 = 134,360; capex 6,042 - 3,122 + 4,434 = 7,354; FCF $127,006M; / 24,147M = $5.26; prices $131.49 / $105.19 / $87.66",
+    "source": "SEC companyfacts (NetCashProvidedByUsedInOperatingActivities, PaymentsToAcquireProductiveAssets); stockanalysis statistics",
+    "status": "CONFIRMED",
+    "note": "FCF is 66% of TTM net income ($192,880M)."
+   },
+   {
+    "claim": "Broadcom and Qualcomm minimum quarter-end forward P/E; implied NTM EPS; resulting prices",
+    "analyst_value": "AVGO 11.737x (2022-10-30); QCOM 9.53x (2022-09-25); NTM EPS 12.097 (162.85 / 13.4619); $142.0 and $115.3",
+    "recomputed_value": "AVGO 11.737 (2022-10-30); QCOM 9.53 (2022-09-25); NVDA forward P/E 13.4619, so NTM EPS 12.097; 11.737 x 12.097 = $141.98; 9.53 x 12.097 = $115.29",
+    "source": "stockanalysis ratios, quarterly, for AVGO, QCOM, NVDA, re-pulled 2026-11-15T03:17:31-03:17:32Z",
+    "status": "CONFIRMED",
+    "note": "These are minimums of 20 quarter-end observations (late 2021 on), not intra-quarter troughs."
+   },
+   {
+    "claim": "TTM non-GAAP EPS and consensus used in the grids",
+    "analyst_value": "Non-GAAP TTM 7.01 (1.30 + 1.62 + 1.87 + 2.22); FY27 9.28; FY28 15.73",
+    "recomputed_value": "Zacks EPS TTM 7.01; last four quarters 1.30, 1.62, 1.87, 2.22; FY27 9.28 (19 estimates, 9.62 seven days ago); FY28 15.73 (17 estimates)",
+    "source": "Zacks detailed-earning-estimates page, re-pulled 2026-11-15T03:24:08Z",
+    "status": "CONFIRMED",
+    "note": ""
+   },
+   {
+    "claim": "Latest FRED DGS10",
+    "analyst_value": "5.10% (2026-11-12)",
+    "recomputed_value": "5.10 on 2026-11-12 (2026-11-11 blank; 4.98 on 11-10) in three raw FRED CSV responses in the on-disk HTTP cache; live re-pull failed",
+    "source": "fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10, cached raw bodies retrieved 2026-11-14T13:32:06Z, 13:33:39Z and 2026-11-15T02:57:23Z; four live attempts 03:18-03:27Z timed out or returned proxy errors",
+    "status": "CONFIRMED",
+    "note": "Confirmed against raw cached responses only, two of them fetched the day before the analysts ran. The figure does not appear in the draft conclusion."
+   },
+   {
+    "claim": "Historical EPS declines behind 'earnings halve as in fiscal 2019-20 and 2022-23' and the $81 double-trough cell",
+    "analyst_value": "TTM Oct 2018 to Oct 2019 -47.8%; FY2019 to FY2020 -31.8%; FY2022 to FY2023 -55.8%; 17.5x x 4.64 = $81.2",
+    "recomputed_value": "TTM 0.18725 to 0.09775 = -47.8%; FY19 to FY20 6.63 to 4.52 = -31.8%; FY22 to FY23 3.85 to 1.74 = -54.8%; 17.5 x 4.64 = $81.2",
+    "source": "SEC companyfacts EarningsPerShareDiluted (original 10-K and 10-Q filings)",
+    "status": "MINOR_DIFFERENCE",
+    "note": "-55.8% comes from the rounded post-split restatement (0.17); as filed it is -54.8%. Fiscal-year 2019 to 2020 EPS fell 31.8%, not by half; the near-halving is the TTM series."
+   },
+   {
+    "claim": "2018-sized and 2022-sized drawdowns applied to the $239.24 peak",
+    "analyst_value": "-56.1% gives $105.03; -66.4% gives $80.38",
+    "recomputed_value": "3.177 / 7.234 - 1 = -56.08%, giving $105.07; 11.227 / 33.376 - 1 = -66.36%, giving $80.48",
+    "source": "Nasdaq historical API (identical to the price file); stockanalysis chart",
+    "status": "CONFIRMED",
+    "note": "Differences of $0.04-0.10 come from the analyst rounding the depth to three decimals."
+   },
+   {
+    "claim": "Analog distribution: further fall from day-5 close to the lowest close within 60 sessions (n = 32)",
+    "analyst_value": "mild quartile -4.0%, median -8.4%, bad quartile -19.3%, giving $156.34 / $149.17 / $131.38",
+    "recomputed_value": "From events.csv: -4.00 / -8.40 / -19.32. From all 32 events re-derived on freshly fetched closes: -4.03 / -8.40 / -19.32, giving $149.17 median and $131.38 bad quartile",
+    "source": "events.csv in the analysts' scratchpad; stockanalysis chart series for all 32 tickers re-pulled 2026-11-15T03:27Z",
+    "status": "CONFIRMED",
+    "note": "All 32 rows match to 0.1 point. Not checkable: event dates and descriptions come from the analyst's memory. NVDA's day 5 counts from 2026-11-09, but the resignation became public on 11-12, so 11-13 is only the second close after it."
+   },
+   {
+    "claim": "Analog distribution: further fall from day-5 close to the lowest close within 250 sessions (n = 32)",
+    "analyst_value": "-9.1% / -24.7% / -39.6%, giving $148.03 / $122.63 / $98.32",
+    "recomputed_value": "From events.csv: -9.10 / -24.70 / -39.62. Re-derived from raw: -9.14 / -24.70 / -39.64, giving $122.62 median and $98.30 bad quartile",
+    "source": "Same as the 60-session check",
+    "status": "CONFIRMED",
+    "note": "The bad quartile is an interpolation between WYNN (-46.0%) and STLA (-37.5%); with n = 32 it moves several points if one case changes."
+   },
+   {
+    "claim": "Three analog events re-derived from raw prices: WYNN 2018-01-26, MSFT 2000-04-03, BABA 2020-11-03",
+    "analyst_value": "WYNN d5 -15.0%, further -4.4% / -46.0%; MSFT d5 -16.2%, further -31.0% / -53.4%; BABA d5 -6.5%, further -23.6% / -51.9%",
+    "recomputed_value": "WYNN pre 200.60, d5 170.49 (-15.0%), -4.4% (2018-02-12) / -46.0% (2018-12-24). MSFT pre 53.12, d5 44.53 (-16.2%), -31.0% (2000-05-26) / -53.4% (2000-12-20). BABA pre 310.84, d5 290.53 (-6.5%), -23.6% (2020-12-24) / -51.9% (2021-10-04)",
+    "source": "stockanalysis chart series for WYNN, MSFT, BABA, fetched 2026-11-15T03:20:18-03:20:19Z",
+    "status": "CONFIRMED",
+    "note": ""
+   },
+   {
+    "claim": "Four NVDA export-shock rows and the $153 template",
+    "analyst_value": "Further fall day 5 to 60-session low: -19.7%, -6.1%, -6.2%, 0.0%; median -6.15%, giving $152.83",
+    "recomputed_value": "2022-09-01: -19.7%; 2022-10-07: -6.1%; 2023-10-17: -6.2%; 2025-04-16: +3.6%, capped at 0. Median -6.15%, giving $152.83. Pre-closes, day moves, intraday lows and sessions to regain (50, 13, 17, 12) all match",
+    "source": "Nasdaq historical API daily OHLC, re-pulled 2026-11-15T03:16:08Z",
+    "status": "CONFIRMED",
+    "note": "n = 4, and the first two events share one trough (2022-10-14)."
+   },
+   {
+    "claim": "200-week simple moving average",
+    "analyst_value": "$123.60 (draft; not in the four analysts' outputs)",
+    "recomputed_value": "$123.60 (mean of the last 200 weekly closes, week of 2023-01-20 through 2026-11-13); $122.87 excluding the current week",
+    "source": "Nasdaq historical API, 2,514 daily bars; the price file matches it on all 2,509 shared dates (max difference 0.0)",
+    "status": "CONFIRMED",
+    "note": ""
+   },
+   {
+    "claim": "April 2025 low ($87-94)",
+    "analyst_value": "Trough close 94.31 (2025-04-04); intraday low 86.62 (2025-04-07)",
+    "recomputed_value": "Lowest close $94.31 on 2025-04-04; lowest intraday $86.62 on 2025-04-07",
+    "source": "Nasdaq historical API; stockanalysis chart (closes)",
+    "status": "CONFIRMED",
+    "note": "$94 sits just above the draft's stated Zone 4 range of $65-90."
+   },
+   {
+    "claim": "Draft: heaviest two-year volume shelf is $130-145",
+    "analyst_value": "Not in the four analysts' outputs; draft wording only",
+    "recomputed_value": "16.3% of two-year volume (96.3B shares, 501 sessions) traded at $130-145. The heaviest $15 band overall is $175-190 at 25.0%; $145-170 holds only 7.9%; the next band below the price is $110-125 at 11.6%",
+    "source": "Nasdaq historical API daily high, low and volume; each day's volume spread evenly over its range (typical-price method gives 16.5% and 26.6%)",
+    "status": "MINOR_DIFFERENCE",
+    "note": "$130-145 is the heaviest shelf below the current price, not the heaviest overall."
+   },
+   {
+    "claim": "Price path: closes, intraday low, peak and drawdown",
+    "analyst_value": "$186.64 (11-06), $162.85 (11-13), intraday low $148.80 (Thursday 11-12), peak close $239.24 (2026-10-06), -31.9%",
+    "recomputed_value": "186.64; 162.85; low 148.80 on 2026-11-12; peak close 239.24 on 2026-10-06; 162.85 / 239.24 - 1 = -31.9%; 52-week low 148.80",
+    "source": "Nasdaq historical API; stockanalysis chart and quote",
+    "status": "CONFIRMED",
+    "note": "On 11-12 the stock opened at 151.01 after closing 173.73 on 11-11, consistent with the resignation becoming public before the 11-12 open."
+   }
+  ],
+  "corrections_needed": [
+   "Replace 'record low' / 'record-low' with '10-year low' wherever the 17.0x multiple appears (Zone 2 header and first item, Zone 3 'record-low P/E on non-GAAP EPS $119', supporting claim (i)). NVDA's trailing P/E was below 16.97x on 424 sessions between 2011-08-25 and end-2013, with a minimum of 12.5x on 2011-12-19 (SEC EPS, stockanalysis closes).",
+   "If a true record-low multiple is wanted as an anchor, it is 12.5x x $7.91 = $99 (12.5x x $7.01 = $88), which belongs in Zones 3-4, not Zone 2.",
+   "Reword supporting claim (i): 20.6x is near the 10-year low of 17.0x, but NVDA traded at 12.5-17x in 2011-13. The inference that further downside depends 'mainly' on estimate cuts is weaker than stated.",
+   "Zone 1: change '+/-7% earnings-day move (1-SD down about $148-149)' to '+/-7% expected (mean absolute) earnings-day move; one standard deviation is about 8.7-9.3%, or about $148-149 on the downside'. A 7% fall is $151.5.",
+   "Zone 2: change 'heaviest two-year volume shelf $130-145' to 'heaviest volume shelf below the current price, $130-145 (16% of two-year volume)'. The heaviest shelf overall is $175-190 (25%); only about 8% traded between $145 and $170.",
+   "Zone 2: the largest-direct-customer scenario is $133.5 on the forward multiple ($137.1 trailing). Print '$133' or '$133-137', not '$134'; $134.4 is the separate short-seller-allegation scenario.",
+   "Zone 4: change 'earnings halve as in fiscal 2019-20 and 2022-23' to 'as trailing-twelve-month EPS did from October 2018 to October 2019 (-47.8%) and fiscal 2022 to 2023 (-54.8%)'. Fiscal-year 2019 to 2020 EPS fell 31.8%, and the analysts' -55.8% uses a rounded restated figure.",
+   "Supporting claim (iii): $574B and 'about 11% of revenue' are the absolute change from the 11-06 close (-12.75%). QQQ rose 3.6%, SPY 2.6% and SMH 4.9% over those sessions, so the market-relative loss is about -15.7% (about $709B, about 14% of revenue). Relabel it as 'the decline since the 11-06 close' or use the relative figures.",
+   "State the analog-mapping assumption behind $149 / $131 / $123 / $98: NVDA's 'day-5 close' (11-13) counts from 2026-11-09, but the CEO resignation only became public on 11-12, so 11-13 is the second close after it.",
+   "Do not attribute 'amid investigations' to the company: the 2026-11-12 8-K and its press release give no reason for the resignation and mention no investigation, inquiry, litigation or guidance.",
+   "Cosmetic: the April 2025 low is $86.62 intraday and $94.31 on a closing basis; $94 lies outside the stated Zone 4 range of $65-90.",
+   "If DGS10 (5.10% on 2026-11-12) is cited anywhere, note that it could not be re-pulled live in this audit (FRED timed out); it agrees with three raw cached FRED responses."
+  ],
+  "overall": "I ran 35 checks against re-pulled raw sources: 29 confirmed, 5 minor differences, 1 wrong. The one substantive error is the 'record low' label on the 17.0x trailing P/E, which the draft uses in Zone 2, Zone 3 and supporting claim (i).\n\n- **Record-low P/E (wrong):** 17.0x on 2018-12-24 is only the low of the 10-year price file. On the same method, NVDA traded below it on 424 sessions in 2011-13, bottoming at 12.5x on 2011-12-19. A true record-low multiple on today's EPS gives about $99 (GAAP) or $88 (non-GAAP), not $134 or $119.\n- **Options:** every figure reproduces within 2 points from a fresh Nasdaq chain pull. The largest put open interest is at $150 (636,808 contracts).\n- **Filings:** every 10-Q figure matches, as does the 8-K. The 8-K gives no reason for the resignation and mentions no investigation.\n- **Valuation:** the 2018 P/E, free-cash-flow yields, Broadcom and Qualcomm trough multiples, and implied forward EPS all reproduce.\n- **Analogs:** all 32 events and the four NVDA export shocks re-derive to 0.1 point from freshly fetched closes; the medians and quartiles are unchanged. The event dates and descriptions come from the analyst's memory and could not be checked.\n- **Price structure:** the 200-week average ($123.60) and April 2025 low reproduce. The price file is identical to Nasdaq's raw history.\n\nThe five minor differences are wording or definition, not arithmetic:\n- The '+/-7%' earnings move is a mean absolute move, paired in the draft with a one-standard-deviation price.\n- $130-145 is the heaviest volume shelf below the price, not overall; $175-190 is heavier.\n- The largest-customer scenario is $133.5, not $134.\n- Fiscal 2019-20 EPS fell 31.8%, not by half; the near-halving is the trailing-twelve-month series.\n- The $574B 'company-specific' loss is an absolute change while the market rose 2.6-4.9%; relative to QQQ it is about $709B.\n\nFRED could not be re-pulled live (four attempts failed); the 5.10% ten-year yield was confirmed only against raw cached FRED responses on disk.\n\nMy scripts and raw downloads are in /tmp/claude-0/-home-user-Temp/dbacb4e2-62a8-5da8-88f5-6a2f24aae003/scratchpad/audit/ (raw files under dl/)."
+ }
+}

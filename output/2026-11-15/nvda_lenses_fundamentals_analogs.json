@@ -1,0 +1,432 @@
+{
+ "fundamentals": {
+  "method": "Earnings at risk from the company-specific issues, filings first. (1) Read NVDA's 10-K for FY ended 2026-01-25 (acc. 0001045810-26-000021), 10-Q for quarter ended 2026-07-26 (acc. 0001045810-26-000075), the Q1 FY27, Q2/Q3 FY26 10-Qs and FY25 10-K (to trace the geographic-definition change and risk-language changes), the Q2 FY27 CFO commentary, and every 8-K since 2026-10-01. (2) Sorted November 2026 headlines (cached Google News/finviz plus 18 fresh Google News RSS searches; headlines only) by evidentiary status. (3) Converted revenue-loss scenarios to EPS: lost revenue x 75.0% reported gross margin, operating expenses fixed, 16.5% tax, 24,285M diluted shares, on Zacks consensus FY27 (rev $407.63B, EPS $9.28) and FY28 (rev $683.05B, EPS $15.73); priced at today's 20.6x trailing (GAAP TTM EPS $7.91) and 13.5x forward (implied NTM EPS $12.10) held constant. (4) Balance-sheet capacity for one-off fines/settlements/write-offs from the 2026-07-26 balance sheet. Calculation script: /tmp/claude-0/-home-user-Temp/dbacb4e2-62a8-5da8-88f5-6a2f24aae003/scratchpad/nvda/calc.py",
+  "headline": "At today's multiples, filing-based earnings-at-risk scenarios put NVDA at about $148 if all China-headquartered billed revenue is lost, about $134 if the largest direct customer is lost or the short seller's alleged 20% of compute sales disappears, about $129 if data-center revenue falls 20%, and about $103 if it falls 35%. A fine is not the driver: a penalty equal to all $56.6B of cash and debt securities is $2.34/share (1.4% of the price), while the company-specific leg alone erased $574B, equivalent to a permanent loss of about 11% of revenue.",
+  "levels": [
+   {
+    "price": 158.3,
+    "pct_from_162_85": -2.8,
+    "label": "Press-reported diverted volume ($7.5B, The Information) treated as one full year of lost revenue",
+    "basis": "7,500 / 302,970 TTM revenue ($M) = 2.48% of revenue. EPS hit = 2.48% x 1.127 (NTM leverage) = 2.8%. Forward: 162.85 x (1 - 0.028) = 158.3. Trailing: 20.6 x (7.91 - 0.0248 x 7.81) = 158.9. FY27 EPS 9.28 -> 9.02; FY28 15.73 -> 15.29.",
+    "assumes": "The reported $7.5B (described in headlines as accumulated over a multi-year relationship) is all lost in one year and never replaced; multiples unchanged.",
+    "breaks_if": "The diverted volume is larger than reported, or enforcement leads to licence conditions on other Southeast Asian intermediaries (the short seller names six more firms - allegation).",
+    "sources": "The Information 2026-11-10 and Fortune 2026-11-12 headlines via Google News RSS; 10-K FY26 and 10-Q Q2 FY27 income statements for TTM revenue."
+   },
+   {
+    "price": 147.8,
+    "pct_from_162_85": -9.2,
+    "label": "(a) Loss of all revenue from customers headquartered in China incl. Hong Kong",
+    "basis": "Q2 FY27 China (incl. HK) revenue 7,880 / 96,221 = 8.19% of revenue (10-Q Note 13). EPS lost = 8.19% x R x 0.75 x (1-0.165) / 24,285M sh: FY27 9.28 -> 8.42 (-9.3%); FY28 15.73 -> 14.29 (-9.2%). Forward: 162.85 x (1 - 0.0819 x 1.127) = 147.8. Trailing: 20.6 x (7.91 - 0.0819 x 7.81) = 149.7. Using the TTM share instead (18,463 / 302,970 = 6.09%): 151.7 / 153.1.",
+    "assumes": "Every dollar billed to China-HQ direct customers disappears and is not resold elsewhere; gross margin 75%, opex fixed; multiples stay 13.5x/20.6x. Note the definition is customer headquarters, not ship-to; Q3 guidance already assumes no China data-center compute revenue.",
+    "breaks_if": "Curbs extend beyond China-HQ customers (for example to Chinese-owned buyers in third countries or cloud access, as the RASA bill cited in the 10-Q would), or lost China volume forces inventory/purchase-obligation charges like the $4.5B H20 charge.",
+    "sources": "10-Q 0001045810-26-000075 Note 13 (p.23) and MD&A (pp.26-27); 10-K 0001045810-26-000021 Note 16; Q2 FY27 CFO commentary (8-K 0001045810-26-000073 Ex.99.2); Zacks consensus."
+   },
+   {
+    "price": 134.4,
+    "pct_from_162_85": -17.5,
+    "label": "(b) ALLEGATION: loss of the 'over 20%' of compute sales the short seller says reaches China via intermediaries",
+    "basis": "20% x data-center compute share. Compute = 162,361 / 193,737 = 83.8% of FY26 data-center revenue (10-K; FY27 filings no longer split compute/networking); data center = 164,269 / 177,837 = 92.4% of H1 FY27 revenue. 0.20 x 0.838 x 0.924 = 15.5% of total revenue. FY27 EPS 9.28 -> 7.65 (-17.5%); FY28 15.73 -> 13.00 (-17.3%). Forward: 162.85 x (1 - 0.155 x 1.127) = 134.4. Trailing: 138.0. If 20% is applied to all data-center revenue (18.5% of total): 128.9 / 133.1.",
+    "assumes": "The short seller's figure is correct and all of that revenue is lost with no resale. This is an unverified allegation known here only from a headline (TIKR.com 2026-11-11 quoting 'over 20%' of compute sales; Culper Research, short since May 2026). Company filings state the opposite: over 99% of controlled data-center compute billed to Singapore was for US-based customers (Q2 FY26 10-Q) and H200 shipments to China were under 1% of data-center revenue (Q2 FY27 10-Q).",
+    "breaks_if": "Worse if the true share is higher (secondary outlets float 20-40%) or if a finding of diversion also brings penalties and licence denials for legitimate customers; better if investigators find the diverted volume is closer to the press-reported $7.5B (2.5% of TTM revenue).",
+    "sources": "TIKR.com 2026-11-11, MarketWatch 2026-11-10, Business Insider 2026-05-14 headlines (Google News RSS); 10-K FY26 Note 16; 10-Q Q2 FY27 Note 13; 10-Q Q2 FY26 (0001045810-25-000209) geographic footnote."
+   },
+   {
+    "price": 133.5,
+    "pct_from_162_85": -18,
+    "label": "(c) Loss of the largest single direct customer (16% of revenue)",
+    "basis": "One direct customer = 16% of Q2 FY27 and H1 FY27 revenue (10-Q Note 13). FY27 EPS 9.28 - 0.16 x 10.51 = 7.60 (-18.1%); FY28 15.73 - 0.16 x 17.61 = 12.91 (-17.9%). Forward: 162.85 x (1 - 0.16 x 1.127) = 133.5. Trailing: 20.6 x (7.91 - 0.16 x 7.81) = 137.1.",
+    "assumes": "The customer's purchases vanish rather than re-route. Direct customers include ODMs, system integrators and distributors, so this overstates end-demand loss; the company also says it is supply-constrained, so freed supply could be resold.",
+    "breaks_if": "The lost customer is an end buyer whose demand is not replaced, or several top customers cut together (three direct customers were 16%, 15% and 13% of H1 FY27 revenue; five were 70% of receivables).",
+    "sources": "10-Q 0001045810-26-000075 Note 13 (p.23), Note 7 (p.14), MD&A Concentration of Revenue (p.29)."
+   },
+   {
+    "price": 128.9,
+    "pct_from_162_85": -20.9,
+    "label": "(d) Data-center revenue falls 20%",
+    "basis": "Data center = 89,023 / 96,221 = 92.5% of Q2 FY27 revenue; 20% x 92.5% = 18.5% of total revenue. FY27 EPS 9.28 -> 7.33 (-21.0%); FY28 15.73 -> 12.47 (-20.7%). Forward: 162.85 x (1 - 0.185 x 1.127) = 128.9. Trailing: 20.6 x (7.91 - 0.185 x 7.81) = 133.1.",
+    "assumes": "A 20% cut versus the consensus path (FY28 consensus revenue $683B is +68% y/y), gross margin held at 75%, opex fixed, multiples unchanged.",
+    "breaks_if": "Gross margin falls with volume (Q3 guide is already 74.0%), or the $279B of supply and capacity commitments produce excess-inventory charges.",
+    "sources": "10-Q 0001045810-26-000075 Note 13 market-platform table (p.24), Note 10 commitments (p.18); Zacks consensus."
+   },
+   {
+    "price": 122.5,
+    "pct_from_162_85": -24.8,
+    "label": "(c, severe) Loss of a direct customer the size of FY26's largest (22% of revenue)",
+    "basis": "FY26 largest direct customer = 22% of revenue (10-K Note 16). FY27 EPS 9.28 -> 6.97 (-24.9%); FY28 15.73 -> 11.85 (-24.6%). Forward: 162.85 x (1 - 0.22 x 1.127) = 122.5. Trailing: 127.5. For reference, stacking (a) 8.2% + (c) 16% = 24.2% of revenue gives 118.4 forward / 124.0 trailing.",
+    "assumes": "Concentration reverts to the FY26 level and that customer is lost entirely with no re-routing.",
+    "breaks_if": "Same as (c); also worse if receivables from that customer (largest AR balance is 22% of $63.1B) become doubtful.",
+    "sources": "10-K 0001045810-26-000021 Note 16 and MD&A Concentration of Revenue; 10-Q Q2 FY27 Note 7."
+   },
+   {
+    "price": 103.4,
+    "pct_from_162_85": -36.5,
+    "label": "(d, severe) Data-center revenue falls 35% - lowest floor this method produces at constant multiples",
+    "basis": "35% x 92.5% = 32.4% of total revenue. FY27 EPS 9.28 -> 5.88 (-36.7%); FY28 15.73 -> 10.03 (-36.3%). Forward: 162.85 x (1 - 0.324 x 1.127) = 103.4. Trailing: 20.6 x (7.91 - 0.324 x 7.81) = 110.8.",
+    "assumes": "A 35% cut to data-center revenue versus consensus with the cost structure unchanged (opex fixed at about 9.5% of TTM revenue, so operating leverage stays near 1.13x); multiples do not compress further.",
+    "breaks_if": "Multiples compress as well (outside this method), gross margin drops, supply commitments ($279B) and guarantees ($108.5B gross maximum) crystallise, or equity-investment marks ($99B of investments) reverse through GAAP EPS.",
+    "sources": "10-Q 0001045810-26-000075 Notes 6, 10, 13; Zacks consensus; StockAnalysis statistics for multiples."
+   }
+  ],
+  "key_numbers": [
+   {
+    "name": "Q2 FY27 revenue / gross profit / gross margin",
+    "value": "$96,221M / $72,142M / 75.0% (H1 FY27 75.0%; TTM 74.7% computed; FY26 71.1%)",
+    "source": "10-Q acc. 0001045810-26-000075, income statement p.3 and MD&A p.29-30; 10-K acc. 0001045810-26-000021",
+    "retrieved_at": "2026-11-15T02:55:31Z"
+   },
+   {
+    "name": "Q2 FY27 operating expenses / operating income / tax rate / diluted shares",
+    "value": "$8,408M / $63,734M / 16.5% / 24,285M",
+    "source": "10-Q acc. 0001045810-26-000075, income statement p.3, Note 11",
+    "retrieved_at": "2026-11-15T02:55:31Z"
+   },
+   {
+    "name": "Operating leverage with fixed opex (gross profit / operating income)",
+    "value": "1.132x Q2 FY27; 1.145x TTM; 1.130x on Q3 guidance; EPS falls 1.13% (FY27) / 1.12% (FY28) per 1% of revenue lost",
+    "source": "Computed from 10-Q/10-K figures, CFO commentary outlook and Zacks consensus",
+    "retrieved_at": "2026-11-15T02:55:52Z"
+   },
+   {
+    "name": "Revenue by customer-headquarters location, Q2 FY27",
+    "value": "US $60,074M (62.4%); Taiwan $26,985M (28.0%); China incl. HK $7,880M (8.2%); Other $1,282M. No Singapore line since Q3 FY26",
+    "source": "10-Q acc. 0001045810-26-000075 Note 13 p.23",
+    "retrieved_at": "2026-11-15T02:55:31Z"
+   },
+   {
+    "name": "Revenue by customer-headquarters location, FY26",
+    "value": "US $149,617M; Taiwan $42,345M (76% of its data-center revenue attributed to US/Europe end customers); China incl. HK $19,677M (9.1%); Other $4,299M; total $215,938M",
+    "source": "10-K acc. 0001045810-26-000021 Note 16",
+    "retrieved_at": "2026-11-15T02:55:32Z"
+   },
+   {
+    "name": "Old billing-location basis (last reported Q2 FY26)",
+    "value": "Singapore $10,156M (22% of quarter), H1 FY26 $19,173M; China $2,769M; H1 FY26 China recast from $8,291M (billing) to $13,644M (headquarters); FY25 Singapore $23,684M (18%)",
+    "source": "10-Q acc. 0001045810-25-000209; 10-Q acc. 0001045810-25-000230; 10-K acc. 0001045810-25-000023",
+    "retrieved_at": "2026-11-15T02:59:33Z"
+   },
+   {
+    "name": "Data-center share of revenue",
+    "value": "Q2 FY27 $89,023M = 92.5% (Hyperscale $48,710M; AI Clouds/Industrial/Enterprise $40,313M); Edge $7,198M. FY26 data center $193,737M = 89.7% (compute $162,361M, networking $31,376M)",
+    "source": "10-Q acc. 0001045810-26-000075 Note 13 p.24; 10-K acc. 0001045810-26-000021 Note 16",
+    "retrieved_at": "2026-11-15T02:55:32Z"
+   },
+   {
+    "name": "Customer concentration",
+    "value": "Q2 FY27: one direct customer 16%; H1 FY27: three at 16%, 15%, 13%; FY26: 22% and 14%. Indirect: 'some individually representing 10% or more' (unquantified). Five direct customers = 22/14/13/11/10% of receivables",
+    "source": "10-Q acc. 0001045810-26-000075 Note 13 p.23, Note 7 p.14; 10-K Note 16",
+    "retrieved_at": "2026-11-15T02:55:31Z"
+   },
+   {
+    "name": "Q3 FY27 company outlook (issued 2026-08-26)",
+    "value": "Revenue $108.0B +/-2%; gross margin 74.0% +/-50bp; GAAP opex about $9.2B; 'not assuming any Data Center compute revenue from China'",
+    "source": "8-K acc. 0001045810-26-000073 Ex. 99.2 CFO commentary",
+    "retrieved_at": "2026-11-15T02:55:52Z"
+   },
+   {
+    "name": "Consensus",
+    "value": "Zacks: Q3 EPS $2.49 / rev $108.92B; Q4 EPS $2.74 / rev $123.09B; FY27 EPS $9.28 / rev $407.63B; FY28 EPS $15.73 / rev $683.05B. S&P via StockAnalysis: FY27 $9.32 / $411.73B; FY28 $15.83 / $687.90B",
+    "source": "zacks.com detailed-earning-estimates; stockanalysis.com forecast (NVDA.json)",
+    "retrieved_at": "2026-11-14T13:25:09Z"
+   },
+   {
+    "name": "Multiples and implied EPS",
+    "value": "P/E 20.59x trailing on GAAP EPS $7.91; forward 13.46x (implied NTM EPS $12.10). TTM GAAP EPS includes $30.6B pre-tax equity-securities gains (about $1.05/share after tax); ex-gains P/E about 23.7x; Zacks TTM EPS $7.01",
+    "source": "stockanalysis.com statistics; gains from 10-K and 10-Q cash-flow statements; Zacks",
+    "retrieved_at": "2026-11-14T13:22:27Z"
+   },
+   {
+    "name": "Liquidity at 2026-07-26",
+    "value": "Cash $22,443M + marketable debt securities $34,143M = $56,586M ($2.34/share). Marketable equity securities $42,783M, of which $36.9B under short-term lock-ups. Non-marketable securities $51,157M",
+    "source": "10-Q acc. 0001045810-26-000075 balance sheet p.5, Note 5 p.12, MD&A p.31",
+    "retrieved_at": "2026-11-15T02:55:31Z"
+   },
+   {
+    "name": "Debt",
+    "value": "$33,366M notes ($8,468M at 2026-01-25); $25.0B issued June 2026 in seven tranches; $1.0B due 2026; $25B commercial paper programme undrawn",
+    "source": "10-Q acc. 0001045810-26-000075 Note 9 p.17",
+    "retrieved_at": "2026-11-15T02:55:31Z"
+   },
+   {
+    "name": "TTM free cash flow",
+    "value": "$127,006M (OCF $134,360M less capex $7,354M) = $5.26/share; Q2 FY27 FCF $21.3B, Q1 $48.6B",
+    "source": "Computed from 10-K and 10-Q cash-flow statements; matches StockAnalysis; CFO commentary",
+    "retrieved_at": "2026-11-15T02:55:52Z"
+   },
+   {
+    "name": "Commitments and guarantees at 2026-07-26",
+    "value": "Supply and capacity $279B ($95.2B at 2026-01-25, $119B at 2026-04-26); total commitments $366B; additional AI-cloud agreements $36B and third-party leases $20B; guarantees max gross $108.5B (SB Energy $105B, signed Aug 2026)",
+    "source": "10-Q acc. 0001045810-26-000075 Note 10 pp.17-19; 10-K Note 12; 8-K acc. 0001045810-26-000069",
+    "retrieved_at": "2026-11-15T02:55:31Z"
+   },
+   {
+    "name": "Inventory and related charges",
+    "value": "Inventories $31,575M ($21,403M at 2026-01-25); H1 FY27 inventory provisions $1.6B; excess purchase-obligation accrual $2,138M; H20 charge $4.5B (Q1 FY26); H200 charge $0.4B (H1 FY27)",
+    "source": "10-Q acc. 0001045810-26-000075 Note 7 p.14, MD&A p.27",
+    "retrieved_at": "2026-11-15T02:55:31Z"
+   },
+   {
+    "name": "Investments and partner financing",
+    "value": "Equity investments $99B plus $25B committed; non-marketable equity $47.9B (H1 net additions $31.0B); equity-method stakes in infrastructure financiers $3.3B; H1 gains from equity securities $23.7B; payment terms of 90 days to one year for some investment-grade customers; receivables $63,059M",
+    "source": "10-Q acc. 0001045810-26-000075 Note 6 p.13, Note 7 p.14-15, MD&A p.26",
+    "retrieved_at": "2026-11-15T02:55:31Z"
+   },
+   {
+    "name": "Buybacks and dividend",
+    "value": "FY26: 282M shares for $40.4B. H1 FY27: 203M shares for $39.8B (Q2 94M for $19.7B at $202-214). $99.3B authorisation left at 2026-07-26 (2.5% of shares at $162.85). Dividend raised to $0.25/quarter",
+    "source": "10-K Note 14; 10-Q acc. 0001045810-26-000075 Note 12 and Part II Item 2 pp.39-40",
+    "retrieved_at": "2026-11-15T02:55:31Z"
+   },
+   {
+    "name": "Legal-proceedings note (as of 10-Q filed 2026-08-26)",
+    "value": "Only the 2018 crypto-era securities class action (class certified 2026-03-25) and related derivative suits; no accrued contingent liabilities; 'regulatory and government inquiries and investigations' described as not expected to be material",
+    "source": "10-Q acc. 0001045810-26-000075 Note 10 Litigation pp.20-21",
+    "retrieved_at": "2026-11-15T02:55:31Z"
+   },
+   {
+    "name": "8-Ks since 2026-10-01",
+    "value": "One: filed 2026-11-12, Items 5.02 and 9.01. Confirms CEO resignation effective 2026-11-11, CFO as interim CEO (remaining CFO), Harvey Jones as Chair, CEO search, Q3 results on 2026-11-17. No reason given; no mention of an investigation, litigation, subpoenas or guidance",
+    "source": "8-K acc. 0001045810-26-000082 and Ex. 99.1; EDGAR submissions list",
+    "retrieved_at": "2026-11-15T03:03:42Z"
+   },
+   {
+    "name": "Price path used",
+    "value": "Close $213.66 (2026-10-29), $181.60 (11-05), $186.64 (11-06), $162.85 (11-13); intraday low $148.80 (11-12). Company-specific leg -12.7% = $574B of market value",
+    "source": "/home/user/Temp/.cache/nvda_daily10y.pkl; shares 24,147M from StockAnalysis",
+    "retrieved_at": "2026-11-14T13:22:27Z"
+   }
+  ],
+  "tables": "### 1. Scenario grid (gross margin 75.0%, opex fixed, tax 16.5%, 24,285M diluted shares; Zacks consensus base)\nEPS lost per 100% of revenue: FY27 = 407,630 x 0.75 x 0.835 / 24,285 = $10.51 (1.13x EPS 9.28); FY28 = 683,050 x 0.75 x 0.835 / 24,285 = $17.61 (1.12x EPS 15.73); TTM = 302,970 x 0.75 x 0.835 / 24,285 = $7.81 (0.99x GAAP EPS 7.91, which carries about $1.05 of equity gains). Forward price = 162.85 x (1 - share x 1.127).\n\n| Scenario | Revenue lost | FY27 EPS (9.28) | FY28 EPS (15.73) | EPS change | Price @20.6x trailing | Price @13.5x forward | Same hit applied to 186.64 (11-06 close) |\n|---|---|---|---|---|---|---|---|\n| Press-reported $7.5B diverted, as one year | 2.5% | 9.02 | 15.29 | -2.8% | 158.9 | 158.3 | 181.4 |\n| (a) China-HQ revenue, TTM share | 6.1% | 8.64 | 14.66 | -6.9% | 153.1 | 151.7 | 173.8 |\n| (a) China-HQ revenue, Q2 FY27 share | 8.2% | 8.42 | 14.29 | -9.3% | 149.7 | 147.8 | 169.4 |\n| (b) ALLEGATION: 20% of DC compute | 15.5% | 7.65 | 13.00 | -17.5% | 138.0 | 134.4 | 154.1 |\n| (c) Largest direct customer, 16% | 16.0% | 7.60 | 12.91 | -18.1% | 137.1 | 133.5 | 153.0 |\n| (b) ALLEGATION upper: 20% of all DC | 18.5% | 7.33 | 12.47 | -21.0% | 133.1 | 128.9 | 147.7 |\n| (d) Data center -20% | 18.5% | 7.33 | 12.47 | -21.0% | 133.1 | 128.9 | 147.7 |\n| (c) FY26-size largest customer, 22% | 22.0% | 6.97 | 11.85 | -24.9% | 127.5 | 122.5 | 140.4 |\n| (a)+(c) stacked | 24.2% | 6.74 | 11.47 | -27.3% | 124.0 | 118.4 | 135.7 |\n| (d) Data center -35% | 32.4% | 5.88 | 10.03 | -36.7% | 110.8 | 103.4 | 118.5 |\n\nAlready-priced test: the company-specific leg (186.64 -> 162.85, -12.7%) equals a permanent revenue loss of about 11.3% at constant forward multiple. That is more than all China-HQ revenue (8.2%) and about 70% of scenario (b)/(c). The last column shows where each scenario lands if the 11-06 multiple was fair: (a) is already below-market at 169, (b)/(c) sit 5-6% under today's price, DC -35% is 118.\n\n### 2. Geographic revenue ($M)\n| Period (basis) | US | Taiwan | China incl. HK | Singapore | Other | Total | China % |\n|---|---|---|---|---|---|---|---|\n| FY25 (billing location) | 61,257 | 20,573 | 17,108 | 23,684 | 7,875 | 130,497 | 13.1% |\n| Q2 FY26 (billing location) | 23,470 | 8,529 | 2,769 | 10,156 | 1,819 | 46,743 | 5.9% |\n| FY26 (customer HQ) | 149,617 | 42,345 | 19,677 | not reported | 4,299 | 215,938 | 9.1% |\n| Q1 FY27 (customer HQ) | 63,769 | 12,006 | 4,550 | not reported | 1,290 | 81,615 | 5.6% |\n| Q2 FY27 (customer HQ) | 60,074 | 26,985 | 7,880 | not reported | 1,282 | 96,221 | 8.2% |\nDefinition changed in the Q3 FY26 10-Q (filed 2025-11-19) from customer billing location to customer headquarters; Singapore line dropped and prior periods recast (H1 FY26 China 8,291 -> 13,644). Q2 FY27 China-HQ revenue (7,880) exceeds all Edge Computing revenue (7,198), so at least $0.7B of it is data-center platform revenue.\n\n### 3. 8-Ks since 2026-10-01 and what the company itself has confirmed\n| Filed | Items | Content |\n|---|---|---|\n| 2026-11-12 (acc. 0001045810-26-000082) | 5.02, 9.01 | Board accepted CEO's resignation as President, CEO and director on 2026-11-11, effective immediately; CFO Colette Kress interim CEO and remains CFO (she signs as both); Harvey Jones Chair; search for permanent CEO; Q3 results 2026-11-17 as scheduled. No reason stated, no severance terms, no investigation, no litigation, no guidance statement. |\nNo other 8-K since 2026-10-01 (EDGAR list refreshed 2026-11-15T03:03Z): no Item 8.01/7.01 on inquiries, no 4.02, no 2.06. Earlier 8-Ks read: 2026-09-03 (Hugging Face, $11.9B + $1.0B retention, close H1 2027); 2026-08-17 (SB Energy guarantees capped at $105B, $1.5B investment).\nRisk-language timeline in filings: 'regulatory and government inquiries and investigations' first appears in the Q3 FY26 10-Q; 'We have provided and will continue to provide assistance to authorities regarding attempted diversion' and 'any compliance failure at a customer or partner' first appear in the Q1 FY27 10-Q (2026-05-20); 'inquiries and investigations from foreign governments regarding sales of our products' first appears in the Q2 FY27 10-Q (2026-08-26). The 10-Q also states that a violation of export law 'even if the violation occurred without our knowledge' may bring penalties.\n\n### 4. November 2026 headlines by evidentiary status (headlines only)\n| Pile | Item | Date | Publisher |\n|---|---|---|---|\n| Company SEC filing | CEO resignation, interim CEO, Chair, results date | 11-12 | 8-K / Ex. 99.1 |\n| Company statement, not in a filing | Board statement; independent committee formed | 11-08 | NVIDIA Newsroom (text not readable here); Tom's Hardware, StreetInsider |\n| Company statement, not in a filing | Independent directors retain outside counsel (Wachtell Lipton per press) | 11-10 | NVIDIA Newsroom; Quartz; Stock Titan |\n| Major press, sources | DOJ inquiring about Hugging Face purchase | 10-28 | Reuters |\n| Major press, sources | Nvidia intervened in US probe of Megaspeed; Commerce inquiry halted; DOJ took over | 11-09/10 | Bloomberg, NYT, NBC |\n| On-record official | President says FBI 'looking into' the CEO's relationship | 11-09/11 | FT, NBC, AP, Reuters |\n| On-record official | DOJ has not concluded the individual was a spy; DOJ will not say if Nvidia is under investigation | 11-12/13 | Reuters; Finimize |\n| Major press, sources | $7 billion-plus ($7.5B) of Nvidia chips reached Chinese firms via the Megaspeed network | 11-10/12 | The Information; Fortune |\n| Major press, sources | US probing whether Super Micro products were smuggled | 11-12 | Bloomberg |\n| Major press | House Republicans float subpoena; ex-CEO and Commerce Secretary summoned; ex-CEO agrees to testify | 11-11 to 11-13 | Reuters, Bloomberg, NYT, NBC |\n| Major press | China chip curbs gain traction in Congress; 'high probability' of tighter controls | 11-09 to 11-12 | Reuters, Semafor, Politico |\n| Major press / court filings | Securities class actions filed against company and ex-CEO | 11-09/10 | Business Wire (Rosen), Reuters, AP |\n| Foreign official action | Singapore charges individuals/firms in Nvidia-linked server fraud case (not Nvidia) | 11-13 | Straits Times, CNA, Bloomberg |\n| Major press analysis of filings | Singapore revenue line disappeared after reporting change | 11-12/13 | WSJ, Fortune (change verified in filings above) |\n| Allegation / commentary | Short seller Culper: 'significant China problem'; China drove 'over 20%' of compute sales; six more Southeast Asian firms named | 05-14; 11-10/11 | Business Insider; MarketWatch; TIKR.com |\n| Allegation / commentary | '20-40% of sales rerouted to China?' fact-check pieces | 11-14 | SBS, FourWeekMBA |\n| Allegation / commentary | Class-action complaint claims; ex-SEC chair on disclosure; 'Is it securities fraud?' | 11-09/10 | Bloomberg Opinion, CNBC |\nNo headline found reporting an SEC enforcement inquiry.\n\n### 5. Balance-sheet capacity for a one-off fine, settlement or write-off (2026-07-26 balance sheet; 24,147M shares)\n| Size | Per share | % of price / market cap | % of cash + debt securities ($56.6B) | % of TTM FCF ($127.0B) |\n|---|---|---|---|---|\n| $10B cash penalty | $0.41 | 0.25% | 17.7% | 7.9% (29 days) |\n| $25B | $1.04 | 0.64% | 44.2% | 19.7% (72 days) |\n| $56.6B (all cash + debt securities) | $2.34 | 1.44% | 100% | 44.6% (163 days) |\n| $127.0B (one year of FCF) | $5.26 | 3.23% | 224% | 100% |\n| $10B pre-tax write-off (16.5% tax shield) | $0.35 | 0.21% | non-cash | non-cash |\nNet cash (cash + debt securities less $33.4B notes) is $23.2B; marketable equity $42.8B is mostly locked up ($36.9B). Write-off candidates on the books: inventory $31.6B, non-marketable securities $51.2B, total equity investments $99B (full write-off about $3.42/share after tax, 43% of $229.0B equity). The $574B lost in the company-specific leg is 10.2x cash + debt securities and 4.5 years of TTM FCF, so the market is discounting earnings power and governance, not a payable fine.\n\n### 6. What the 2026-11-17 report (and the 10-Q that normally follows the same day) can move\n| Disclosure | Reference point | Effect on the numbers above |\n|---|---|---|\n| Q3 revenue and margin | Guide $108.0B +/-2% ($105.8-110.2B), GM 74.0%; consensus $108.9B, EPS $2.49 | Each 1% of permanent revenue = about 1.13% of EPS = about $1.84/share at today's multiple |\n| Q4 outlook | Consensus $123.1B revenue, EPS $2.74 | A guide 10% below consensus maps to about -11% EPS (about $144) |\n| China wording | 'Not assuming any Data Center compute revenue from China' | If kept, scenario (a) is limited to the non-compute China-HQ revenue; removal or new licence conditions enlarges it |\n| Geographic and concentration tables | China-HQ 8.2%, Taiwan 28.0%, top customer 16% | Resets the shares used in (a) and (c) |\n| Legal note and risk factors | No accrual; inquiries 'not material'; no mention of the new suits | First company confirmation of subpoenas, DOJ/BIS/SEC inquiries, new class actions, or a loss accrual |\n| Charges | Q2 provisions $985M; H20 precedent $4.5B | Inventory/purchase-obligation charges, investigation costs, equity-investment marks (H1 gains $23.7B can reverse through GAAP EPS) |\n| Capital return | $99.3B authorisation; Q2 buyback $19.7B | A paused buyback removes a bid worth about 2.5% of shares; continuation at these prices adds to EPS |\n| Controls and timing | Interim CEO and CFO are the same person | A late 10-Q, a control deficiency or qualified certifications would be new information |",
+  "caveats": [
+   "Multiples are held at today's 20.6x trailing and 13.5x forward by construction. Consensus EPS has barely moved (Zacks FY28 $15.61 -> $15.73 over 7 days; FY27 $9.62 -> $9.28) while the price fell, so today's multiple already embeds some earnings risk: applying an EPS cut to today's price may double-count, and further multiple compression (another analyst's method) would add to these declines.",
+   "The EPS conversion treats cost of revenue as fully variable and operating expenses as fixed. It ignores charges that a sudden demand loss would trigger (inventory $31.6B, supply commitments $279B; the H20 charge was $4.5B) and ignores mitigation: the 10-Q says the company is supply-constrained, so freed supply could be resold.",
+   "Scenario (b) rests on a short seller's allegation known here only from a secondary headline ('over 20%' of compute sales, TIKR.com 2026-11-11); the base, period and method of that claim could not be read. Company filings contradict it. The FY26 compute/networking mix was used because FY27 filings no longer split it.",
+   "China revenue in filings is defined by the direct customer's headquarters, not where chips are shipped or used. It is neither a measure of exports to China nor of diversion.",
+   "Direct customers include ODMs, system integrators and distributors; losing the 16% direct customer does not mean losing 16% of end demand, so (c) is likely overstated. Indirect customers above 10% exist but are not quantified in the 10-Q.",
+   "The 20.6x trailing multiple is on GAAP EPS of $7.91, which includes about $1.05/share of after-tax gains on equity securities. Excluding them the trailing P/E is about 23.7x, so the 'lowest in five years' reading is flattered, and those gains can reverse.",
+   "FY27 figures are pro forma run-rate sensitivities: three of four FY27 quarters are complete (FY27 ends January 2027). NTM leverage of 1.127x is interpolated between FY27 and FY28.",
+   "Balance-sheet figures are as of 2026-07-26. Since then: $1.5B SB Energy investment, pending $11.9B Hugging Face purchase, continued buybacks and dividends, and Q3 cash flow; none is visible until 2026-11-17. No size of fine or settlement is estimated.",
+   "News items are headlines from Google News RSS and finviz, not article text, and are unverified. Press reports of FBI, DOJ and Commerce activity are not confirmed by any company filing; allegations against individuals are not established (Reuters headline 2026-11-12: DOJ has not concluded the individual was a spy).",
+   "The only company filing on the events is the 2026-11-12 8-K. The board investigation and retention of outside counsel come from company newsroom statements and press coverage, not from an SEC filing, and the 8-K gives no reason for the resignation.",
+   "Page references are read from page footers in the EDGAR HTML text and may be off by one page."
+  ],
+  "unavailable": [
+   "Text of the NVIDIA Newsroom board statements of 2026-11-08 and 2026-11-10 (host not reachable; headlines only)",
+   "The Culper Research report itself and the exact share of sales it alleges reaches China, with its definition and period",
+   "Article bodies for The Information, WSJ, Reuters, Bloomberg and NYT reports (headlines only), including how the $7.5B figure was built and over what period",
+   "Court dockets and complaints for the securities class actions filed from 2026-11-09 (class period, claims, damages sought)",
+   "Any official confirmation from DOJ, FBI, Commerce/BIS or the SEC of an investigation of the company",
+   "Megaspeed's share of NVIDIA revenue and the identity of the 16% direct customer or of the indirect customers above 10%",
+   "FY27 split of data-center revenue between compute and networking (not disclosed after the market-platform recast)",
+   "Q3 FY27 results, the post-July balance sheet, buybacks since 2026-07-26 and any Q4 guidance (due 2026-11-17)",
+   "A published NTM consensus revenue figure (NTM EPS was implied from the 13.46x forward P/E)",
+   "Penalty schedules or precedent settlements for export-control or securities violations (deliberately not estimated or recalled from memory)"
+  ]
+ },
+ "analogs": {
+  "method": "Historical analogs (event studies on real daily closes): NVDA's own 25%+ drawdowns and export-control shocks, plus 32 validated leadership-scandal / regulatory / export-action episodes at other large companies, measured from the pre-event close and from the day-5 close",
+  "headline": "Analogs put the typical next-three-month closing low only about 7-9% below $162.85 (roughly $148-152, a zone the $148.80 intraday low on 11-12 already touched) with a bad-quartile outcome near $131-134; over twelve months the median analog made a lower low 20-25% below its day-5 close ($122-130), with the bad quartile near $98-110. NVDA's own deep drawdowns (2018, 2021-22) map to $105 and $80; the day-5 close held within 5% of the eventual low in 41% of analogs over 60 sessions but only 19% over 250.",
+  "levels": [
+   {
+    "price": 156.34,
+    "pct_from_162_85": -4,
+    "label": "Mild quartile: 60-session closing low if NVDA follows the better 25% of analogs",
+    "basis": "75th percentile of the further fall from day-5 close to the lowest close in sessions 6-60 = -4.0% (all 32 analogs; also -4.0% for the 20 severity-matched ones). 162.85 x (1 - 0.040) = 156.34. Day-5 close was within 5% of the 60-session low in 41% of analogs (45% severity-matched, 44% of the 9 leadership+regulatory cases).",
+    "assumes": "The 2026-11-17 report and guidance hold, and no new enforcement step (charges, subpoena, enacted export law) arrives in the next three months.",
+    "breaks_if": "A close below about $154.7 (5% under the day-5 close): history then shifts to the median or bad-quartile path. Over 250 sessions the day-5 close held within 5% in only 19% of analogs.",
+    "sources": "stockanalysis.com daily close series (32 analog tickers, SPY, QQQ); NVDA pickle"
+   },
+   {
+    "price": 152.83,
+    "pct_from_162_85": -6.2,
+    "label": "NVDA's own export-control template",
+    "basis": "Four validated NVDA export shocks (t0 2022-09-01, 2022-10-07, 2023-10-17, 2025-04-16): further fall from day-5 close to the 60-session low = -19.7%, -6.1%, -6.2%, 0.0%; median -6.15% -> 162.85 x 0.9385 = 152.83. Adding 5 other chip export events (AMAT 2023, LRCX 2022, SNPS 2025, MU 2018, SWKS 2019; n=9): median -6.1% ($152.92), bad quartile -7.5% ($150.64), worst -25.1% ($121.97).",
+    "assumes": "The China/export overhang behaves like the 2022-2025 curbs, where lost China revenue was absorbed and the pre-event close was regained in 12-50 sessions.",
+    "breaks_if": "The diversion probe produces charges or penalties, or legislation reaches a broader product set; none of these nine events included a leadership exit or a criminal inquiry into the company itself except AMAT 2023 (-3.8%).",
+    "sources": "/home/user/Temp/.cache/nvda_daily10y.pkl; stockanalysis.com daily closes"
+   },
+   {
+    "price": 149.17,
+    "pct_from_162_85": -8.4,
+    "label": "Median analog 60-session closing low",
+    "basis": "Median further fall day-5 -> 60-session low = -8.4% (n=32) -> $149.17. Subsets: leadership -9.3% ($147.70), regulatory -7.5% ($150.64), severity-matched (day-5 loss >=10%) -6.8% ($151.78), leadership+regulatory -7.9% ($149.98). Pre-event route: median low within 60 sessions -20.8% x 186.64 = $147.91. NVDA cross-checks: since-2016 median drawdown depth -37.6% x 239.24 = $149.29; 2025 depth -36.9% = $150.96; intraday low 11-12 = $148.80.",
+    "assumes": "This is an ordinary leadership/regulatory shock. Note the same 32 stocks fell a median 7.9% over sessions 6-60 from any random day, so this level is roughly normal volatility, not an event premium.",
+    "breaks_if": "A decisive close below $147-149 (the cluster above plus the 11-12 intraday low): 25% of analogs went on to lose 19% or more.",
+    "sources": "stockanalysis.com daily closes; NVDA pickle"
+   },
+   {
+    "price": 134.21,
+    "pct_from_162_85": -17.6,
+    "label": "Lowest NVDA trough multiple applied to today's earnings",
+    "basis": "Lowest trailing P/E at any NVDA drawdown trough with SEC TTM coverage: 2018-12-24 close 3.177 / TTM diluted EPS 0.18725 (10-Q filed 2018-11-15) = 16.97x. 16.97 x 7.91 (TTM EPS, quarter ended 2026-07-26) = $134.21. Other trough P/Es: 43.5x (2020), 36.8x (2022), 57.8x (2024), 32.0x (2025); today 20.6x.",
+    "assumes": "The market prices NVDA at its most depressed historical trough multiple while TTM earnings stay at $7.91.",
+    "breaks_if": "Earnings fall. The 17.0x trough in 2018 was followed by a 48% drop in TTM EPS (0.18725 -> 0.09775 by the Oct-2019 quarter); a repeat would make this multiple meaningless as a floor.",
+    "sources": "SEC EDGAR companyfacts CIK0001045810 (TTM EPS); NVDA daily closes"
+   },
+   {
+    "price": 131.38,
+    "pct_from_162_85": -19.3,
+    "label": "Bad-quartile analog 60-session closing low",
+    "basis": "25th percentile of further fall day-5 -> 60-session low = -19.3% (n=32) -> $131.38. Subsets: leadership -17.4% ($134.47), regulatory -17.9% ($133.70), severity-matched -17.5% ($134.31). Worst NVDA export-shock path -19.7% = $130.77 (Sept-Oct 2022).",
+    "assumes": "A second leg of bad news inside three months, as in UNH 2025 (-24.7%), JD 2018 (-27.4%), PZZA 2018 (-24.4%), BABA 2020 (-23.6%), BA 2024 (-17.4%).",
+    "breaks_if": "The episode turns into an accounting/auditor problem: SMCI 2024 (-59.2%) and Valeant 2015 (-61.4%) are the two 60-session outcomes beyond this band.",
+    "sources": "stockanalysis.com daily closes"
+   },
+   {
+    "price": 122.63,
+    "pct_from_162_85": -24.7,
+    "label": "Median analog 12-month (250-session) closing low",
+    "basis": "Median further fall day-5 -> 250-session low = -24.7% (n=32) -> $122.63. Subsets: leadership -26.4% ($119.94), regulatory -22.2% ($126.70), severity-matched -20.0% ($130.20), leadership+regulatory -24.7% ($122.63). Market-relative version -26.1%. Pre-event route: median low within 250 sessions -36.3% x 186.64 = $118.89. Baseline for the same stocks from a random day: -16.9%, so about 8 points is event-specific (21 of 32 events were worse than their own stock's median).",
+    "assumes": "The overhang lingers for a year and the stock makes a later, lower low (the 250-session low came at a median of session 108; only 41% were in by session 60).",
+    "breaks_if": "Fast resolution: 14 of 32 analogs regained the pre-event close within 60 sessions and 22 within 250. Conversely, 10 of the 32 lows coincided with market-wide lows (Dec 2018, Mar 2020, Apr 2025, 2000), so a broad bear market pushes below this.",
+    "sources": "stockanalysis.com daily closes (analogs, SPY, QQQ)"
+   },
+   {
+    "price": 105.03,
+    "pct_from_162_85": -35.5,
+    "label": "NVDA 2018 repeat (scandal plus earnings downcycle)",
+    "basis": "2018 closing drawdown -56.1% (7.234 on 2018-10-01 -> 3.177 on 2018-12-24) applied to the 239.24 peak: 239.24 x 0.439 = $105.03. Related: 10 of NVDA's 13 completed 25%+ drawdowns since 1999 went beyond today's -31.9%, and from that level fell a further median 33.9% ($107.64; quartiles -13.7% / -52.2%). Severity-matched analog bad quartile at 250 sessions -32.6% = $109.76; leadership bad quartile -36.8% = $103.00.",
+    "assumes": "A genuine earnings decline arrives on top of the scandal, as in 2018 when TTM EPS fell 48% in the following year.",
+    "breaks_if": "Holds as a floor only if earnings fall no more than roughly a third: at $105 the trailing P/E on $7.91 would be 13.3x, below any NVDA trough multiple in the SEC-covered record.",
+    "sources": "stockanalysis.com NVDA daily closes since 1999; SEC EDGAR companyfacts"
+   },
+   {
+    "price": 98.32,
+    "pct_from_162_85": -39.6,
+    "label": "Bad-quartile analog 12-month closing low",
+    "basis": "25th percentile of further fall day-5 -> 250-session low = -39.6% (n=32) -> $98.32. Regulatory subset -46.0% ($87.94); pre-event route bad quartile -47.9% x 186.64 = $97.29. Cases at or beyond this: WYNN 2018 -46.0%, MU 2018 -47.9%, BBY 2012 -48.3%, BABA 2020 -51.9%, MSFT 2000 -53.4%, UAA 2019 -56.1%, SMCI 2024 -59.2%, Valeant -89.7%.",
+    "assumes": "The scandal coincides with a business or market downturn; most of these cases overlapped one (China crackdown, dot-com bust, Dec 2018, COVID).",
+    "breaks_if": "Fraud, restatement or loss of the franchise; then the tail cases below apply.",
+    "sources": "stockanalysis.com daily closes"
+   },
+   {
+    "price": 80.38,
+    "pct_from_162_85": -50.6,
+    "label": "NVDA 2021-22 repeat (full bear-market drawdown)",
+    "basis": "2021-22 closing drawdown -66.4% (33.376 on 2021-11-29 -> 11.227 on 2022-10-14) applied to 239.24 = $80.38. NVDA's bottom-quartile depth across all 13 completed episodes since 1999 is also -66.4%.",
+    "assumes": "A 2022-style combination of collapsing demand, inventory correction and a market-wide derating (QQQ fell alongside).",
+    "breaks_if": "Only deeper precedents are NVDA 2000 (-67.8%), 2008 (-85.1%) and 2002 (-89.7%), all when it was a small cyclical graphics supplier.",
+    "sources": "stockanalysis.com NVDA daily closes since 1999"
+   },
+   {
+    "price": 66.44,
+    "pct_from_162_85": -59.2,
+    "label": "Worst analog excluding the levered case (accounting scandal path)",
+    "basis": "SMCI 2024: day-5 close to lowest close within 60 and 250 sessions = -59.2% (short report, 10-K delay, auditor resignation). 162.85 x 0.408 = $66.44. Worst leadership-subset outcome: UAA 2019 -56.1% ($71.49), which overlapped COVID.",
+    "assumes": "The board investigation finds the financial statements cannot be relied on.",
+    "breaks_if": "Nothing in the facts supplied indicates an accounting issue; this is a tail marker, not a forecast.",
+    "sources": "stockanalysis.com daily closes (SMCI, UAA)"
+   },
+   {
+    "price": 16.77,
+    "pct_from_162_85": -89.7,
+    "label": "Worst analog in the set (Valeant) - not a credible floor for NVDA",
+    "basis": "BHC (Valeant) t0 2015-09-28: day-5 close to lowest close within 250 sessions = -89.7% -> $16.77. NVDA's own worst drawdown (-89.7%, 2002) applied to 239.24 = $24.64.",
+    "assumes": "Fraud allegations plus a debt-funded business model that stops working; Valeant carried heavy debt, NVDA holds more cash than debt and $127.0B of trailing free cash flow.",
+    "breaks_if": "Reported for completeness because the worst case was requested; it requires both fraud and balance-sheet stress.",
+    "sources": "stockanalysis.com daily closes (BHC, NVDA)"
+   }
+  ],
+  "key_numbers": [
+   {
+    "name": "NVDA last close / day-5 close of the company-specific leg (2026-11-13)",
+    "value": "$162.85 (-12.7% vs pre-event close $186.64 on 2026-11-06; -31.9% vs peak close $239.24 on 2026-10-06)",
+    "source": "/home/user/Temp/.cache/nvda_daily10y.pkl; stockanalysis.com NVDA chart series",
+    "retrieved_at": "2026-11-14T13:24:02Z (pickle file dated 2026-11-15T02:52Z)"
+   },
+   {
+    "name": "NVDA intraday low of this decline",
+    "value": "$148.80 on 2026-11-12 (8.6% below the lowest close; at past troughs intraday lows undercut the trough close by 2.1-8.3%)",
+    "source": "/home/user/Temp/.cache/nvda_daily10y.pkl",
+    "retrieved_at": "2026-11-15T02:52Z (file timestamp)"
+   },
+   {
+    "name": "NVDA completed closing drawdowns of 25%+ since 1999",
+    "value": "13 episodes; depth median -51.9%, quartiles -35.5% / -66.4%, worst -89.7% (2002). Since 2016: -27.0%, -36.9%, -37.6%, -56.1%, -66.4% (median -37.6%)",
+    "source": "stockanalysis.com https://stockanalysis.com/api/symbol/s/NVDA/history?type=chart (daily closes from 1999-01-22)",
+    "retrieved_at": "2026-11-14T13:24:02Z"
+   },
+   {
+    "name": "NVDA episodes that went beyond today's -31.9%",
+    "value": "10 of 13; further fall from the -31.9% level: median -33.9%, quartiles -13.7% / -52.2%; since 2016: -7.3% (2025), -8.4% (2020), -35.5% (2018), -50.6% (2021-22)",
+    "source": "computed from stockanalysis.com NVDA daily closes",
+    "retrieved_at": "2026-11-14T13:24:02Z"
+   },
+   {
+    "name": "NVDA trailing P/E at drawdown troughs",
+    "value": "17.0x (2018-12-24), 43.5x (2020-03-16), 36.8x (2022-10-14), 57.8x (2024-08-07), 32.0x (2025-04-04); now 20.6x",
+    "source": "trough close / latest filed TTM diluted EPS, SEC EDGAR https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+    "retrieved_at": "2026-11-14T13:26:07Z"
+   },
+   {
+    "name": "NVDA export-control shocks (4 validated)",
+    "value": "Day move -4.7% to -8.0%; lowest close within 60 sessions -12.5% to -25.6% vs pre-event (median -14.1%); pre-event close regained in 12, 13, 17 and 50 sessions",
+    "source": "/home/user/Temp/.cache/nvda_daily10y.pkl; QQQ from stockanalysis.com",
+    "retrieved_at": "2026-11-15T02:55:25Z"
+   },
+   {
+    "name": "Analog set size",
+    "value": "32 company-episodes used (16 leadership, 25 regulatory/legal, 5 chip export actions, 9 leadership+regulatory, 20 with a day-5 loss of 10% or more); 13 candidate dates dropped for no visible reaction",
+    "source": "stockanalysis.com daily close series for 32 tickers, SPY, QQQ",
+    "retrieved_at": "2026-11-15T02:55:23Z to 03:02:28Z"
+   },
+   {
+    "name": "Further fall from day-5 close to 60-session low (all analogs)",
+    "value": "mild quartile -4.0%, median -8.4%, bad quartile -19.3%, worst -61.4% -> $156.34 / $149.17 / $131.38 / $62.86",
+    "source": "computed from stockanalysis.com daily closes",
+    "retrieved_at": "2026-11-15T03:02:28Z"
+   },
+   {
+    "name": "Further fall from day-5 close to 250-session low (all analogs)",
+    "value": "mild quartile -9.1%, median -24.7%, bad quartile -39.6%, worst -89.7% -> $148.03 / $122.63 / $98.32 / $16.77",
+    "source": "computed from stockanalysis.com daily closes",
+    "retrieved_at": "2026-11-15T03:02:28Z"
+   },
+   {
+    "name": "How often the day-5 close was within 5% of the eventual low",
+    "value": "60 sessions: 41% all, 31% leadership, 48% regulatory, 45% severity-matched. 250 sessions: 19% all, 12% leadership, 24% regulatory, 20% severity-matched",
+    "source": "computed from stockanalysis.com daily closes",
+    "retrieved_at": "2026-11-15T03:02:28Z"
+   },
+   {
+    "name": "Baseline: same stocks from a random day",
+    "value": "Median further fall over sessions 6-60 is -7.9% (events -8.4%; 15 of 32 worse than own baseline); over sessions 6-250 it is -16.9% (events -24.7%; 21 of 32 worse). NVDA itself, last 10 years: -7.1% (60) and -12.3% (250)",
+    "source": "computed from stockanalysis.com daily closes",
+    "retrieved_at": "2026-11-15T03:02:28Z"
+   },
+   {
+    "name": "Analog recovery of the pre-event close",
+    "value": "14 of 32 within 60 sessions, 22 within 250, 6 later, 4 never as of 2026-11-13 (BA 2019, BABA, KHC, Valeant)",
+    "source": "computed from stockanalysis.com daily closes",
+    "retrieved_at": "2026-11-15T03:02:28Z"
+   },
+   {
+    "name": "Timing of analog lows",
+    "value": "60-session low at median session 15 (interquartile 10-37); 250-session low at median session 108 (26-185); 22% of 250-session lows were in by session 20, 41% by session 60",
+    "source": "computed from stockanalysis.com daily closes",
+    "retrieved_at": "2026-11-15T03:02:28Z"
+   }
+  ],
+  "tables": "All percentages are price returns on split-adjusted closes. t0 = first session that reacted; pre-close = close of the session before t0; \"day 5\" = close of t0+4 (NVDA: 2026-11-13). Validation rule: close-to-close move <= -3% or excess return <= -2 standard deviations (60-session trailing, vs benchmark) on t0 or the next session. Full per-event file: /tmp/claude-0/-home-user-Temp/dbacb4e2-62a8-5da8-88f5-6a2f24aae003/scratchpad/nvda/events.csv\n\n**A. NVDA closing drawdowns of 25%+ from an all-time-high close (daily closes since 1999)**\n\n| Peak close (date) | Trough close (date) | Depth | Sessions down | Sessions trough to new high | Intraday low (date, vs peak close) | TTM EPS / P/E at trough |\n|---|---|---|---|---|---|---|\n| 0.0495 (1999-02-24) | 0.0341 (1999-04-26) | -31.1% | 42 | 81 | n/a | n/a |\n| 0.0586 (1999-08-31) | 0.0378 (1999-09-24) | -35.5% | 17 | 29 | n/a | n/a |\n| 0.3109 (2000-03-13) | 0.1433 (2000-04-14) | -53.9% | 24 | 43 | n/a | n/a |\n| 0.3603 (2000-06-21) | 0.1161 (2000-12-21) | -67.8% | 128 | 81 | n/a | n/a |\n| 0.4139 (2001-06-07) | 0.1990 (2001-10-02) | -51.9% | 77 | 25 | n/a | n/a |\n| 0.5976 (2002-01-03) | 0.0614 (2002-10-09) | -89.7% | 193 | 1032 | n/a | n/a |\n| 0.6450 (2006-12-19) | 0.4725 (2007-03-16) | -26.7% | 58 | 63 | n/a | n/a |\n| 0.9885 (2007-10-17) | 0.1475 (2008-11-20) | -85.1% | 277 | 1881 | n/a | n/a |\n| 7.234 (2018-10-01) | 3.177 (2018-12-24) | -56.1% | 58 | 287 | 3.11 (2018-12-26, -57.0%) | 0.18725 / 17.0x |\n| 7.868 (2020-02-19) | 4.910 (2020-03-16) | -37.6% | 18 | 39 | 4.52 (2020-03-18, -42.6%) | 0.113 / 43.5x |\n| 33.376 (2021-11-29) | 11.227 (2022-10-14) | -66.4% | 221 | 153 | 10.81 (2022-10-13, -67.6%) | 0.305 / 36.8x |\n| 135.58 (2024-06-18) | 98.91 (2024-08-07) | -27.0% | 34 | 47 | 90.69 (2024-08-05, -33.1%) | 1.71 / 57.8x |\n| 149.43 (2025-01-06) | 94.31 (2025-04-04) | -36.9% | 61 | 55 | 86.62 (2025-04-07, -42.0%) | 2.95 / 32.0x |\n| 239.24 (2026-10-06) | 162.85 (2026-11-13, open) | -31.9% | 28 | open | 148.80 (2026-11-12, -37.8%) | 7.91 / 20.6x |\n\nDepths applied to the $239.24 peak (since 2016): -27.0% = $174.65 (already broken), -36.9% = $150.96, -37.6% = $149.29, -56.1% = $105.03, -66.4% = $80.38. All-history median -51.9% = $115.07; worst -89.7% = $24.64.\n\n**B. NVDA export-control shocks (validated)**\n\n| t0 | Pre-close | Day move (excess vs QQQ) | Low close within 20 sess (date) | Low close within 60 sess (date) | Intraday low within 60 (date) | Sessions to regain pre-close | Day-5 close vs pre | Further fall day-5 to 60-sess low |\n|---|---|---|---|---|---|---|---|---|\n| 2022-09-01 | 15.09 | -7.7% (-7.7%) | -19.0% (2022-09-29) | -25.6% (2022-10-14) | 10.81 = -28.4% (2022-10-13) | 50 | -7.3% | -19.7% |\n| 2022-10-07 | 13.13 | -8.0% (-4.4%) | -14.5% (2022-10-14) | -14.5% (2022-10-14) | 10.81 = -17.6% (2022-10-13) | 13 | -8.9% | -6.1% |\n| 2023-10-17 | 46.09 | -4.7% (-4.4%) | -12.5% (2023-10-26) | -12.5% (2023-10-26) | 39.23 = -14.9% (2023-10-31) | 17 | -6.8% | -6.2% |\n| 2025-04-16 | 112.20 | -6.9% (-4.0%) | -13.6% (2025-04-21) | -13.6% (2025-04-21) | 95.04 = -15.3% (2025-04-21) | 12 | -8.5% | 0.0% |\n\nDropped: 2025-01-13 (-2.0%, z -0.8) and 2023-06-28 (-1.8%, z -0.6). The first two rows share one trough.\n\n**C. Analog events used (one per company-episode). Tags: L = founder/CEO exit or personal scandal, R = regulatory/legal, E = export/China action, F = fraud/accounting, P = product safety. Low = lowest close within N sessions vs pre-close; Rel = lowest stock/benchmark ratio vs pre-event (QQQ for tech, SPY otherwise)**\n\n| Ticker | t0 | Tags | Pre-close | Day0 % (z) | Low5 | Low20 | Low60 | Low120 | Low250 (date) | Rel60 | Rel250 | Sessions to regain pre-close | Day5 vs pre | Further d5 to 60 | Further d5 to 250 |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n| WYNN | 2018-01-26 | L,R | 200.60 | -10.1 (-6.7) | -18.5 | -18.8 | -18.8 | -24.1 | -54.1 (2018-12-24) | -18.9 | -50.1 | 73 | -15.0 | -4.4 | -46.0 |\n| TSLA | 2018-09-28 | L,R,F | 20.50 | -13.9 (-3.7) | -13.9 | -18.5 | -18.5 | -18.5 | -41.8 (2019-06-03) | -15.4 | -36.4 | 2 | -8.4 | -11.1 | -36.5 |\n| META | 2018-03-19 | R | 185.09 | -6.8 (-3.6) | -13.9 | -17.8 | -17.8 | -17.8 | -33.0 (2018-12-24) | -11.6 | -25.1 | 38 | -13.9 | -4.5 | -22.2 |\n| INTC | 2024-12-02 | L | 24.05 | -0.5 (-0.7); next day -6.1 (-2.8) | -13.5 | -20.7 | -20.7 | -24.6 | -24.6 (2025-04-08) | -22.6 | -26.7 | 50 | -13.0 | -8.9 | -13.3 |\n| BA | 2019-03-11 | P,R | 422.54 | -5.3 (-5.5) | -11.7 | -14.3 | -20.2 | -24.2 | -38.4 (2020-03-05) | -22.0 | -44.1 | never | -10.3 | -11.0 | -31.3 |\n| MCD | 2019-11-04 | L | 193.94 | -2.7 (-2.6) | -2.7 | -2.7 | -2.7 | -29.3 | -29.3 (2020-03-23) | -3.7 | -9.7 | 3 | -0.2 | -0.9 | -29.2 |\n| SMCI | 2024-08-27 | F,R | 56.25 | -2.6 (-0.7); next day -19.0 (-4.4) | -22.2 | -31.3 | -68.0 | -68.0 | -68.0 (2024-11-14) | -70.1 | -70.1 | 120 | -21.5 | -59.2 | -59.2 |\n| HPQ | 2010-08-09 | L | 46.30 | -8.0 (-10.6) | -13.3 | -17.9 | -17.9 | -17.9 | -26.0 (2011-06-15) | -17.6 | -35.4 | 113 | -12.6 | -6.1 | -15.3 |\n| BABA | 2020-11-03 | R | 310.84 | -8.1 (-5.6) | -8.1 | -17.7 | -28.6 | -28.6 | -55.1 (2021-10-04) | -38.2 | -66.2 | never | -6.5 | -23.6 | -51.9 |\n| PZZA | 2018-07-11 | L | 50.79 | -4.8 (-2.1) | -4.8 | -19.1 | -23.3 | -23.3 | -24.2 (2019-02-01) | -25.1 | -25.1 | 2 | +1.5 | -24.4 | -25.3 |\n| MSFT | 2000-04-03 | R | 53.12 | -14.5 (-2.9) | -19.1 | -37.3 | -42.2 | -42.2 | -60.9 (2000-12-20) | -26.7 | -36.4 | not within 250 (3916) | -16.2 | -31.0 | -53.4 |\n| UNH | 2025-05-13 | L,R,F | 378.75 | -17.8 (-4.6) | -27.6 | -27.6 | -37.2 | -37.2 | -37.2 (2025-08-01) | -41.2 | -41.2 | 249 | -16.6 | -24.7 | -24.7 |\n| AIG | 2005-03-15 | L,R,F | 1277.00 | -3.0 (-1.9) | -9.3 | -20.2 | -21.1 | -21.1 | -21.1 (2005-04-22) | -17.7 | -17.7 | 160 | -9.3 | -13.0 | -13.0 |\n| UAA | 2019-11-04 | L,F,R | 21.14 | -18.9 (-11.0) | -18.9 | -19.6 | -19.6 | -63.2 | -63.5 (2020-05-14) | -20.8 | -61.3 | 33 | -16.9 | -3.2 | -56.1 |\n| JD | 2018-09-04 | L | 31.30 | -6.0 (-3.2) | -16.0 | -21.7 | -38.4 | -38.4 | -38.4 (2018-11-23) | -27.8 | -27.8 | 208 | -15.2 | -27.4 | -27.4 |\n| BBY | 2012-04-10 | L | 22.65 | -5.9 (-2.1) | -5.9 | -9.0 | -20.4 | -25.3 | -50.2 (2012-12-28) | -16.0 | -51.5 | 237 | -3.5 | -17.5 | -48.3 |\n| AMAT | 2023-11-17 | R,E | 154.81 | -4.0 (-3.3) | -4.0 | -6.5 | -6.5 | -6.5 | -6.5 (2023-12-06) | -8.6 | -11.0 | 16 | -2.9 | -3.8 | -3.8 |\n| LRCX | 2022-10-07 | R,E | 39.76 | -5.7 (-1.2); next day -6.4 (-3.3) | -18.5 | -20.8 | -20.8 | -20.8 | -20.8 (2022-10-14) | -17.6 | -17.6 | 16 | -14.3 | -7.5 | -7.5 |\n| EFX | 2017-09-08 | R,L | 142.72 | -13.7 (-18.9) | -32.3 | -34.9 | -34.9 | -34.9 | -34.9 (2017-09-15) | -35.5 | -35.5 | not within 250 (474) | -32.3 | -3.8 | -3.8 |\n| KHC | 2019-02-22 | F,R | 48.18 | -27.5 (-26.0) | -33.2 | -33.9 | -33.9 | -46.1 | -48.1 (2019-08-27) | -36.4 | -54.2 | never | -31.1 | -4.0 | -24.7 |\n| BA | 2024-01-08 | P,R,L | 249.00 | -8.0 (-6.4) | -12.6 | -19.5 | -27.8 | -34.0 | -44.5 (2024-11-14) | -34.1 | -56.2 | not within 250 (510) | -12.6 | -17.4 | -36.5 |\n| QCOM | 2017-01-17 | R | 66.88 | -4.0 (-3.0) | -17.9 | -21.3 | -21.3 | -21.5 | -25.8 (2017-09-08) | -23.3 | -38.3 | 217 | -17.9 | -4.0 | -9.5 |\n| BHC (Valeant) | 2015-09-28 | R,F | 199.47 | -16.5 (-7.0) | -20.7 | -44.9 | -64.7 | -86.5 | -90.6 (2016-06-27) | -66.9 | -90.9 | never | -8.6 | -61.4 | -89.7 |\n| MRSH (Marsh) | 2004-10-14 | R,F,L | 46.13 | -24.5 (-31.0) | -47.8 | -47.8 | -47.8 | -47.8 | -47.8 (2004-10-19) | -47.4 | -47.4 | not within 250 (2275) | -46.0 | -0.3 | -0.3 |\n| SNPS | 2025-05-28 | R,E | 511.79 | -9.6 (-9.3) | -11.1 | -11.1 | -11.1 | -24.2 | -25.7 (2026-03-27) | -10.9 | -35.2 | 23 | -8.9 | 0.0 | -18.4 |\n| ATVI | 2021-11-16 | L,R | 70.43 | -6.1 (-2.7) | -11.7 | -18.7 | -18.7 | -18.7 | -18.7 (2021-12-01) | -17.7 | -17.7 | 43 | -11.7 | -7.9 | -7.9 |\n| MRK | 2004-09-30 | P,R | 45.07 | -26.8 (-36.0) | -29.7 | -33.3 | -42.3 | -42.3 | -42.3 (2004-11-09) | -44.9 | -44.9 | not within 250 (520) | -29.7 | -17.9 | -17.9 |\n| JNJ | 2018-12-14 | P,R | 147.84 | -10.0 (-7.0) | -13.7 | -16.9 | -16.9 | -16.9 | -16.9 (2018-12-24) | -13.5 | -24.1 | not within 250 (274) | -13.2 | -4.2 | -4.2 |\n| STLA | 2024-12-02 | L | 13.20 | -6.3 (-2.5) | -6.3 | -6.3 | -6.6 | -35.4 | -35.4 (2025-04-08) | -6.5 | -38.8 | 4 | +3.4 | -9.7 | -37.5 |\n| AAPL | 2024-03-21 | R | 178.67 | -4.1 (-4.5) | -5.0 | -6.5 | -7.7 | -7.7 | -7.7 (2024-04-19) | -5.1 | -5.1 | 31 | -3.0 | -4.8 | -4.8 |\n| MU | 2018-07-03 | R,E | 54.48 | -5.5 (-1.7) | -5.5 | -5.5 | -23.4 | -44.3 | -46.7 (2018-12-24) | -27.5 | -44.1 | 5 | +2.3 | -25.1 | -47.9 |\n| SWKS | 2019-05-16 | R,E | 78.75 | -6.0 (-4.5) | -13.6 | -15.4 | -15.4 | -15.4 | -15.4 (2019-05-31) | -12.1 | -12.1 | 32 | -13.0 | -2.8 | -2.8 |\n| NVDA (now) | 2026-11-09 | L,R,E | 186.64 | -4.3 (-4.4) | -12.7 | open | open | open | open | open | open | open | -12.7 | ? | ? |\n\n**D. Secondary legs of the same episodes (not in the distributions)**\n\n| Ticker | t0 | Event | Pre-close | Day0 % (z) | Low60 | Low250 (date) | Further d5 to 60 | Further d5 to 250 |\n|---|---|---|---|---|---|---|---|---|\n| WYNN | 2018-02-07 | founder-CEO resigned | 163.22 | +8.6 (+3.5) | -0.2 | -43.6 (2018-12-24) | -1.0 | -44.1 |\n| SMCI | 2024-10-30 | auditor resigned | 49.12 | -32.7 (-6.1) | -63.3 | -63.3 (2024-11-14) | -35.0 | -35.0 |\n| BABA | 2020-12-24 | antitrust probe | 256.18 | -13.3 (-5.4) | -13.3 | -56.3 (2021-12-03) | -3.1 | -51.9 |\n| UNH | 2025-05-15 | DOJ probe report | 308.01 | -10.9 (-2.4) | -22.8 | -22.8 (2025-08-01) | -21.5 | -21.5 |\n| BHC | 2015-10-21 | fraud allegations | 146.74 | -19.2 (-4.9) | -52.1 | -87.2 (2016-06-27) | -35.8 | -82.9 |\n| BHC | 2016-03-15 | guidance cut, filing delay, CEO exit | 69.04 | -51.5 (-9.8) | -65.4 | -83.2 (2017-03-09) | -17.5 | -60.1 |\n| BA | 2019-12-23 | CEO fired | 328.00 | +2.9 (+1.6) | -70.2 | -71.0 (2020-03-20) | -70.1 | -70.9 |\n| CDNS | 2025-05-28 | same event as SNPS | 323.08 | -10.7 (-8.5) | -11.9 | -17.8 (2026-04-10) | 0.0 | -9.4 |\n\n**E. Candidates dropped for no visible reaction on the date or the next session**\n\n| Ticker | Candidate | Move on date / next session | Note |\n|---|---|---|---|\n| WFC | 2016-09-08 | +0.3% / -2.4% (excess 0.0) | excess decline only began 09-12 and 09-13; low within 250 sessions -12.1% |\n| WFC | 2016-10-12 | -0.3% / -1.3% | CEO retirement |\n| MU | 2023-05-22 | -2.8% (z -1.4) | China ban |\n| QCOM | 2013-11-25 | -0.6% | China probe |\n| AAPL | 2011-08-24 | +0.7% / -0.7% | founder-CEO resignation (health) |\n| LULU | 2013-12-10 | -1.7% / -1.1% | -11.6% came on 12-12 with earnings |\n| TXN | 2018-07-17 | +1.1% / -0.1% | CEO resignation |\n| INTC | 2018-06-21 | -2.4% (z -1.2) | CEO resignation |\n| UNH | 2006-03-20, 2006-10-16 | -0.3% ; -2.5% (z -1.9) | backdating, CEO exit |\n| ATVI | 2021-07-22 | -0.8% / +1.1% | reaction (-6.8%) came three sessions later |\n| WYNN | 2018-02-06 | -1.4% / +8.6% | resignation was met with a rally; kept as secondary leg only |\n| BA | 2019-12-23 | +2.9% | firing was met with a rally; kept as secondary leg only |\n| NVDA | 2025-01-13, 2023-06-28 | -2.0% ; -1.8% | export-rule headlines |\n\n**F. Further decline from the day-5 close to the lowest later close, applied to $162.85. Order: mild quartile / median / bad quartile / worst**\n\n| Subset | n | Day 5 to 60 sessions, % | $ (median / bad quartile / worst) | Day-5 within 5% of 60-session low | Day 5 to 250 sessions, % | $ (median / bad quartile / worst) | Day-5 within 5% of 250-session low |\n|---|---|---|---|---|---|---|---|\n| All analogs | 32 | -4.0 / -8.4 / -19.3 / -61.4 | 149.17 / 131.38 / 62.86 | 41% | -9.1 / -24.7 / -39.6 / -89.7 | 122.63 / 98.32 / 16.77 | 19% |\n| L: founder/CEO exit or personal scandal | 16 | -4.2 / -9.3 / -17.4 / -27.4 | 147.70 / 134.47 / 118.23 | 31% | -13.2 / -26.4 / -36.8 / -56.1 | 119.94 / 103.00 / 71.49 | 12% |\n| R: regulatory/legal incl. export | 25 | -4.0 / -7.5 / -17.9 / -61.4 | 150.64 / 133.70 / 62.86 | 48% | -7.5 / -22.2 / -46.0 / -89.7 | 126.70 / 87.94 / 16.77 | 24% |\n| E: chip export/China actions (peers) | 5 | -2.8 / -3.8 / -7.5 / -25.1 | 156.66 / 150.64 / 121.97 | 60% | -3.8 / -7.5 / -18.4 / -47.9 | 150.64 / 132.89 / 84.84 | 40% |\n| L and R together | 9 | -3.8 / -7.9 / -13.0 / -24.7 | 149.98 / 141.68 / 122.63 | 44% | -7.9 / -24.7 / -36.5 / -56.1 | 122.63 / 103.41 / 71.49 | 22% |\n| Severity-matched (day-5 loss 10%+) | 20 | -4.0 / -6.8 / -17.5 / -59.2 | 151.78 / 134.31 / 66.44 | 45% | -7.8 / -20.0 / -32.6 / -59.2 | 130.20 / 109.76 / 66.44 | 20% |\n| L, severity-matched | 10 | -4.0 / -7.0 / -15.3 / -27.4 | 151.45 / 137.97 / 118.23 | 40% | -9.2 / -20.0 / -34.2 / -56.1 | 130.28 / 107.11 / 71.49 | 20% |\n| R, severity-matched | 17 | -4.0 / -4.5 / -17.4 / -59.2 | 155.52 / 134.51 / 66.44 | 53% | -7.5 / -22.2 / -36.5 / -59.2 | 126.70 / 103.41 / 66.44 | 24% |\n| NVDA own export shocks | 4 | -4.6 / -6.2 / -9.6 / -19.7 | 152.83 / 147.26 / 130.77 | 25% | same as 60 | same | 25% |\n| Export events, peers + NVDA own | 9 | -2.8 / -6.1 / -7.5 / -25.1 | 152.92 / 150.64 / 121.97 | 44% | -3.8 / -6.2 / -18.4 / -47.9 | 152.75 / 132.89 / 84.84 | 33% |\n\nMarket-relative version (all 32): 60 sessions -4.5 / -7.8 / -17.8 / -63.4; 250 sessions -10.8 / -26.1 / -40.6 / -90.0.\n\n**G. Total decline from the pre-event close to the lowest close, applied to $186.64. Order: mild quartile / median / bad quartile / worst**\n\n| Subset | n | Low within 60 sessions, % | $ (median / bad quartile / worst) | Low within 250 sessions, % | $ (median / bad quartile / worst) |\n|---|---|---|---|---|---|\n| All analogs | 32 | -17.9 / -20.8 / -34.1 / -68.0 | 147.91 / 122.90 / 59.72 | -24.5 / -36.3 / -47.9 / -90.6 | 118.89 / 97.29 / 17.54 |\n| L | 16 | -18.6 / -20.5 / -29.6 / -47.8 | 148.29 / 131.44 / 97.43 | -25.6 / -36.3 / -45.3 / -63.5 | 118.89 / 102.05 / 68.12 |\n| R | 25 | -18.5 / -21.1 / -34.9 / -68.0 | 147.26 / 121.50 / 59.72 | -21.1 / -38.4 / -48.1 / -90.6 | 114.97 / 96.87 / 17.54 |\n| E (peers) | 5 | -11.1 / -15.4 / -20.8 / -23.4 | 157.90 / 147.82 / 142.97 | -15.4 / -20.8 / -25.7 / -46.7 | 147.82 / 138.67 / 99.48 |\n| L and R | 9 | -18.8 / -21.1 / -34.9 / -47.8 | 147.26 / 121.50 / 97.43 | -34.9 / -41.8 / -47.8 / -63.5 | 108.62 / 97.43 / 68.12 |\n| Severity-matched | 20 | -18.8 / -21.1 / -37.5 / -68.0 | 147.35 / 116.65 / 59.72 | -25.5 / -37.8 / -47.9 / -68.0 | 116.09 / 97.29 / 59.72 |\n\nTable G's bad quartiles are lower than Table F's because several analogs lost 30-46% in their first five sessions; Table F conditions on NVDA's actual day-5 position and is the better mapping.\n\n**H. Context checks**\n\n| Check | Result |\n|---|---|\n| Same 32 stocks from a random day, further fall over sessions 6-60 | median of medians -7.9% (events -8.4%; 15 of 32 events worse than own-stock median) |\n| Same, sessions 6-250 | -16.9% (events -24.7%; 21 of 32 worse) |\n| NVDA from any day, last 10 years, sessions 6-60 | median -7.1%, bad quartile -14.6%, worst decile -25.9% |\n| NVDA from any day, last 10 years, sessions 6-250 | median -12.3%, bad quartile -28.9%, worst decile -48.3% |\n| Clock started at the sector leg (day-11 close instead of day-5) | 60 sessions: median -5.5% ($153.89), bad quartile -14.2% ($139.77), within 5% in 50%; 250 sessions: median -21.3% ($128.16), bad quartile -37.6% ($101.58), within 5% in 25% |\n| Timing of analog lows | 60-session low at median session 15; 250-session low at median session 108; 41% of 250-session lows in by session 60 |\n| Pre-event close regained | 14 of 32 within 60 sessions; 22 within 250; 6 later; 4 never |\n| 250-session lows that fell on market-wide lows | 10 of 32 (Dec 2018: WYNN, META, MU, JNJ; 2020: BA, MCD, UAA; Apr 2025: INTC, STLA; 2000: MSFT) |",
+  "caveats": [
+   "Event dates, descriptions and tags (who left, what the regulator did) come from memory; only the price reaction on or next to each date was checked against downloaded prices. No news text was read to confirm what caused each move.",
+   "Small sample: 32 episodes, 16 in the leadership subset, 9 with both leadership and regulatory elements, 5 chip export actions. Quartiles on these counts move several points if one or two cases are added or removed.",
+   "No analog combines a founder-CEO exit, a criminal diversion inquiry and export legislation at a $3.9T company. The closest partial matches (UNH 2025, WYNN 2018, AIG 2005, Marsh 2004, UAA 2019) are different businesses with different earnings sensitivity.",
+   "Selection bias runs both ways. Requiring a visible reaction drops muted cases (AAPL 2011, TXN 2018, INTC 2018) and slow-burn ones (WFC 2016, LULU 2013); only tickers the provider still serves were used, so bankrupt or delisted scandal names (for example Enron, WorldCom, Tyco, Nikola) are absent and the tail is understated.",
+   "At 60 sessions the analog median (-8.4%) is almost the same as what those stocks do from a random day (-7.9%), so the $148-152 zone reflects ordinary volatility more than a scandal effect. The event effect shows mainly in the tail and at 250 sessions.",
+   "250-session windows pick up unrelated shocks: 10 of 32 lows fell on market-wide lows, and some cases had later company problems (TSLA 2019 demand, BBY 2012 earnings). Benchmark-relative figures did not soften the medians, but high-beta stocks fall more than the benchmark in crashes.",
+   "Events are not independent: four share the December 2018 low, three share COVID, LRCX 2022 is the same shock as NVDA's own October 2022 event, and the first two NVDA export shocks share one trough.",
+   "Valuation differs from every NVDA precedent: past troughs came at 17-58x trailing earnings, today is 20.6x. Applying past percentage depths may overstate downside if earnings hold, and understate it if the 11-17 report or the investigation changes the earnings base.",
+   "Earnings on 2026-11-17 fall on session 7 of the episode. Few analogs had a scheduled report that early (UAA, KHC and AMAT reported at t0), so the next week is less comparable than the averages suggest.",
+   "Analog data are closes only, so intraday undercuts are not captured; NVDA's own troughs were undercut intraday by 2-8%. Returns exclude dividends. Pre-2009 NVDA closes are small split-adjusted numbers rounded to four decimals, so the 1999 depths carry about half a point of rounding error.",
+   "AIG 2005 (-3.02% on t0, z -1.9) and MU 2018 (-5.5%, z -1.7) pass the validation rule only on the raw-move leg; AMAT 2023, UAA 2019 and KHC 2019 coincided with earnings releases.",
+   "The Valeant and SMCI tails involved accounting or leverage problems that nothing in the supplied facts indicates for NVDA; they are reported because the worst case was requested, not as likely paths."
+  ],
+  "unavailable": [
+   "Intraday highs and lows for the analog tickers and for NVDA before 2016-11-21 (the long series is close-only)",
+   "NVDA TTM EPS before fiscal 2009 (no XBRL facts), so no trough P/E for the 1999-2008 drawdowns",
+   "News text or filings to confirm the cause and exact timing of each analog event (headlines only are reachable; none were used)",
+   "Price histories for delisted or foreign-listed scandal cases (for example Tyco, Enron, WorldCom, Nikola, Luckin, Volkswagen, Nissan), which would have filled out the tail",
+   "Point-in-time valuation and estimate data for the analog companies at their event dates, needed to match cases on starting multiple"
+  ]
+ }
+}

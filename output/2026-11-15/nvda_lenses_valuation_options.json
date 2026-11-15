@@ -1,0 +1,539 @@
+{
+ "valuation": {
+  "method": "Valuation floors (earnings power x multiple): NVDA's own point-in-time multiple history, peer trough multiples, consensus and historical earnings drawdowns, cash-flow and earnings-yield floors",
+  "headline": "Valuation gives three tiers below $162.85: about $131-142 (-13% to -19%) if earnings hold and the multiple falls to NVDA's own record low (17.0x trailing, Dec 2018) or the 2022 peer-trough forward multiple; about $93-119 (-27% to -43%) if trailing earnings are priced like a cyclical semiconductor at its trough (about 12x) or stripped of non-operating gains; and $46-88 only if earnings also fall by the 48-56% seen in NVDA's 2019 and 2023 downturns while the multiple stays at trough, a combination with no NVDA precedent. Today's price already assumes roughly no growth beyond trailing EPS at a market multiple (about half of FY2028 consensus), but it does not price an actual decline in earnings.",
+  "levels": [
+   {
+    "price": 142,
+    "pct_from_162_85": -12.8,
+    "label": "Peer-trough forward multiple on unchanged consensus (AVGO, Oct 2022)",
+    "basis": "AVGO minimum quarter-end forward P/E 11.737x (2022-10-30) x NVDA NTM consensus EPS 12.097 (= 162.85 / stockanalysis forward P/E 13.4619) = 141.98. Same method: AMAT 12.783x -> 154.6; median of six peer minimums 11.16x -> 135.0.",
+    "assumes": "NTM consensus EPS of about 12.1 survives the 11-17 print and the governance/export news; the market pays NVDA what it paid Broadcom at the 2022 semiconductor low.",
+    "breaks_if": "Consensus is cut (Zacks FY2027 has only moved 9.62 -> 9.28 in 7 days, FY2028 rose), or the multiple goes to the lower peer troughs (QCOM 9.5x, INTC 10.6x, MU 6.5x).",
+    "sources": "stockanalysis ratios quarterly (AVGO, NVDA); 20 quarter-end observations per ticker"
+   },
+   {
+    "price": 134.2,
+    "pct_from_162_85": -17.6,
+    "label": "NVDA's own record-low trailing P/E on trailing GAAP EPS",
+    "basis": "Lowest daily point-in-time trailing P/E in the 10-year price file: 16.97x on 2018-12-24 (close 3.177 / TTM diluted EPS 0.18725, quarter ended 2018-10-28, filed 2018-11-15); 17.09x on 2019-01-03 is the minimum of the 2019+ window. 16.97 x TTM GAAP EPS 7.91 = 134.23. AVGO trailing trough 17.07x gives 135.0.",
+    "assumes": "Trailing GAAP EPS of 7.91 is not about to fall; the market repeats the multiple it paid when it believed NVDA earnings had peaked in late 2018.",
+    "breaks_if": "Trailing EPS is restated lower in investors' minds (non-GAAP TTM is 7.01, see $119), or the market treats NVDA like commodity semiconductors (about 12x trailing at troughs). An in-line Q3 moves this floor up: non-GAAP TTM becomes 8.20 and 16.97x gives 139.",
+    "sources": "SEC EDGAR companyfacts TTM EPS by filing date; /home/user/Temp/.cache/nvda_daily10y.pkl"
+   },
+   {
+    "price": 131.5,
+    "pct_from_162_85": -19.3,
+    "label": "4% trailing free-cash-flow yield",
+    "basis": "TTM FCF 127.006B / 24.147B shares = 5.26 per share; 5.26 / 0.04 = 131.49. Current FCF yield 3.23%.",
+    "assumes": "TTM FCF is representative. It is only 66% of TTM net income (127.0B vs 192.9B); latest quarter FCF 21.4B vs net income 59.7B.",
+    "breaks_if": "Cash conversion normalises upward (floor rises) or working capital and supply prepayments keep absorbing cash (floor falls).",
+    "sources": "SEC EDGAR TTM cash flow; stockanalysis statistics (shares, FCF per share 5.26)"
+   },
+   {
+    "price": 125.3,
+    "pct_from_162_85": -23,
+    "label": "NVDA's own record-low EV/EBITDA on trailing EBITDA",
+    "basis": "Lowest daily EV/EBITDA (market cap + debt - cash - short-term investments): 14.92x on 2018-12-24. (14.92 x EBITDA 201.266B + net cash 23.609B) / 24.147B shares = 125.34. On the cash-only EV definition used in NVDA.evseries.json the trough is 16.35x -> 137.3.",
+    "assumes": "TTM EBITDA of 201.3B holds; 2018 trough multiple repeats.",
+    "breaks_if": "EBITDA falls (it fell 48% peak to trough in both 2018-19 and 2022-23), or peer-trough EV/EBITDA applies (AVGO 11.5x -> 96.6; median of eight peers 9.4x -> 79.7).",
+    "sources": "SEC EDGAR TTM series; price file; stockanalysis statistics (net cash, shares)"
+   },
+   {
+    "price": 119,
+    "pct_from_162_85": -27,
+    "label": "Record-low trailing P/E on trailing non-GAAP EPS",
+    "basis": "16.97x x non-GAAP TTM EPS 7.01 (Zacks: 1.30 + 1.62 + 1.87 + 2.22) = 118.96. Equivalent grid cell: 15x x TTM GAAP 7.91 = 118.7.",
+    "assumes": "Investors discard the non-operating gains in GAAP earnings (GAAP net income 58.3B exceeded operating income 53.5B in fiscal Q1) and pay the 2018 trough multiple.",
+    "breaks_if": "Q3 on 11-17 is in line (non-GAAP TTM 8.20 -> 139 at the same multiple) or misses and guides down (floor falls with EPS).",
+    "sources": "Zacks detailed estimates (EPS TTM, surprise history); SEC TTM series; stockanalysis quarterly income figures"
+   },
+   {
+    "price": 115.3,
+    "pct_from_162_85": -29.2,
+    "label": "Low-end peer-trough forward multiple on unchanged consensus (QCOM, Sep 2022)",
+    "basis": "QCOM minimum quarter-end forward P/E 9.53x (2022-09-25) x NTM EPS 12.097 = 115.29. Nearby cells: earnings yield of 10-year + 3 points on FY2027 consensus = 9.28 / 0.081 = 114.6; 15x x (FY2027 consensus -20% = 7.42) = 111.4; INTC 10.58x x NTM = 128.0.",
+    "assumes": "Consensus holds but NVDA is valued as a mature, legally encumbered chip franchise (Qualcomm in 2022).",
+    "breaks_if": "Growth continues near consensus (FY2028 EPS 15.73 puts this price at 7.3x), or estimates are cut so the same multiple gives less.",
+    "sources": "stockanalysis ratios quarterly (QCOM, INTC, NVDA); Zacks; FRED DGS10"
+   },
+   {
+    "price": 105.2,
+    "pct_from_162_85": -35.4,
+    "label": "5% trailing free-cash-flow yield",
+    "basis": "5.26 FCF per share / 0.05 = 105.19.",
+    "assumes": "TTM FCF 127.0B is the right base and the market demands a yield near the 10-year Treasury (5.10%).",
+    "breaks_if": "FCF converges toward net income (consensus FY2027 FCF 189.8B on stockanalysis would give 157 at 5%).",
+    "sources": "SEC EDGAR TTM cash flow; stockanalysis statistics and forecast; FRED DGS10"
+   },
+   {
+    "price": 97.7,
+    "pct_from_162_85": -40,
+    "label": "Trailing earnings yield = 10-year Treasury + 3 points (no growth needed)",
+    "basis": "DGS10 5.10% (2026-11-12) + 3.00 = 8.10% -> P/E 12.35x; 7.91 / 0.081 = 97.65. On non-GAAP TTM 7.01: 86.5. AVGO trough EV/EBITDA 11.47x gives 96.6.",
+    "assumes": "Price at which trailing GAAP earnings alone pay an equity-like premium over Treasuries with zero growth.",
+    "breaks_if": "Trailing earnings fall rather than stay flat; or the 10-year yield moves.",
+    "sources": "FRED DGS10; SEC TTM EPS; stockanalysis ratios (AVGO)"
+   },
+   {
+    "price": 93.1,
+    "pct_from_162_85": -42.8,
+    "label": "Cyclical-semiconductor trough multiple on trailing earnings (median of 8 peer trailing P/E minimums, 11.8x)",
+    "basis": "Peer minimum quarter-end trailing P/E: AMD 45.08, ASML 28.12, AVGO 17.07, AMAT 11.83, TSM 11.71, QCOM 10.96, INTC 7.96, MU 7.28; median 11.77 x 7.91 = 93.11. Identical grid cells: 10x x FY2027 consensus 9.28 = 92.8; 20x x (FY2027 -50% = 4.64) = 92.8.",
+    "assumes": "The market decides current earnings are cycle-peak and pays what it paid TSM, AMAT and QCOM at their 2022 lows.",
+    "breaks_if": "Earnings keep growing (peak-earnings multiples are only applied when a decline is expected); or earnings really do fall, in which case see the tiers below.",
+    "sources": "stockanalysis ratios quarterly for 8 peers, 20 quarters each (late 2021 to Q3 2026); SEC TTM EPS"
+   },
+   {
+    "price": 87.7,
+    "pct_from_162_85": -46.2,
+    "label": "6% trailing free-cash-flow yield",
+    "basis": "5.26 / 0.06 = 87.66.",
+    "assumes": "TTM FCF flat; market demands about 0.9 point over the 10-year yield in cash.",
+    "breaks_if": "Same as other FCF floors: conversion is currently depressed relative to earnings.",
+    "sources": "SEC EDGAR TTM cash flow; stockanalysis statistics"
+   },
+   {
+    "price": 81.2,
+    "pct_from_162_85": -50.1,
+    "label": "Double trough: NVDA-sized earnings drawdown at NVDA's record-low multiple",
+    "basis": "17.5x x (FY2027 consensus 9.28 x 0.5 = 4.64) = 81.2. Exact precedent inputs: 16.97x x 9.28 x (1 - 0.478) = 82.2; 16.97x x TTM 7.91 x (1 - 0.558) = 59.4. Nearby: trailing earnings yield of 10-year + 5 points (10.1%, 9.9x) = 78.3; median peer trough EV/EBITDA 9.44x = 79.7.",
+    "assumes": "Earnings power halves, as TTM EPS did in 2018-19 (-47.8%) and FY2022-23 (-55.8%), taking EPS back to about FY2026's level (4.77 non-GAAP), and the market pays only a trough multiple on those trough earnings.",
+    "breaks_if": "History: at the 2018 and 2022 price lows NVDA traded at 32.5x and 66x the eventual trough EPS, because the market looked through the dip. This cell needs the decline to be seen as structural (export bans, lost share, a collapse in customer spending), not cyclical.",
+    "sources": "SEC EDGAR annual and TTM EPS; Zacks consensus; FRED DGS10; stockanalysis peer ratios"
+   },
+   {
+    "price": 65.7,
+    "pct_from_162_85": -59.6,
+    "label": "8% trailing free-cash-flow yield",
+    "basis": "5.26 / 0.08 = 65.75. Nearby grid cell: 15x x 4.64 = 69.6.",
+    "assumes": "Distressed-style cash yield on today's depressed FCF; effectively also assumes earnings fall toward FCF.",
+    "breaks_if": "Any normalisation of cash conversion; a net-cash company with 127B of FCF buying back stock at this yield.",
+    "sources": "SEC EDGAR TTM cash flow; stockanalysis statistics"
+   },
+   {
+    "price": 46.4,
+    "pct_from_162_85": -71.5,
+    "label": "Arbitrary tail: 10x on halved earnings",
+    "basis": "10x x 4.64 = 46.4. Not tied to any NVDA precedent; resembles INTC and MU trough trailing multiples (7.96x, 7.28x) applied to halved EPS (37 and 34).",
+    "assumes": "Earnings halve and NVDA is valued like the weakest large semiconductor franchises at their lows.",
+    "breaks_if": "Shown only to bound the grid; no documented case of NVDA trading below 17x trailing in the data read.",
+    "sources": "Grid arithmetic; stockanalysis ratios quarterly (INTC, MU)"
+   }
+  ],
+  "key_numbers": [
+   {
+    "name": "Last close (2026-11-13)",
+    "value": "162.85",
+    "source": "stockanalysis quote in /home/user/Temp/.cache/collect/NVDA.json; matches /home/user/Temp/.cache/nvda_daily10y.pkl",
+    "retrieved_at": "2026-11-14T13:25:09Z"
+   },
+   {
+    "name": "TTM GAAP diluted EPS (quarter ended 2026-07-26, 10-Q filed 2026-08-26)",
+    "value": "7.91",
+    "source": "SEC EDGAR companyfacts CIK0001045810 (sec_ttm)",
+    "retrieved_at": "2026-11-14T13:26:07Z"
+   },
+   {
+    "name": "TTM non-GAAP EPS (last four reported quarters 1.30 + 1.62 + 1.87 + 2.22)",
+    "value": "7.01",
+    "source": "Zacks detailed earning estimates",
+    "retrieved_at": "2026-11-15T03:00:53Z"
+   },
+   {
+    "name": "FY2027 (Jan 2027) EPS consensus, Zacks",
+    "value": "9.28 (low 9.01, high 9.71, 19 estimates; 9.62 seven days ago)",
+    "source": "Zacks detailed earning estimates",
+    "retrieved_at": "2026-11-15T03:00:53Z"
+   },
+   {
+    "name": "FY2028 (Jan 2028) EPS consensus, Zacks",
+    "value": "15.73 (low 13.96, high 17.04, 17 estimates; 12.57 ninety days ago)",
+    "source": "Zacks detailed earning estimates",
+    "retrieved_at": "2026-11-15T03:00:53Z"
+   },
+   {
+    "name": "FY2027 / FY2028 EPS consensus, S&P",
+    "value": "9.32 (low 8.78, high 10.10, 50 analysts) / 15.83 (range paywalled)",
+    "source": "stockanalysis forecast",
+    "retrieved_at": "2026-11-14T13:25:09Z"
+   },
+   {
+    "name": "Forward P/E (NTM) and implied NTM EPS",
+    "value": "13.46x -> 12.10",
+    "source": "stockanalysis ratios (Current column); EPS = 162.85 / 13.4619",
+    "retrieved_at": "2026-11-14T13:24:57Z"
+   },
+   {
+    "name": "NVDA daily trailing P/E, 2019-01-02 to 2026-11-13 (1,979 days)",
+    "value": "min 17.09 (2019-01-03), 5th pct 27.29, median 61.72, now 20.59 (1.4th percentile)",
+    "source": "computed: SEC TTM diluted EPS by filing date / daily close",
+    "retrieved_at": "2026-11-14T13:26:07Z"
+   },
+   {
+    "name": "NVDA record-low trailing P/E in the 10-year price file",
+    "value": "16.97 on 2018-12-24 (close 3.177, TTM EPS 0.18725)",
+    "source": "computed: SEC TTM EPS (ttm_series, 47 quarters) / price file",
+    "retrieved_at": "2026-11-14T13:26:07Z"
+   },
+   {
+    "name": "NVDA EV/EBITDA",
+    "value": "daily since 2019: min 15.04 (2019-01-03), 5th pct 25.84, median 51.86; 10-year min 14.92 (2018-12-24); monthly evseries 2021-11 to now: min 19.55 (now), prior min 24.56 (2026-10-31), 5th pct 27.40, median 47.86",
+    "source": "computed from SEC TTM series and price file; /home/user/Temp/.cache/collect/NVDA.evseries.json",
+    "retrieved_at": "2026-11-14T13:52:05Z"
+   },
+   {
+    "name": "NVDA quarter-end forward P/E and P/FCF (20 and 19 quarters, 2021-10 to 2026-07)",
+    "value": "forward P/E min 20.82 (2026-07-26), median 35.25, now 13.46; P/FCF min 37.59 (2025-04-27), median 58.59, now 30.96",
+    "source": "stockanalysis ratios quarterly",
+    "retrieved_at": "2026-11-14T13:24:57Z"
+   },
+   {
+    "name": "Median of peer minimum multiples (quarter-end, 20 quarters each)",
+    "value": "forward P/E 11.16 (6 peers), trailing P/E 11.77 (8 peers), EV/EBITDA 9.44 (8 peers)",
+    "source": "stockanalysis ratios quarterly: AMD, AVGO, TSM, MU, QCOM, INTC, AMAT, ASML",
+    "retrieved_at": "2026-11-15T02:56:10Z"
+   },
+   {
+    "name": "NVDA historical EPS declines",
+    "value": "TTM 0.18725 (Oct 2018) -> 0.09775 (Oct 2019): -47.8%; FY2019 0.16575 -> FY2020 0.113: -31.8%; FY2022 0.385 -> FY2023 0.17: -55.8% (TTM revenue fell 19.4% and 12.4%)",
+    "source": "SEC EDGAR companyfacts (sec_ttm, sec_annual_eps), current split basis",
+    "retrieved_at": "2026-11-14T13:26:07Z"
+   },
+   {
+    "name": "TTM free cash flow, per share, yield",
+    "value": "127.0B; 5.26 per share; 3.23% at 162.85 (66% of TTM net income 192.9B)",
+    "source": "SEC EDGAR TTM series; stockanalysis statistics",
+    "retrieved_at": "2026-11-14T13:26:07Z"
+   },
+   {
+    "name": "TTM EBITDA; shares; net cash",
+    "value": "201.3B; 24.147B; 23.6B (cash and securities 62.47B, debt 38.86B)",
+    "source": "SEC EDGAR TTM series; stockanalysis statistics",
+    "retrieved_at": "2026-11-14T13:22:27Z"
+   },
+   {
+    "name": "10-year Treasury yield (DGS10, 2026-11-12)",
+    "value": "5.10%",
+    "source": "FRED fredgraph.csv?id=DGS10",
+    "retrieved_at": "2026-11-15T02:57:23Z"
+   },
+   {
+    "name": "S&P 500 P/E on current-year estimates",
+    "value": "21.98x",
+    "source": "Zacks detailed earning estimates (growth table)",
+    "retrieved_at": "2026-11-14T13:23:06Z"
+   }
+  ],
+  "tables": "**1. NVDA's own multiple history (point-in-time)**\n\n| Series | Window / n | Minimum (date) | 5th pct | Median | Now |\n|---|---|---|---|---|---|\n| Daily trailing P/E (SEC TTM diluted EPS from filing date) | 2019-01-02 to 2026-11-13, 1,979 days | 17.09 (2019-01-03) | 27.29 | 61.72 | 20.59 (1.4th pct) |\n| Same, whole price file | 2016-11-21 to 2026-11-13, 2,509 days | 16.97 (2018-12-24) | 27.11 | 54.55 | 20.59 (2.0th pct) |\n| Daily EV/EBITDA (cash + ST investments netted) | 2019+ | 15.04 (2019-01-03) | 25.84 | 51.86 | 19.55 |\n| Same, whole price file | 2016-11+ | 14.92 (2018-12-24) | 25.33 | 44.14 | 19.55 |\n| Monthly EV/EBITDA (NVDA.evseries.json, cash-only EV) | 2021-11-30 to 2026-11-13, 61 obs | 19.55 (2026-11-13); before that 24.56 (2026-10-31), 26.49 (2026-08-31) | 27.40 | 47.86 | 19.55 |\n| Quarter-end forward P/E (stockanalysis) | 20 qtrs, 2021-10 to 2026-07 | 20.82 (2026-07-26) | 24.77 | 35.25 | 13.46 |\n| Quarter-end trailing P/E (stockanalysis) | 20 qtrs | 25.97 (2026-07-26) | 31.42 | 51.55 | 20.59 |\n| Quarter-end P/FCF (stockanalysis) | 19 qtrs | 37.59 (2025-04-27) | 39.26 | 58.59 | 30.96 |\n| Quarter-end EV/EBITDA (stockanalysis) | 20 qtrs | 24.69 (2026-07-26) | 29.98 | 43.07 | 19.42 |\n\nDays since 2019 with trailing P/E below 20x: 20, all between 2019-01-02 and 2019-02-11.\n\n**2. Multiples at each closing-price trough**\n\n| Price trough | Drawdown | Trailing P/E | EV/EBITDA | Price / peak TTM EPS | Price / eventual trough TTM EPS |\n|---|---|---|---|---|---|\n| 2018-12-24, 3.18 | -56.1% | 17.0x | 14.9x | 17.0x (0.18725) | 32.5x (0.09775) |\n| 2020-03-16, 4.91 | -37.6% | 43.5x | 34.5x | n/a | n/a |\n| 2022-10-14, 11.23 | -66.4% | 36.8x | 29.3x | 29.2x (0.385) | 66.0x (0.17) |\n| 2024-08-07, 98.91 | -27.0% | 57.8x | 48.9x | n/a | n/a |\n| 2025-04-04, 94.31 | -36.9% | 32.0x | 27.2x | n/a | n/a |\n| 2026-11-13, 162.85 | -31.9% so far | 20.6x | 19.6x | 20.6x (7.91) | unknown |\n\n**3. Peer quarter-end multiples (stockanalysis, 20 quarters each, late 2021 to Q3 2026): minimum (quarter) / median / now**\n\n| Peer | Forward P/E | Trailing P/E (positive obs) | EV/EBITDA |\n|---|---|---|---|\n| AMD | 15.35 (2022-09-24) / 33.70 / 35.48 | 45.08 (2022-06-25) / 81.51 / 115.76 (18) | 18.89 (2022-09-24) / 43.39 / 78.02 |\n| AVGO | 11.74 (2022-10-30) / 25.05 / 19.94 | 17.07 (2022-10-30) / 48.40 / 44.29 (19) | 11.47 (2022-10-30) / 30.26 / 32.38 |\n| TSM | not served | 11.71 (2022-12-31) / 22.37 / 26.91 (20) | 7.10 (2022-12-31) / 12.95 / 15.48 |\n| MU | 6.53 (2022-06-02) / 11.96 / 4.41 | 7.28 (2022-09-01) / 17.38 / 10.47 (13) | 3.52 (2022-09-01) / 9.72 / 7.46 |\n| QCOM | 9.53 (2022-09-25) / 13.88 / 17.98 | 10.96 (2022-06-26) / 17.38 / 13.58 (18) | 9.22 (2022-06-26) / 14.19 / 18.16 |\n| INTC | 10.58 (2022-07-02) / 38.11 / 42.87 | 7.96 (2022-10-01) / 10.50 / loss (5) | 5.41 (2022-10-01) / 14.76 / 16.35 |\n| AMAT | 12.78 (2022-05-01) / 19.98 / 19.31 | 11.83 (2022-10-30) / 20.61 / 29.36 (20) | 9.66 (2022-10-30) / 16.71 / 24.43 |\n| ASML | not served | 28.12 (2025-03-30) / 35.78 / 38.79 (20) | 21.10 (2025-03-30) / 28.78 / 29.99 |\n| Median of minimums | 11.16 (6 peers) | 11.77 (8 peers) | 9.44 (8 peers) |\n\nNVDA price at each peer minimum: forward P/E x NTM EPS 12.10: AMD 185.6, AMAT 154.6, AVGO 142.0, INTC 128.0, QCOM 115.3, MU 79.0. Trailing P/E x 7.91: AVGO 135.0, AMAT 93.6, TSM 92.7, QCOM 86.7, INTC 62.9, MU 57.6. EV/EBITDA x 201.3B + 23.6B net cash, / 24.147B shares: ASML 176.9, AMD 158.5, AVGO 96.6, AMAT 81.5, QCOM 77.9, TSM 60.2, INTC 46.1, MU 30.3.\n\n**4. Earnings anchors and their downside**\n\n| Anchor | EPS | Low end / note |\n|---|---|---|\n| TTM GAAP diluted (SEC) | 7.91 | includes non-operating gains |\n| TTM non-GAAP (Zacks) | 7.01 | 8.20 if Q3 lands on the 2.49 consensus |\n| FY2027 consensus | 9.28 Zacks / 9.32 S&P | low 9.01 (Zacks), 8.78 (S&P); H1 actual 4.09 |\n| NTM consensus (S&P, implied) | 12.10 | n/a |\n| FY2028 consensus | 15.73 Zacks / 15.83 S&P | low 13.96 (Zacks); consensus was 12.57 ninety days ago |\n| NVDA TTM EPS, Oct 2018 to Oct 2019 | 0.18725 -> 0.09775 | -47.8% (TTM revenue -19.4%, EBITDA -48.1%) |\n| NVDA FY2019 to FY2020 | 0.16575 -> 0.113 | -31.8% |\n| NVDA FY2022 to FY2023 | 0.385 -> 0.17 | -55.8% (TTM revenue -12.4% peak to trough, EBITDA -48.6%) |\n\n**5. Price grid: EPS x multiple, price (% from 162.85)**\n\n| EPS scenario | EPS | 25x | 20x | 17.5x | 15x | 12.5x | 10x |\n|---|---|---|---|---|---|---|---|\n| TTM GAAP (SEC) | 7.91 | 198 (+21%) | 158 (-3%) | 138 (-15%) [N] | 119 (-27%) | 99 (-39%) [P] | 79 (-51%) |\n| TTM non-GAAP (Zacks) | 7.01 | 175 (+8%) | 140 (-14%) | 123 (-25%) [N] | 105 (-35%) | 88 (-46%) [P] | 70 (-57%) |\n| FY2027 consensus (Zacks) | 9.28 | 232 (+42%) | 186 (+14%) | 162 (-0%) | 139 (-15%) | 116 (-29%) | 93 (-43%) |\n| FY2027 low est. (Zacks) | 9.01 | 225 (+38%) | 180 (+11%) | 158 (-3%) | 135 (-17%) | 113 (-31%) | 90 (-45%) |\n| FY2027 low est. (S&P) | 8.78 | 220 (+35%) | 176 (+8%) | 154 (-6%) | 132 (-19%) | 110 (-33%) | 88 (-46%) |\n| NTM consensus (S&P, implied) | 12.10 | 302 (+86%) | 242 (+49%) | 212 (+30%) | 181 (+11%) [P] | 151 (-7%) [P] | 121 (-26%) [P] |\n| FY2028 consensus (Zacks) | 15.73 | 393 (+141%) | 315 (+93%) | 275 (+69%) | 236 (+45%) | 197 (+21%) | 157 (-3%) |\n| FY2028 low est. (Zacks) | 13.96 | 349 (+114%) | 279 (+71%) | 244 (+50%) | 209 (+29%) | 174 (+7%) | 140 (-14%) |\n| FY2027 consensus -20% | 7.42 | 186 (+14%) | 148 (-9%) | 130 (-20%) | 111 (-32%) | 93 (-43%) | 74 (-54%) |\n| FY2027 consensus -35% | 6.03 | 151 (-7%) [E] | 121 (-26%) | 106 (-35%) [E+N] | 90 (-44%) | 75 (-54%) [E+P] | 60 (-63%) |\n| FY2027 consensus -50% | 4.64 | 116 (-29%) [E] | 93 (-43%) | 81 (-50%) [E+N] | 70 (-57%) | 58 (-64%) [E+P] | 46 (-72%) |\n\nAnchors: [N] NVDA's own record-low trailing multiple (16.97x; exact prices 134.2 GAAP, 119.0 non-GAAP). [P] peer-trough multiple: forward troughs AMD 15.3x, AMAT 12.8x, AVGO 11.7x, INTC 10.6x, QCOM 9.5x on the NTM row; median peer trailing trough 11.8x on the TTM rows (exact 93.1 / 82.5). [E] NVDA's own earnings drawdown: -35% row is close to FY2019-20 (-31.8%), -50% row sits between 2018-19 TTM (-47.8%) and FY2022-23 (-55.8%); the 25x column is still below the 32.5x and 66x of trough EPS that the market paid at the 2018 and 2022 price lows. [E+N] and [E+P] combine a trough multiple with trough earnings, which has no NVDA precedent. Untagged cells are arbitrary; the -20% row has only one reference point (FY2028 consensus stood 20% lower, at 12.57, ninety days ago).\n\n**6. Cash-flow and yield floors**\n\n| Floor | Price | vs 162.85 |\n|---|---|---|\n| TTM FCF yield 4% | 131.5 | -19.3% |\n| TTM FCF yield 5% | 105.2 | -35.4% |\n| TTM FCF yield 6% | 87.7 | -46.2% |\n| TTM FCF yield 8% | 65.7 | -59.6% |\n| TTM GAAP earnings yield = DGS10 5.10% + 3 = 8.10% (12.35x) | 97.7 | -40.0% |\n| Same on FY2027 consensus 9.28 | 114.6 | -29.6% |\n| TTM GAAP earnings yield = DGS10 + 5 = 10.10% (9.90x) | 78.3 | -51.9% |\n| Same on FY2027 consensus 9.28 | 91.9 | -43.6% |\n\nToday: FCF yield 3.23%; earnings yield 4.86% (TTM GAAP), 5.70% (FY2027), 9.66% (FY2028).\n\n**7. What $162.85 already prices in**\n\n| Lens | Reading |\n|---|---|\n| P/E today | 20.6x TTM GAAP, 23.2x TTM non-GAAP, 17.5x FY2027, 13.5x NTM, 10.4x FY2028 |\n| Consensus right, multiple wrong | forward P/E is 35% below its prior 5-year quarter-end minimum (13.46x vs 20.82x) and 62% below its median (35.25x); already inside the peer-trough range of 9.5x-15.3x (MU 6.5x aside) |\n| Multiple held at NVDA's prior minimum forward P/E 20.8x | implied NTM EPS 7.82: 35% below NTM consensus, about equal to trailing GAAP EPS |\n| Market multiple (S&P 500 21.98x) | implied EPS 7.41: FY2027 consensus -20%, FY2028 consensus -53% |\n| NVDA 5th-percentile trailing P/E since 2019 (27.3x) | implied EPS 5.97: TTM GAAP -25%, FY2027 -36%, FY2028 -62% |\n| NVDA-sized EPS fall from TTM GAAP (-47.8% / -55.8% -> 4.13 / 3.49) | 162.85 would be 39x / 47x trough EPS, versus 32.5x and 66x paid at the 2018 and 2022 price lows |\n| Yield hurdle | trailing earnings yield 4.86% is below the 10-year at 5.10%; to earn 10-year + 3 points at this price EPS must reach 13.19: 67% above TTM GAAP, 16% below FY2028 consensus |",
+  "caveats": [
+   "Consensus is stale relative to the news. Zacks FY2027 was trimmed only from 9.62 to 9.28 in the last 7 days and FY2028 rose to 15.73; earnings on 2026-11-17 (after the close) and the first guidance under the interim CEO will re-base every row. An in-line Q3 lifts non-GAAP TTM EPS from 7.01 to about 8.20 and raises trailing-multiple floors about 17%; a guide-down lowers them.",
+   "GAAP TTM EPS (7.91) is above non-GAAP (7.01) because GAAP includes non-operating gains (fiscal Q1 net income 58.3B vs operating income 53.5B). Floors built on 7.91 are flattered by about 11%.",
+   "TTM free cash flow (127.0B) is 66% of net income (192.9B), and the latest quarter was 21.4B against 59.7B of net income, so FCF-yield floors sit well below earnings-based floors and move a lot if cash conversion changes.",
+   "The 'FY2027 cut by 20/35/50%' rows cannot literally happen to fiscal 2027: the first half (4.09) is reported and Q3 has ended. Read them as haircuts to forward earnings power; -50% is roughly a return to FY2026 EPS (4.77 non-GAAP, 4.90 GAAP).",
+   "NVDA's own precedents cut both ways. In 2018 and 2022 the price bottomed at a low multiple of peak earnings (17.0x and 29.2x), which was 32.5x and 66x the eventual trough EPS, so multiplying a trough multiple by trough earnings double-counts relative to history. But in both cases the growth story and management were intact; a governance, legal or export-control shock that impairs the franchise is outside those precedents.",
+   "Peer evidence is thin: 20 quarter-end snapshots per ticker (late 2021 to Q3 2026), covering one downturn (2022) and missing intra-quarter lows. AMD and INTC trailing P/E are distorted by small or negative GAAP earnings; MU's forward P/E shows a repeated 203.0 placeholder in five loss-making quarters, which inflates its median.",
+   "A valuation floor is not support. Multiples have no hard lower bound (MU forward P/E 4.4x today, INTC 8.0x trailing in 2022), and no EPS scenario here includes legal or regulatory penalties; for scale, each $10B of fines or settlements is about $0.41 per share.",
+   "Point-in-time dating uses 10-Q/10-K filing dates, which trail the earnings release by days to weeks, so trough multiples around report dates are approximate. The evseries EV nets cash only (not short-term investments), overstating EV by about 1%; stockanalysis shows 19.42x against 19.55x.",
+   "This is analysis of what stated assumptions imply, not a forecast or advice."
+  ],
+  "unavailable": [
+   "NVDA forward P/E history before October 2021 and any daily point-in-time forward P/E (stockanalysis serves 20 of 40 quarters free); the forward multiple at the December 2018 trough could not be sourced.",
+   "Low and high FY2028 EPS estimates from S&P (paywalled on stockanalysis); the Zacks range was used instead.",
+   "Forward P/E for TSM and ASML (row not served for these tickers on stockanalysis).",
+   "Peer multiples before late 2021, so no 2008 or 2018-19 peer troughs; intra-quarter peer troughs would need point-in-time EPS for each peer.",
+   "NVDA quarterly FCF history before late 2023 in the SEC TTM series (fcf_ttm is empty for most earlier quarters), so no long daily P/FCF series.",
+   "GAAP consensus EPS by quarter and any consensus for FY2028 free cash flow.",
+   "Size of potential legal or regulatory penalties and NVDA's China revenue exposure: not in any dataset read this session, so not modelled."
+  ]
+ },
+ "options": {
+  "method": "Options-implied (risk-neutral) distribution from the full NVDA option chain on Nasdaq's public option-chain endpoint: 24 expiries (2026-11-16 to 2029-01-19), 2,232 strike rows, closing quotes of Friday 2026-11-13 with spot $162.85. Prices are bid/ask mids (ask-only -> half the ask; last as final fallback); 155 Dec-2026 rows with strikes above $480 and no bid/ask were dropped. For each expiry: (1) ATM straddle interpolated at spot (linear in strike, and re-priced at K=spot from the interpolated ATM IV) -> implied move in $ and %, and a 1-SD range S*exp(+/-IV*sqrt(T)); (2) implied vols: puts inverted with a 200-step American binomial tree, calls with Black-Scholes, T = calendar days/365, r from FRED DTB3 (4.14% discount = 4.22% continuous) for expiries up to 3 months and interpolated to DGS1/DGS2 beyond, q = 0.614% from the collected stockanalysis statistics; skew read at strikes 10/20/30% below spot; (3) risk-neutral probability of finishing below each level = e^(rT) x slope of put price in strike, computed two ways: raw finite differences of quoted put mids across neighbouring strikes, and (primary) the derivative of European put prices re-generated from a spread-weighted smoothing spline through the de-Americanised put IVs; quantiles are read off the same curve; (4) earnings-day move isolated by subtracting the pre-earnings (Nov-16) variance and an assumed ordinary Tuesday from the first post-earnings (Nov-18) variance; (5) put open interest and Friday volume by strike. Scripts and intermediate files: /tmp/claude-0/-home-user-Temp/dbacb4e2-62a8-5da8-88f5-6a2f24aae003/scratchpad/nvda/ (fetch_chain.py, analyze2.py, metrics.py, metrics_term.json).",
+  "headline": "As of Friday's close (before the 2026-11-17 report) options price a +/-8.6% ($14) move through Wednesday's first post-earnings expiry, about +/-7% of it from the earnings reaction itself; the one-standard-deviation downside is about $146 this week, $136 by Dec 18, $131 by mid-January and $113 by June 2027, with the risk-neutral 5% tail at about $135 this week, $117 by Dec 18, $108 by January and $78 by June 2027. A close below the $148.80 low is priced at about 20% by Wednesday and 31% by Dec 18; a close below $100 at about 1.6% by Dec 18, 3% by January, 11% by June 2027 and 27% by January 2029 -- risk-neutral odds, which overstate real-world odds when protection is bid.",
+  "levels": [
+   {
+    "price": 155.72,
+    "pct_from_162_85": -4.38,
+    "label": "1-SD downside by Mon 2026-11-16 close (last expiry before earnings)",
+    "basis": "Nov-16 ATM IV 49.4% (average of call and put IV at the $162.5/$165 strikes, interpolated to spot), T=3/365 -> IV*sqrt(T)=4.48%; 162.85*exp(-0.0448)=155.72. ATM straddle $5.82 = 3.6%. Risk-neutral 16% quantile $155.8; P(close<$150)=4.3%, P(<$148.80)=3.2%, P(<$140) about 0.4%.",
+    "assumes": "No new shock before Monday's close larger than Friday's option prices allow for; lognormal 1-SD from ATM IV.",
+    "breaks_if": "A fresh headline (charges, subpoena, pre-announcement) lands before the report; the market still puts about 1-in-25 odds on a Monday close below $150.",
+    "sources": "Nasdaq option-chain API, expiry 2026-11-16 (retrieved 2026-11-15T02:55Z); FRED DTB3; stockanalysis dividend yield"
+   },
+   {
+    "price": 150,
+    "pct_from_162_85": -7.89,
+    "label": "Heaviest put strike (positioning concentration, not a floor)",
+    "basis": "$150 puts carry the largest put open interest summed over all expiries: 636,808 contracts (183,265 in Jan-2027, 42,115 in Nov-20, 38,603 in Dec-18, 13,924 in Nov-16). On Friday $160 puts had the largest volume (223,333 across expiries) and $150 the second (168,652); 49.3% of Friday's put volume in expiries through Jan-2027 was in strikes $150-$162.85 and 15.7% in $140-$150.",
+    "assumes": "Open-interest concentration marks where hedges and dealer gamma sit, so price action tends to be busiest around it.",
+    "breaks_if": "OI does not show who is long or short; if dealers are short these puts, hedging adds to selling through $150 rather than supporting it. OI shown may predate Friday's trades.",
+    "sources": "Nasdaq option-chain API, all 24 expiries (retrieved 2026-11-15T02:55-02:56Z)"
+   },
+   {
+    "price": 148.73,
+    "pct_from_162_85": -8.67,
+    "label": "1-SD downside from the earnings reaction alone (range $148.4-$149.2; coincides with the $148.80 52-week low)",
+    "basis": "Total ATM variance Nov-18 0.011694 minus Nov-16 0.002005 minus an assumed ordinary Tuesday (0.002005 if Tue=Mon; 0.00146 if Tue=average of Thu/Fri after earnings; 0.00108 if Tue=average session of Nov 23-27) = 0.00768-0.00861 -> 1-SD 8.8-9.3% ($14.3-$15.1), expected absolute move 7.0-7.4% ($11.4-$12.1). 162.85*exp(-0.0907)=148.73 (middle case).",
+    "assumes": "ATM variance adds across days; Tuesday is an ordinary pre-earnings day (no Tuesday expiry exists to measure it); spot still near $162.85 going into the print.",
+    "breaks_if": "Spot moves on Monday/Tuesday headlines before the report; the report or the CEO/investigation commentary produces a move beyond 1 SD (about a 1-in-6 one-sided event by construction).",
+    "sources": "Nasdaq option-chain API, expiries 2026-11-16, 11-18, 11-20, 11-27"
+   },
+   {
+    "price": 146.16,
+    "pct_from_162_85": -10.25,
+    "label": "1-SD downside by Wed 2026-11-18 close (first expiry after earnings)",
+    "basis": "Nov-18 ATM IV 92.4%, T=5/365 -> 10.81%; 162.85*exp(-0.1081)=146.16. ATM straddle $14.04 = 8.6%. Risk-neutral 16% quantile $146.3. P(close<$150)=22.6%, P(<$148.80)=20.3%, P(<$140)=8.4%.",
+    "assumes": "Friday's pricing of Monday + Tuesday + the earnings reaction is right; lognormal 1-SD from ATM IV.",
+    "breaks_if": "Results or guidance, or legal/export news, are worse than a one-sigma surprise; options give about 8% to a Wednesday close below $140 and about 3% below $130.",
+    "sources": "Nasdaq option-chain API, expiry 2026-11-18"
+   },
+   {
+    "price": 144.31,
+    "pct_from_162_85": -11.38,
+    "label": "1-SD downside by Fri 2026-11-20 close",
+    "basis": "Nov-20 ATM IV 87.3%, T=7/365 -> 12.09%; 162.85*exp(-0.1209)=144.31. ATM straddle $15.69 = 9.6%. Risk-neutral 16% quantile $144.0. P(close<$140)=10.6%, P(<$130)=3.7%.",
+    "assumes": "Two ordinary post-earnings sessions at about 3.8%/day after the event.",
+    "breaks_if": "Post-earnings follow-through selling (downgrades, forced de-risking) larger than the 73% forward vol priced for Thu-Fri.",
+    "sources": "Nasdaq option-chain API, expiry 2026-11-20"
+   },
+   {
+    "price": 136.29,
+    "pct_from_162_85": -16.31,
+    "label": "1-SD downside by Fri 2026-12-18 (December monthly)",
+    "basis": "Dec-18 ATM IV 57.5%, T=35/365 -> 17.81%; 162.85*exp(-0.1781)=136.29. ATM straddle $23.06 = 14.2%. Risk-neutral 16% quantile $135.7. P(close<$140)=20.2%, P(<$130)=11.5%, P(<$120)=6.1%.",
+    "assumes": "Vol decays after the report to the 45-51% forward vol priced for late Nov to mid Dec.",
+    "breaks_if": "The investigation, DOJ/FBI inquiries or export legislation escalate so that realised vol stays near the recent 54-65% (10- and 20-day) rather than falling.",
+    "sources": "Nasdaq option-chain API, expiry 2026-12-18; realised vol from .cache/nvda_daily10y.pkl"
+   },
+   {
+    "price": 135.34,
+    "pct_from_162_85": -16.89,
+    "label": "Risk-neutral 5% tail by Wed 2026-11-18 close",
+    "basis": "Strike at which the smoothed risk-neutral CDF for the Nov-18 expiry equals 5% ($135.3); neighbouring values P(<$140)=8.4%, P(<$130)=2.7% (raw slopes 8.3% and 3.0%). Put IV there about 105%.",
+    "assumes": "Risk-neutral density from put-price slopes; puts at $130-$140 are liquid (bid/ask 1-4 cents wide, thousands of contracts traded).",
+    "breaks_if": "A jump the market prices at 1-in-20; real-world odds are lower than 5% if the put skew is mostly risk premium.",
+    "sources": "Nasdaq option-chain API, expiry 2026-11-18"
+   },
+   {
+    "price": 130.95,
+    "pct_from_162_85": -19.59,
+    "label": "1-SD downside by Fri 2027-01-15",
+    "basis": "Jan-2027 ATM IV 52.5%, T=63/365 -> 21.80%; 162.85*exp(-0.2180)=130.95. ATM straddle $28.16 = 17.3%. Risk-neutral 16% quantile $130.8. P(close<$130)=15.4%, P(<$120)=9.3%, P(<$100)=3.2%.",
+    "assumes": "Forward vol of 39-48% between mid-December and mid-January.",
+    "breaks_if": "A second shock (enforcement action, export curbs enacted, guidance cut) inside the window.",
+    "sources": "Nasdaq option-chain API, expiry 2027-01-15"
+   },
+   {
+    "price": 120.48,
+    "pct_from_162_85": -26.02,
+    "label": "Risk-neutral 1% tail by Wed 2026-11-18 close",
+    "basis": "Smoothed risk-neutral CDF for Nov-18 equals 1% at $120.5; P(<$120)=1.0% (raw 0.9%). $120 put quoted 0.11/0.13, 1,945 traded.",
+    "assumes": "Deep-wing put prices reflect probability rather than only lottery-ticket demand; quotes below $105 are too thin to refine this.",
+    "breaks_if": "An earnings-night gap of more than about 26%; nothing in the quotes rules it out, it is just priced at about 1-in-100.",
+    "sources": "Nasdaq option-chain API, expiry 2026-11-18"
+   },
+   {
+    "price": 117.07,
+    "pct_from_162_85": -28.11,
+    "label": "Risk-neutral 5% tail by Fri 2026-12-18",
+    "basis": "Smoothed risk-neutral CDF for Dec-18 equals 5% at $117.1; P(<$120)=6.1%, P(<$110)=3.1%. Put IV at 30% below spot 72% versus 57.5% ATM.",
+    "assumes": "Risk-neutral density from put slopes; $110-$125 Dec puts are liquid (3-6 cent spreads, OI 8,000-57,000 per strike).",
+    "breaks_if": "Events the market prices at 1-in-20 over five weeks.",
+    "sources": "Nasdaq option-chain API, expiry 2026-12-18"
+   },
+   {
+    "price": 113.17,
+    "pct_from_162_85": -30.51,
+    "label": "1-SD downside by Thu 2027-06-17 (mid-2027)",
+    "basis": "Jun-2027 ATM IV 47.3%, T=216/365 -> 36.40%; 162.85*exp(-0.3640)=113.17. ATM straddle $46.43 = 28.5%. Risk-neutral 16% quantile $110.2. P(close<$120)=21.4%, P(<$100)=11.4%, P(<$80)=5.3%.",
+    "assumes": "Vol averaging about 47% for seven months; lognormal 1-SD (the skewed risk-neutral 16% quantile is about $3 lower).",
+    "breaks_if": "Fundamental damage (China revenue loss, enforcement penalties, AI-capex downturn) rather than a sentiment episode.",
+    "sources": "Nasdaq option-chain API, expiry 2027-06-17; FRED DTB3/DGS1"
+   },
+   {
+    "price": 108.52,
+    "pct_from_162_85": -33.36,
+    "label": "Risk-neutral 5% tail by Fri 2027-01-15",
+    "basis": "Smoothed risk-neutral CDF for Jan-2027 equals 5% at $108.5; P(<$110)=5.4%, P(<$100)=3.2% (raw 5.0% and 3.2%). The $100 strike is the single largest put line in the chain (OI 241,342, quoted 0.64/0.72).",
+    "assumes": "Risk-neutral density from put slopes.",
+    "breaks_if": "Events priced at 1-in-20 over two months.",
+    "sources": "Nasdaq option-chain API, expiry 2027-01-15"
+   },
+   {
+    "price": 93.19,
+    "pct_from_162_85": -42.78,
+    "label": "Risk-neutral 1% tail by Fri 2026-12-18 (about the April-2025 low area)",
+    "basis": "Smoothed risk-neutral CDF for Dec-18 equals 1% at $93.2; P(<$100)=1.6%, P(<$90) about 0.8%. Quotes: $95 put 0.22/0.28, $90 put 0.16/0.23.",
+    "assumes": "Wing quotes with 25-35% bid/ask spreads are informative; treat as roughly $88-$98.",
+    "breaks_if": "A tail event the market prices at about 1-in-100 within five weeks.",
+    "sources": "Nasdaq option-chain API, expiry 2026-12-18"
+   },
+   {
+    "price": 83.48,
+    "pct_from_162_85": -48.74,
+    "label": "1-SD downside by Fri 2029-01-19 (longest expiry)",
+    "basis": "Jan-2029 ATM IV 45.2%, T=798/365 -> 66.83%; 162.85*exp(-0.6683)=83.48. ATM straddle $81.15 = 49.8%. Risk-neutral 16% quantile $74.9. P(close<$100)=26.6%, P(<$80)=18.0%.",
+    "assumes": "About 45% vol for 2.2 years; lognormal. The low risk-neutral median ($150) is mostly volatility drag, not a forecast of decline.",
+    "breaks_if": "Long-dated quotes are wide (up to about $1.7 on $5 strikes), so these are good to about +/-3-5 points of probability.",
+    "sources": "Nasdaq option-chain API, expiry 2029-01-19; FRED DTB3/DGS1/DGS2"
+   },
+   {
+    "price": 78.47,
+    "pct_from_162_85": -51.81,
+    "label": "Risk-neutral 5% tail by Thu 2027-06-17",
+    "basis": "Smoothed risk-neutral CDF for Jun-2027 equals 5% at $78.5; P(<$80)=5.3% (raw 5.9%), P(<$90)=7.9%. $80 put quoted 1.15/1.33, $75 put 0.94/1.05.",
+    "assumes": "Risk-neutral density from put slopes; quotes solid down to about $65.",
+    "breaks_if": "Events priced at 1-in-20 over seven months.",
+    "sources": "Nasdaq option-chain API, expiry 2027-06-17"
+   },
+   {
+    "price": 36.08,
+    "pct_from_162_85": -77.84,
+    "label": "Risk-neutral 5% tail by Fri 2029-01-19 (thin; indicative only)",
+    "basis": "Smoothed risk-neutral CDF for Jan-2029 equals 5% at $36.1. Quotes: $35 put 0.70/0.84 (OI 18), $40 put 1.03/1.09 (OI 894).",
+    "assumes": "Sparse deep-wing LEAPS quotes are representative.",
+    "breaks_if": "Thin quotes; treat as an order of magnitude ($30-$45), and as a risk-neutral, not real-world, 5%.",
+    "sources": "Nasdaq option-chain API, expiry 2029-01-19"
+   }
+  ],
+  "key_numbers": [
+   {
+    "name": "Spot used (last trade shown on the option chain, as of Nov 13, 2026)",
+    "value": "$162.85",
+    "source": "https://api.nasdaq.com/api/quote/NVDA/option-chain (lastTrade field)",
+    "retrieved_at": "2026-11-15T02:55:30Z"
+   },
+   {
+    "name": "Expiries listed / strike rows parsed",
+    "value": "24 expiries, 2026-11-16 to 2029-01-19; 2,232 rows (2,077 used)",
+    "source": "Nasdaq option-chain API, 17 paged requests",
+    "retrieved_at": "2026-11-15T02:55:30Z to 02:56:09Z"
+   },
+   {
+    "name": "Risk-free rate",
+    "value": "DTB3 4.14% discount basis (2026-11-12) = 4.24% bond-equivalent = 4.22% continuous; DGS1 4.65%, DGS2 4.86% used beyond 3 months",
+    "source": "FRED fredgraph.csv DTB3, DGS1, DGS2",
+    "retrieved_at": "2026-11-15T02:57:49Z"
+   },
+   {
+    "name": "Dividend yield",
+    "value": "0.614% ($1.00 annual dividend)",
+    "source": "stockanalysis.com statistics in /home/user/Temp/.cache/collect/NVDA.json",
+    "retrieved_at": "2026-11-14T13:22:27Z"
+   },
+   {
+    "name": "ATM straddle, Mon 2026-11-16 (last pre-earnings expiry)",
+    "value": "$5.82 = 3.6%; ATM IV 49.4%; 1-SD range $155.7-$170.3",
+    "source": "Nasdaq option-chain API, computed",
+    "retrieved_at": "2026-11-15T02:55:30Z"
+   },
+   {
+    "name": "ATM straddle, Wed 2026-11-18 (first post-earnings expiry)",
+    "value": "$14.04 = 8.6%; ATM IV 92.4%; 1-SD range $146.2-$181.4",
+    "source": "Nasdaq option-chain API, computed",
+    "retrieved_at": "2026-11-15T02:55:30Z"
+   },
+   {
+    "name": "Earnings-day implied move (isolated)",
+    "value": "expected absolute move 7.0-7.4% ($11.4-$12.1); 1-SD 8.8-9.3% ($14.3-$15.1); 66-74% of the Nov-18 variance",
+    "source": "Computed from Nov-16, Nov-18, Nov-20, Nov-27 ATM variances",
+    "retrieved_at": "2026-11-15T02:55:30Z"
+   },
+   {
+    "name": "ATM straddle, Fri 2026-12-18",
+    "value": "$23.06 = 14.2%; ATM IV 57.5%; 1-SD range $136.3-$194.6",
+    "source": "Nasdaq option-chain API, computed",
+    "retrieved_at": "2026-11-15T02:55:35Z"
+   },
+   {
+    "name": "ATM straddle, Fri 2027-01-15",
+    "value": "$28.16 = 17.3%; ATM IV 52.5%; 1-SD range $131.0-$202.5",
+    "source": "Nasdaq option-chain API, computed",
+    "retrieved_at": "2026-11-15T02:55:37Z"
+   },
+   {
+    "name": "ATM straddle, Thu 2027-06-17",
+    "value": "$46.43 = 28.5%; ATM IV 47.3%; 1-SD range $113.2-$234.3",
+    "source": "Nasdaq option-chain API, computed",
+    "retrieved_at": "2026-11-15T02:55:51Z"
+   },
+   {
+    "name": "ATM straddle, Fri 2029-01-19 (longest)",
+    "value": "$81.15 = 49.8%; ATM IV 45.2%; 1-SD range $83.5-$317.7",
+    "source": "Nasdaq option-chain API, computed",
+    "retrieved_at": "2026-11-15T02:56:09Z"
+   },
+   {
+    "name": "Put skew, Dec-18 expiry (ATM / -10% / -20% / -30%)",
+    "value": "57.5% / 60% / 64% / 72%",
+    "source": "Nasdaq option-chain API, computed (American tree for puts)",
+    "retrieved_at": "2026-11-15T02:55:35Z"
+   },
+   {
+    "name": "Put skew, Nov-18 expiry (ATM / -10% / -20% / -30%)",
+    "value": "92.4% / 95% / 110% / 135% (last is thin)",
+    "source": "Nasdaq option-chain API, computed",
+    "retrieved_at": "2026-11-15T02:55:30Z"
+   },
+   {
+    "name": "Risk-neutral P(close below $148.80)",
+    "value": "3.2% by Nov 16; 20.3% by Nov 18; 24.2% by Nov 20; 30.8% by Dec 18; 34.3% by Jan 15 2027; 41.4% by Jun 17 2027; 49.3% by Jan 19 2029",
+    "source": "Computed from put-price slopes",
+    "retrieved_at": "2026-11-15T02:55:30Z to 02:56:09Z"
+   },
+   {
+    "name": "Risk-neutral P(close below $100)",
+    "value": "about 0.2% by Nov 18; 1.6% by Dec 18; 3.2% by Jan 15 2027; 11.4% by Jun 17 2027; 26.6% by Jan 19 2029",
+    "source": "Computed from put-price slopes",
+    "retrieved_at": "2026-11-15T02:55:30Z to 02:56:09Z"
+   },
+   {
+    "name": "Total open interest and Friday volume, all expiries",
+    "value": "puts 8,444,783 OI / 1,416,353 volume; calls 9,477,023 OI / 2,226,421 volume (put/call 0.89 OI, 0.64 volume)",
+    "source": "Nasdaq option-chain API (strikes up to $480)",
+    "retrieved_at": "2026-11-15T02:55:30Z to 02:56:09Z"
+   },
+   {
+    "name": "Largest put positions",
+    "value": "$150 strike 636,808 OI across expiries; largest single line Jan-2027 $100 put 241,342; Friday put volume led by $160 (223,333) and $150 (168,652)",
+    "source": "Nasdaq option-chain API",
+    "retrieved_at": "2026-11-15T02:55:30Z to 02:56:09Z"
+   },
+   {
+    "name": "Realised volatility for comparison (close-to-close, annualised)",
+    "value": "5-day 53.4%, 10-day 64.7%, 20-day 54.0%, 60-day 43.8%, 250-day 38.8%",
+    "source": "/home/user/Temp/.cache/nvda_daily10y.pkl (last row 2026-11-13)",
+    "retrieved_at": "file on disk, read 2026-11-15"
+   },
+   {
+    "name": "Sensitivity of results to rate/dividend inputs",
+    "value": "flat DTB3 for all expiries: probabilities change by at most 0.13 points; q=0 instead of 0.614%: at most 0.33 points and 0.56 vol points of ATM IV",
+    "source": "Re-runs of the same computation",
+    "retrieved_at": "2026-11-15"
+   }
+  ],
+  "tables": "**T1. Implied move and skew by expiry** (mid quotes, Friday 2026-11-13 close; spot $162.85; IV on calendar ACT/365 basis; * = a neighbouring strike is thin)\n| Expiry | Days | ATM straddle $ (linear interp / model at K=spot) | Implied move % | ATM IV | 1-SD range $ | Put IV -10% ($146.57) | -20% ($130.28) | -30% ($114.00) |\n|---|---|---|---|---|---|---|---|---|\n| 2026-11-16 Mon | 3 | 5.86 / 5.82 | 3.6% | 49.4% | 155.7 - 170.3 (+/-4.5%) | 62% | 95%* | 140%* |\n| 2026-11-18 Wed | 5 | 14.06 / 14.04 | 8.6% | 92.4% | 146.2 - 181.4 (+/-10.8%) | 95% | 110% | 135%* |\n| 2026-11-20 Fri | 7 | 15.71 / 15.69 | 9.6% | 87.3% | 144.3 - 183.8 (+/-12.1%) | 89% | 98% | 119% |\n| 2026-11-27 Fri | 14 | 17.87 / 17.85 | 11.0% | 70.2% | 141.9 - 186.9 (+/-13.8%) | 72% | 78% | 93% |\n| 2026-12-18 Fri | 35 | 23.11 / 23.06 | 14.2% | 57.5% | 136.3 - 194.6 (+/-17.8%) | 60% | 64% | 72% |\n| 2027-01-15 Fri | 63 | 28.32 / 28.16 | 17.3% | 52.5% | 131.0 - 202.5 (+/-21.8%) | 54% | 57% | 63% |\n| 2027-03-19 Fri | 126 | 37.44 / 37.20 | 22.8% | 49.3% | 121.9 - 217.5 (+/-28.9%) | 50% | 52% | 56% |\n| 2027-06-17 Thu | 216 | 46.83 / 46.43 | 28.5% | 47.3% | 113.2 - 234.3 (+/-36.4%) | 48% | 49% | 52% |\n| 2027-12-17 Fri | 399 | 60.98 / 60.14 | 36.9% | 45.8% | 100.9 - 262.9 (+/-47.9%) | 46% | 47% | 48% |\n| 2028-01-21 Fri | 434 | 63.14 / 62.21 | 38.2% | 45.5% | 99.1 - 267.6 (+/-49.7%) | 45% | 47% | 48% |\n| 2029-01-19 Fri | 798 | 83.19 / 81.15 | 49.8% | 45.2% | 83.5 - 317.7 (+/-66.8%) | 45% | 45% | 46% |\n\n**T2. Risk-neutral probability (%) of FINISHING below strike at expiry** - smoothed put-price slope (primary); ~ = quotes too thin to trust beyond \"about zero / upper bound\"\n| Expiry | <$160 | <$150 | <$148.80 | <$140 | <$130 | <$120 | <$110 | <$100 | <$90 | <$80 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| 2026-11-16 | 34.6 | 4.3 | 3.2 | ~0.4 | ~0.1 | ~<0.1 | ~<0.1 | ~<0.1 | ~0.1 | ~0.1 |\n| 2026-11-18 | 46.7 | 22.6 | 20.3 | 8.4 | 2.7 | 1.0 | 0.4 | ~0.2 | ~0.2 | ~0.1 |\n| 2026-11-20 | 46.0 | 26.5 | 24.2 | 10.6 | 3.7 | 1.4 | 0.6 | 0.3 | ~0.1 | ~0.1 |\n| 2026-11-27 | 47.5 | 27.9 | 25.8 | 13.6 | 5.8 | 2.3 | 1.0 | ~0.4 | ~0.2 | ~0.2 |\n| 2026-12-18 | 47.0 | 32.4 | 30.8 | 20.2 | 11.5 | 6.1 | 3.1 | 1.6 | ~0.8 | ~0.4 |\n| 2027-01-15 | 48.8 | 35.8 | 34.3 | 24.3 | 15.4 | 9.3 | 5.4 | 3.2 | 1.9 | 1.2 |\n| 2027-03-19 | 48.9 | 39.6 | 38.5 | 30.7 | 22.8 | 16.1 | 10.9 | 7.1 | 4.5 | ~2.7 |\n| 2027-06-17 | 49.8 | 42.3 | 41.4 | 34.8 | 27.8 | 21.4 | 15.9 | 11.4 | 7.9 | 5.3 |\n| 2027-12-17 | 51.9 | 46.1 | 45.4 | 40.1 | 34.1 | 28.3 | 22.9 | 17.9 | 13.7 | 10.1 |\n| 2028-01-21 | 51.4 | 45.9 | 45.2 | 40.2 | 34.5 | 29.0 | 23.7 | 18.9 | 14.6 | 11.0 |\n| 2029-01-19 | 54.2 | 49.9 | 49.3 | 45.4 | 40.7 | 36.0 | 31.2 | 26.6 | 22.1 | 18.0 |\n\n**T3. Same, raw finite difference of quoted put mids across the neighbouring listed strikes (cross-check; * = thin)**\n| Expiry | <$160 | <$150 | <$148.80 | <$140 | <$130 | <$120 | <$110 | <$100 | <$90 | <$80 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| 2026-11-16 | 33.5 | 5.3 | 3.0 | 0.3* | 0.3* | -0.1* | 0.0* | 0.0* | 0.0* | 0.2* |\n| 2026-11-18 | 45.5 | 24.7 | 20.0 | 8.3 | 3.0 | 0.9 | 0.4 | 0.2* | 0.2* | 0.0* |\n| 2026-11-20 | 45.5 | 27.2 | 23.0 | 11.3 | 3.0 | 1.4 | 0.5 | 0.3 | 0.2* | 0.1* |\n| 2026-11-27 | 47.1 | 26.4 | 24.1 | 14.0 | 6.1 | 2.3 | 0.8 | 0.6* | 0.3* | 0.2* |\n| 2026-12-18 | 48.3 | 32.6 | 31.4 | 20.2 | 11.7 | 4.8 | 3.5 | 2.0 | 1.0* | 1.0* |\n| 2027-01-15 | 48.1 | 37.0 | 34.2 | 24.9 | 16.0 | 9.2 | 5.0 | 3.2 | 1.7 | 1.7 |\n| 2027-03-19 | 50.0 | 40.1 | 37.0 | 31.5 | 22.8 | 16.2 | 11.2 | 6.9 | 4.5 | 3.0* |\n| 2027-06-17 | 50.8 | 43.4 | 40.5 | 35.7 | 28.2 | 21.8 | 15.9 | 12.0 | 7.3 | 5.9 |\n| 2027-12-17 | 52.9 | 47.9 | 45.2 | 41.5 | 34.7 | 29.2 | 23.4 | 20.5 | 12.5 | 10.3 |\n| 2028-01-21 | 53.9 | 48.6 | 48.6 | 40.7 | 35.4 | 30.4 | 24.0 | 21.1 | 14.1 | 11.7 |\n| 2029-01-19 | 59.4 | 49.1 | 44.4 | 51.9 | 42.8 | 40.0 | 33.0 | 29.2 | 24.4 | 16.9 |\n\n**T4. Risk-neutral quantiles of the price at expiry ($; from the T2 distribution; ~ = below the lowest solidly quoted strike)**\n| Expiry | median | 25% | 16% | 10% | 5% | 2.5% | 1% |\n|---|---|---|---|---|---|---|---|\n| 2026-11-16 | 162.7 | 158.1 | 155.8 | 153.6 | 150.7 | 147.8 | 143.9 |\n| 2026-11-18 | 161.3 | 151.2 | 146.3 | 141.7 | 135.3 | 129.1 | 120.5 |\n| 2026-11-20 | 162.2 | 149.2 | 144.0 | 139.4 | 133.0 | 126.2 | 116.3 |\n| 2026-11-27 | 161.2 | 148.3 | 142.1 | 136.3 | 128.4 | 120.7 | 110.3 |\n| 2026-12-18 | 162.0 | 144.3 | 135.7 | 127.8 | 117.1 | 106.9 | 93.2 |\n| 2027-01-15 | 161.0 | 140.6 | 130.8 | 121.4 | 108.5 | 95.5 | 75.5 |\n| 2027-03-19 | 161.2 | 133.0 | 119.9 | 108.0 | 92.5 | 78.2 | ~60.0 |\n| 2027-06-17 | 160.3 | 125.8 | 110.2 | 96.3 | 78.5 | ~62.3 | ~41.9 |\n| 2027-12-17 | 156.6 | 114.0 | 95.7 | 79.8 | 60.2 | 43.1 | ~21.0 |\n| 2028-01-21 | 157.4 | 112.5 | 93.4 | 77.0 | 57.1 | ~40.1 | n/a |\n| 2029-01-19 | 150.3 | 96.5 | 74.9 | 57.1 | 36.1 | n/a | n/a |\n\n**T5. Isolating the earnings-day move (report 2026-11-17 after the close; no Tuesday expiry exists, so Tuesday's variance is assumed)**\n| Input / result | Value |\n|---|---|\n| Nov-16 Mon (last pre-earnings expiry) | straddle $5.82 = 3.6%; ATM IV 49.4% (about 71% on a 1-trading-day basis); total variance 0.00201; 1-SD 4.5% |\n| Nov-18 Wed (first post-earnings expiry) | straddle $14.04 = 8.6%; ATM IV 92.4%; total variance 0.01169; 1-SD 10.8% |\n| Nov-20 Fri | straddle $15.69 = 9.6%; ATM IV 87.3%; total variance 0.01461; 1-SD 12.1% |\n| Earnings-day variance = var(Nov-18) - var(Nov-16) - var(Tue), Tue = Mon | 0.00768 -> 1-SD 8.8% ($14.3), expected absolute move 7.0% ($11.4), 1-SD down price $149.2 |\n| Same, Tue = average of Thu/Fri after earnings (3.8%/day) | 0.00823 -> 1-SD 9.1% ($14.8), expected absolute move 7.2% ($11.8), 1-SD down price $148.7 |\n| Same, Tue = average session of Nov 23-27 (3.3%/day, 4 sessions assumed) | 0.00861 -> 1-SD 9.3% ($15.1), expected absolute move 7.4% ($12.1), 1-SD down price $148.4 |\n| Straddle shortcut sqrt(8.62^2 - 2 x 3.57^2) | 7.0% |\n| Share of Nov-18 variance attributable to the earnings day | 66-74% |\n| Forward ATM vol after the event (calendar, annualised) | Nov-18 to Nov-20 73%; Nov-27 to Dec-18 45-51%; Dec-18 to Jan-15 39-48%; 2027 to Jan-2029 forwards 42-51% |\n\n**T6. Put positioning by expiry (contracts; volume is Friday 2026-11-13; strikes above $480 with no bid/ask excluded)**\n| Expiry | Put OI | Put volume | Put/call OI | Put/call volume | Largest put OI strikes | Largest put volume strikes |\n|---|---|---|---|---|---|---|\n| 2026-11-16 | 121,003 | 459,816 | 0.69 | 0.77 | $150 13,924; $155 12,997; $160 10,963; $140 8,341 | $160 121,540; $150 80,494; $155 44,466; $157.5 36,445; $145 26,707 |\n| 2026-11-18 | 87,290 | 116,050 | 0.67 | 0.83 | $150 10,395; $160 6,161; $140 5,754; $155 4,671 | $160 17,185; $145 16,091; $150 10,292; $155 8,300; $80 6,482 (ask $0.02) |\n| 2026-11-20 | 841,857 | 286,141 | 0.66 | 0.76 | $190 89,538; $200 56,847; $150 42,115; $160 40,810; $170 40,382; $80 31,405 | $160 25,859; $150 25,745; $140 21,230; $155 17,359; $75 16,751; $70 16,221 (1-4 cents) |\n| 2026-11-27 | 135,718 | 47,561 | 0.81 | 0.87 | $165 12,334; $145 11,827; $185 11,342; $175 11,126; $160 8,952 | $145 6,439; $95 6,222; $140 5,827; $155 4,979 |\n| 2026-12-18 | 1,570,940 | 110,665 | 0.93 | 0.68 | $200 86,098; $160 57,541; $120 57,006; $80 54,019; $180 48,362 | $160 20,711; $145 11,738; $150 10,817; $120 6,542 |\n| 2027-01-15 | 1,617,287 | 73,811 | 0.88 | 0.34 | $100 241,342; $150 183,265; $200 90,241; $190 70,996; $140 58,092; $160 55,109 | $150 11,964; $160 9,261; $100 6,136; $140 5,252 |\n| All 24 expiries | 8,444,783 | 1,416,353 | 0.89 | 0.64 | $150 636,808; $100 426,777; $200 408,614; $140 404,492; $160 382,080; $120 305,498 | $160 223,333; $150 168,652 |\n\n**T7. Where put OI and Friday put volume sit, expiries through 2027-01-15 (share of 4,542,875 OI / 1,184,125 volume)**\n| Strike band | Share of put OI | Share of Friday put volume |\n|---|---|---|\n| at or above spot ($162.85+, in the money) | 42.0% | 11.8% |\n| $150 to $162.85 | 14.5% | 49.3% |\n| $140 to $150 | 6.1% | 15.7% |\n| $130 to $140 | 4.0% | 7.4% |\n| $120 to $130 | 4.7% | 3.7% |\n| $100 to $120 | 10.4% | 3.5% |\n| $80 to $100 | 6.2% | 4.1% |\n| below $80 | 12.1% | 4.6% |\n\n**T8. Plain statements: the options market prices about an X% chance NVDA finishes below $Y by date Z (risk-neutral, as of Friday 2026-11-13 close, before the 2026-11-17 report; finishing below at expiry, not touching)**\n| By | <$160 | <$150 | <$148.80 | <$140 | <$130 | <$120 | <$110 | <$100 | <$90 | <$80 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Mon 2026-11-16 (pre-earnings) | 35% | 4% | 3% | <0.5% | ~0 | ~0 | ~0 | ~0 | ~0 | ~0 |\n| Wed 2026-11-18 (first post-earnings) | 47% | 23% | 20% | 8% | 3% | 1% | 0.4% | ~0.2% | ~0.2% | ~0.1% |\n| Fri 2026-12-18 | 47% | 32% | 31% | 20% | 12% | 6% | 3% | 1.6% | ~0.8% | ~0.4% |\n| Fri 2027-01-15 | 49% | 36% | 34% | 24% | 15% | 9% | 5% | 3% | 2% | 1% |\n| Thu 2027-06-17 | 50% | 42% | 41% | 35% | 28% | 21% | 16% | 11% | 8% | 5% |\n| Fri 2029-01-19 | 54% | 50% | 49% | 45% | 41% | 36% | 31% | 27% | 22% | 18% |\n\nChecks: the smoothed probabilities (T2) are monotone in strike for all 24 expiries and lie in [0,1] apart from two wing values of -0.02% and -0.2% (2026-11-16 near $110-120 and 2026-12-31 at $80), reported as about zero. In non-thin cells the raw slopes (T3) agree with T2 to a median 0.4 points for expiries through June 2027 (worst 2.6 points outside the thin 2026-11-25 weekly), but the raw slopes are non-monotone where quotes are thin: 2026-11-16 below about $142 (puts at 5 cents or less, several ask-only) and the 2028-2029 LEAPS (bid/ask up to about $1.7 wide on $5 strikes; single-interval slopes jump by up to 14 points), so for those use T2 and treat it as good to about +/-3-5 points. Positioning read (T6-T7): Friday's put flow was concentrated at $150-$160 (49% of volume) and $140-$150 (16%), i.e. around the $148.80 low; standing open interest is largest at $150, then at $100 (Jan-2027) and in now in-the-money strikes $170-$200.",
+  "caveats": [
+   "These are risk-neutral probabilities: they embed the premium investors pay for protection, so they overstate real-world odds of decline when puts are bid (as now, with 13 downgrades, an investigation and earnings ahead). The low long-dated medians ($150 for Jan-2029) are mostly volatility drag in a lognormal-like distribution, not a forecast of decline.",
+   "Everything is as of Friday 2026-11-13 closing quotes, before the 2026-11-17 after-close report; the whole surface will reprice on Monday headlines and again after earnings.",
+   "Finishing below a level at expiry is not the same as touching it. The chance of trading through a level at some point before expiry is higher -- up to roughly double for a driftless diffusion (reflection-principle rule of thumb, not measured from quotes). Example: about 20% to close below $148.80 on Wednesday is consistent with something like a 30-40% chance of printing below it by then.",
+   "Quote quality: closing snapshot with some crossed bid/ask pairs; ask-only quotes were valued at half the ask. Thin areas: Nov-16 puts below about $142 (5 cents or less), most weekly puts below $100-$105, Dec-18 below $90, and 2028-2029 LEAPS generally. Near/mid-dated probabilities are good to about +/-1-2 points, 2028-2029 to +/-3-5 points; 1% quantiles are rough.",
+   "Model choices: puts de-Americanised with a 200-step binomial tree, calls treated as European; T in calendar days/365 (the Monday expiry carries the weekend: 49.4% calendar IV is about 71% on a one-trading-day basis). I used DTB3 for expiries up to 3 months and interpolated to DGS1/DGS2 beyond rather than a flat DTB3; with flat DTB3 no probability changes by more than 0.13 points.",
+   "Dividend input: 0.614% yield from the collected data. Long-dated put-call parity fits better with a carry closer to q = 0 (Jan-2029 ATM put IV 43.8% vs call IV 46.6% at q=0.614%, 44.4% vs 44.9% at q=0); switching to q=0 moves probabilities by at most 0.33 points, so conclusions are unaffected.",
+   "The earnings-day isolation depends on what Tuesday is assumed to be worth, because there is no Tuesday expiry; the three baselines give 7.0-7.4% expected absolute move. The 4-session count for Nov 23-27 assumes the US Thanksgiving closure on Thu Nov 26 (remembered calendar fact; consistent with the chain listing no Nov-26 expiry).",
+   "One-SD ranges use ATM IV and a symmetric lognormal; with put skew the true downside tail is fatter -- use the quantile table (T4) for tails.",
+   "Open interest does not show direction (who is long or short), so heavy-OI strikes are not floors. The open interest shown may be as of the prior session (some Nov-16 strikes show volume but blank OI); I could not verify the OI as-of date from the page.",
+   "Spot of $162.85 is the stock close; near-dated put-call parity implies the option market closed about $0.10-$0.25 lower (parity forward $162.74 vs $162.90 for Nov-16), which is immaterial to the probabilities because they come from put-price slopes.",
+   "Analysis, not advice."
+  ],
+  "unavailable": [
+   "Time-stamped intraday or NBBO-quality option quotes (only the Friday closing snapshot is public); no provider-supplied implied vols or greeks.",
+   "Historical option chains / implied-vol history, so no IV rank and no comparison of today's skew with NVDA's skew before the 2026-10-30 selloff or at past drawdown lows.",
+   "A Tuesday 2026-11-17 expiry (none listed), which would have isolated the earnings move without an assumption for Tuesday.",
+   "The as-of date of the open-interest figures and any buy/sell (opening vs closing, customer vs dealer) breakdown of volume.",
+   "A real-world (physical) probability measure: the risk premium embedded in put prices is not observable from the chain.",
+   "DTB3 for 2026-11-13 (latest FRED observation is 2026-11-12) and an OIS/Treasury curve matched to each expiry.",
+   "The next ex-dividend date and declared amount (used the 0.614% trailing yield as a continuous yield instead)."
+  ]
+ }
+}
